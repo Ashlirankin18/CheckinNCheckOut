@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
         print("hello")
         print("this is a test")
         print("not thie again")
+        print("not thie again too")
+
     }
     // would theis work/
     
