@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
       view.backgroundColor = .blue
         print("hello")
+      
     }
     
 
