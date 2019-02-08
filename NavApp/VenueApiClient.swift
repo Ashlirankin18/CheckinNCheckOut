@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 final class VenueApiClient {
   static func getVenues(){
     
