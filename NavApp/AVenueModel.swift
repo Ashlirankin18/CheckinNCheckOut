@@ -7,13 +7,13 @@
 //
 
 import Foundation
-struct AVenue:Codable {
+struct Venue:Codable {
   let response:AResult
 }
 struct AResult:Codable {
-  let venue: AVenueInfo
+  let venue: VenueInfo
 }
-struct AVenueInfo:Codable {
+struct VenueInfo:Codable {
   let id : String?
   let name: String?
   let contact: ContactInfo?
@@ -25,7 +25,7 @@ struct AVenueInfo:Codable {
   let listed: Listed?
   
 }
-struct AContactInfo:Codable {
+struct SpecificContactInfo:Codable {
   let phone: String
   let formattedPhone: String
   let twitter:  String

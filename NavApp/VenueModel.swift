@@ -7,13 +7,13 @@
 //
 
 import Foundation
-struct Venue:Codable {
+struct Venues:Codable {
   let response:Result
 }
 struct Result:Codable {
-  let venues: [VenueInfo]
+  let venues: [VenuesInfo]
 }
-struct VenueInfo:Codable {
+struct VenuesInfo:Codable {
   let id : String
   let name: String
   let contact: ContactInfo?
