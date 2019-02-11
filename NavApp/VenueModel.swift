@@ -19,27 +19,43 @@ struct VenueInfo:Codable {
   let contact: ContactInfo?
   let location:Location
   let categories: [CategoryInfo]
-  let likes: Likes?
-  let rating:Double?
-  let description:String?
-  
 }
 struct ContactInfo:Codable {
-  let phone: String
-  let formattedPhone: String
-  let twitter:  String
-  let instagram: String
-  let facebook: String
-  let facebookUsername:String
-  let facebookName: String
+  let phone: String?
+  let formattedPhone: String?
+  let twitter:  String?
+  let instagram: String?
+  let facebook: String?
+  let facebookUsername:String?
+  let facebookName: String?
 }
 struct Location:Codable {
   let formattedAddress: [String]
 }
 struct CategoryInfo:Codable{
+  let id:String
   let name:String
+  let icon:IconInfo
 }
 struct Likes:Codable {
   let count: Int
+  
+}
+struct IconInfo:Codable {
+  let prefix:String
+  let suffix:String
+}
+struct Listed:Codable {
+  let groups: [Groups]
+}
+struct Groups:Codable {
+  let type: String
+  let items: [GroupInfo]
+}
+struct GroupInfo:Codable {
+  let id: String
+  let name: String
+  let description:String
+  let type:String
   
 }
