@@ -8,21 +8,20 @@
 
 import Foundation
 struct Venue:Codable {
-  let result:Result
-  
+  let response:Result
 }
 struct Result:Codable {
-  let venue: VenueInfo
+  let venues: [VenueInfo]
 }
 struct VenueInfo:Codable {
   let id : String
   let name: String
-  let contact: ContactInfo
+  let contact: ContactInfo?
   let location:Location
   let categories: [CategoryInfo]
-  let likes: Likes
-  let rating:Double
-  let description:String
+  let likes: Likes?
+  let rating:Double?
+  let description:String?
   
 }
 struct ContactInfo:Codable {
@@ -35,7 +34,7 @@ struct ContactInfo:Codable {
   let facebookName: String
 }
 struct Location:Codable {
-  let formattedAddress: String
+  let formattedAddress: [String]
 }
 struct CategoryInfo:Codable{
   let name:String
