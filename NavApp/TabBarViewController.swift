@@ -16,11 +16,14 @@ class TabBarViewController: UITabBarController {
       view.backgroundColor = .white
       let listVC = ListViewController()
       let mainVC = MainViewController()
+      let favVc = FavoritesViewController()
       listVC.tabBarItem.title = "ListView"
       listVC.tabBarItem.image = #imageLiteral(resourceName: "icons8-news-feed-25")
       mainVC.tabBarItem.title = "Main"
       mainVC.tabBarItem.image = #imageLiteral(resourceName: "icons8-active-state-25")
-      self.viewControllers = [listVC,mainVC]
+      favVc.tabBarItem.title = "Favorites"
+      favVc.tabBarItem.image = #imageLiteral(resourceName: "icons8-star-25")
+      self.viewControllers = [listVC,mainVC,favVc]
     }
     
 
