@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+<<<<<<< HEAD
+//    let favVC = FavoritesViewController()
+=======
     let tabBarController = TabBarViewController()
+>>>>>>> 5c3ddee3405c7af491efab5c0809ef3f3313d83d
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = tabBarController
     window?.makeKeyAndVisible()
