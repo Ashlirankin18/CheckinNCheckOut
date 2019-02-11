@@ -17,7 +17,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
       view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
     //  getVenuesInArea(lattitude: "40.7", longitude: "-74", date: "20190215")
-     getVenueDetails(venueId: "4bddccbe6198c9b67bb911ff", date: "20190211")
+    // getVenueDetails(venueId: "4bddccbe6198c9b67bb911ff", date: "20190211")
     }
     
   private func getVenuesInArea(lattitude:String,longitude:String,date:String){
@@ -43,9 +43,7 @@ class ListViewController: UIViewController {
       }
     }
   }
-  
-  
-  }
+}
     
 
 

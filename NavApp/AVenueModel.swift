@@ -44,7 +44,6 @@ struct ACategoryInfo:Codable{
 }
 struct ALikes:Codable {
   let count: Int
-  
 }
 struct AIconInfo:Codable {
   let prefix:String

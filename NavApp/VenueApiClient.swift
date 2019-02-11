@@ -41,7 +41,6 @@ final class VenueApiClient {
         }catch{
           completionHandler(AppError.jsonDecodingError(error),nil)
         }
-        
       }
     }
   }
