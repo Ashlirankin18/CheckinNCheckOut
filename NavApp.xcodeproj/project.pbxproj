@@ -18,6 +18,9 @@
 		2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B8220E256300C89FFC /* VenueApiClient.swift */; };
 		2E57C3C0220E256300C89FFC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B9220E256300C89FFC /* AppError.swift */; };
 		2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */; };
+		2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F3220F212F00E10E2C /* ListViewController.swift */; };
+		2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F5220F214700E10E2C /* SecretKeys.swift */; };
+		2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		2E57C3B8220E256300C89FFC /* VenueApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueApiClient.swift; sourceTree = "<group>"; };
 		2E57C3B9220E256300C89FFC /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2E5999F3220F212F00E10E2C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2E5999F5220F214700E10E2C /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +56,6 @@
 		2E57C395220E251100C89FFC = {
 			isa = PBXGroup;
 			children = (
-				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
 				2E57C3A0220E251100C89FFC /* NavApp */,
 				2E57C39F220E251100C89FFC /* Products */,
 			);
@@ -67,6 +72,10 @@
 		2E57C3A0220E251100C89FFC /* NavApp */ = {
 			isa = PBXGroup;
 			children = (
+				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
+				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
+				2E5999F5220F214700E10E2C /* SecretKeys.swift */,
+				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
 				2E57C3A1220E251100C89FFC /* AppDelegate.swift */,
 				2E57C3B9220E256300C89FFC /* AppError.swift */,
 				2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */,
@@ -156,11 +165,14 @@
 				2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */,
 				2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */,
 				2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */,
+				2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */,
 				2E57C3C0220E256300C89FFC /* AppError.swift in Sources */,
 				2E57C3BE220E256300C89FFC /* String+Extension.swift in Sources */,
 				2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */,
 				2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */,
+				2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */,
 				2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */,
+				2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
