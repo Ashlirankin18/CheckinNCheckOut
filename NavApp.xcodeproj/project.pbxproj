@@ -24,6 +24,9 @@
 		61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB3220E6DE9005907B2 /* FavoritesView.swift */; };
 		61387FB6220E6DFB005907B2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */; };
 		61387FB8220E7904005907B2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB7220E7904005907B2 /* FavoriteCell.swift */; };
+		614BEE2C221243E000B985C6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2B221243E000B985C6 /* ListView.swift */; };
+		614BEE2E22124B7600B985C6 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */; };
+		614BEE302212640200B985C6 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2F2212640200B985C6 /* ListDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		61387FB3220E6DE9005907B2 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		61387FB7220E7904005907B2 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		614BEE2B221243E000B985C6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		614BEE2F2212640200B985C6 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 			children = (
 				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
 				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
+				614BEE2F2212640200B985C6 /* ListDetailViewController.swift */,
+				614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */,
+				614BEE2B221243E000B985C6 /* ListView.swift */,
 				61387FB3220E6DE9005907B2 /* FavoritesView.swift */,
 				61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */,
 				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
@@ -170,10 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				614BEE2C221243E000B985C6 /* ListView.swift in Sources */,
 				61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */,
 				2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */,
 				2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */,
 				2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */,
+				614BEE2E22124B7600B985C6 /* ListTableViewCell.swift in Sources */,
 				2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */,
 				2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */,
 				2E57C3C0220E256300C89FFC /* AppError.swift in Sources */,
@@ -183,6 +194,7 @@
 				61387FB8220E7904005907B2 /* FavoriteCell.swift in Sources */,
 				2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */,
 				2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */,
+				614BEE302212640200B985C6 /* ListDetailViewController.swift in Sources */,
 				2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */,
 				2E7339152211E793009F9C54 /* SecretKeys.swift in Sources */,
 			);
