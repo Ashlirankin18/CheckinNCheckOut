@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D88AB9F22124CC500E58D09 /* CreateVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88AB9E22124CC500E58D09 /* CreateVenueViewController.swift */; };
 		2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3A1220E251100C89FFC /* AppDelegate.swift */; };
 		2E57C3A9220E251200C89FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3A8220E251200C89FFC /* Assets.xcassets */; };
 		2E57C3AC220E251200C89FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D88AB9E22124CC500E58D09 /* CreateVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVenueViewController.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3A1220E251100C89FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E57C3A8220E251200C89FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
 				61387FB3220E6DE9005907B2 /* FavoritesView.swift */,
 				61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */,
+				0D88AB9E22124CC500E58D09 /* CreateVenueViewController.swift */,
 				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
 				61387FB7220E7904005907B2 /* FavoriteCell.swift */,
 				2E7339142211E793009F9C54 /* SecretKeys.swift */,
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D88AB9F22124CC500E58D09 /* CreateVenueViewController.swift in Sources */,
 				61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */,
 				2E73391922122966009F9C54 /* AVenueModel.swift in Sources */,
 				2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */,
