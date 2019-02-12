@@ -22,7 +22,6 @@ class FavoritesViewController: UIViewController {
 
 }
 
-
 extension FavoritesViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
