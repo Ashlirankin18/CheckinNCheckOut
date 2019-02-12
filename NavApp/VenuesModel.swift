@@ -30,6 +30,8 @@ struct ContactInfo:Codable {
   let facebookName: String?
 }
 struct Location:Codable {
+  let lat : Double
+  let lng: Double
   let formattedAddress: [String]
 }
 struct CategoryInfo:Codable{
