@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12C5D9DD22137C40006F0849 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D9DC22137C40006F0849 /* MainView.swift */; };
-		2E0CE45A2214C7C9009F39A4 /* CreateTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CE4582214C7C9009F39A4 /* CreateTipView.swift */; };
-		2E0CE45B2214C7C9009F39A4 /* CreateTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CE4592214C7C9009F39A4 /* CreateTipViewController.swift */; };
 		2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3A1220E251100C89FFC /* AppDelegate.swift */; };
 		2E57C3A9220E251200C89FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3A8220E251200C89FFC /* Assets.xcassets */; };
 		2E57C3AC220E251200C89FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */; };
-		2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B3220E256300C89FFC /* VenuesModel.swift */; };
+		2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B3220E256300C89FFC /* VenueModel.swift */; };
 		2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */; };
 		2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B5220E256300C89FFC /* Date+Extension.swift */; };
 		2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B6220E256300C89FFC /* NetworkHelper.swift */; };
@@ -22,30 +19,17 @@
 		2E57C3C0220E256300C89FFC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B9220E256300C89FFC /* AppError.swift */; };
 		2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */; };
 		2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F3220F212F00E10E2C /* ListViewController.swift */; };
+		2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F5220F214700E10E2C /* SecretKeys.swift */; };
 		2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */; };
-		2E73391922122966009F9C54 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391822122966009F9C54 /* AVenueModel.swift */; };
-		2E73391B22125923009F9C54 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391A22125923009F9C54 /* CollectionModel.swift */; };
-		2E73391D22125CB0009F9C54 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391C22125CB0009F9C54 /* CreateTipModel.swift */; };
-		2E73391F221260E0009F9C54 /* TipCreatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391E221260E0009F9C54 /* TipCreatorHelper.swift */; };
-		2E73392122126224009F9C54 /* CollectionPersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73392022126224009F9C54 /* CollectionPersistanceHelper.swift */; };
-		61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB3220E6DE9005907B2 /* FavoritesView.swift */; };
-		61387FB6220E6DFB005907B2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */; };
-		61387FB8220E7904005907B2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB7220E7904005907B2 /* FavoriteCell.swift */; };
-		614BEE2C221243E000B985C6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2B221243E000B985C6 /* ListView.swift */; };
-		614BEE2E22124B7600B985C6 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */; };
-		614BEE302212640200B985C6 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BEE2F2212640200B985C6 /* ListDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12C5D9DC22137C40006F0849 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		2E0CE4582214C7C9009F39A4 /* CreateTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTipView.swift; sourceTree = "<group>"; };
-		2E0CE4592214C7C9009F39A4 /* CreateTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTipViewController.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3A1220E251100C89FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E57C3A8220E251200C89FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E57C3AB220E251200C89FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E57C3B3220E256300C89FFC /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
+		2E57C3B3220E256300C89FFC /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		2E57C3B5220E256300C89FFC /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		2E57C3B6220E256300C89FFC /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -54,18 +38,8 @@
 		2E57C3B9220E256300C89FFC /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2E5999F3220F212F00E10E2C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2E5999F5220F214700E10E2C /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		2E73391822122966009F9C54 /* AVenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVenueModel.swift; sourceTree = "<group>"; };
-		2E73391A22125923009F9C54 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
-		2E73391C22125CB0009F9C54 /* CreateTipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTipModel.swift; sourceTree = "<group>"; };
-		2E73391E221260E0009F9C54 /* TipCreatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCreatorHelper.swift; sourceTree = "<group>"; };
-		2E73392022126224009F9C54 /* CollectionPersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPersistanceHelper.swift; sourceTree = "<group>"; };
-		61387FB3220E6DE9005907B2 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		61387FB7220E7904005907B2 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
-		614BEE2B221243E000B985C6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		614BEE2F2212640200B985C6 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,83 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E0CE45C2214C833009F39A4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2E73391C22125CB0009F9C54 /* CreateTipModel.swift */,
-				2E73391A22125923009F9C54 /* CollectionModel.swift */,
-				2E57C3B3220E256300C89FFC /* VenuesModel.swift */,
-				2E73391822122966009F9C54 /* AVenueModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2E0CE45D2214C84F009F39A4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2E0CE4582214C7C9009F39A4 /* CreateTipView.swift */,
-				61387FB7220E7904005907B2 /* FavoriteCell.swift */,
-				12C5D9DC22137C40006F0849 /* MainView.swift */,
-				614BEE2D22124B7600B985C6 /* ListTableViewCell.swift */,
-				614BEE2B221243E000B985C6 /* ListView.swift */,
-				61387FB3220E6DE9005907B2 /* FavoritesView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2E0CE45E2214C86E009F39A4 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2E0CE4592214C7C9009F39A4 /* CreateTipViewController.swift */,
-				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
-				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
-				614BEE2F2212640200B985C6 /* ListDetailViewController.swift */,
-				61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */,
-				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		2E0CE45F2214C881009F39A4 /* HelperMethods */ = {
-			isa = PBXGroup;
-			children = (
-				2E73391E221260E0009F9C54 /* TipCreatorHelper.swift */,
-				2E73392022126224009F9C54 /* CollectionPersistanceHelper.swift */,
-				2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */,
-				2E0CE4622214C8D4009F39A4 /* Extensions */,
-			);
-			path = HelperMethods;
-			sourceTree = "<group>";
-		};
-		2E0CE4602214C8AA009F39A4 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				2E57C3A1220E251100C89FFC /* AppDelegate.swift */,
-				2E57C3A8220E251200C89FFC /* Assets.xcassets */,
-				2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		2E0CE4612214C8BB009F39A4 /* NetworkServices */ = {
-			isa = PBXGroup;
-			children = (
-				2E57C3B6220E256300C89FFC /* NetworkHelper.swift */,
-				2E57C3B9220E256300C89FFC /* AppError.swift */,
-				2E57C3B8220E256300C89FFC /* VenueApiClient.swift */,
-			);
-			path = NetworkServices;
-			sourceTree = "<group>";
-		};
-		2E0CE4622214C8D4009F39A4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2E57C3B5220E256300C89FFC /* Date+Extension.swift */,
-				2E57C3B7220E256300C89FFC /* String+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		2E57C395220E251100C89FFC = {
 			isa = PBXGroup;
 			children = (
@@ -175,12 +72,20 @@
 		2E57C3A0220E251100C89FFC /* NavApp */ = {
 			isa = PBXGroup;
 			children = (
-				2E0CE45D2214C84F009F39A4 /* Views */,
-				2E0CE45E2214C86E009F39A4 /* Controllers */,
-				2E0CE45C2214C833009F39A4 /* Models */,
-				2E0CE45F2214C881009F39A4 /* HelperMethods */,
-				2E0CE4602214C8AA009F39A4 /* SupportingFiles */,
-				2E0CE4612214C8BB009F39A4 /* NetworkServices */,
+				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
+				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
+				2E5999F5220F214700E10E2C /* SecretKeys.swift */,
+				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
+				2E57C3A1220E251100C89FFC /* AppDelegate.swift */,
+				2E57C3B9220E256300C89FFC /* AppError.swift */,
+				2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */,
+				2E57C3B5220E256300C89FFC /* Date+Extension.swift */,
+				2E57C3B6220E256300C89FFC /* NetworkHelper.swift */,
+				2E57C3B7220E256300C89FFC /* String+Extension.swift */,
+				2E57C3B8220E256300C89FFC /* VenueApiClient.swift */,
+				2E57C3B3220E256300C89FFC /* VenueModel.swift */,
+				2E57C3A8220E251200C89FFC /* Assets.xcassets */,
+				2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */,
 				2E57C3AD220E251200C89FFC /* Info.plist */,
 			);
 			path = NavApp;
@@ -256,33 +161,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E0CE45A2214C7C9009F39A4 /* CreateTipView.swift in Sources */,
-				2E0CE45B2214C7C9009F39A4 /* CreateTipViewController.swift in Sources */,
-				614BEE2C221243E000B985C6 /* ListView.swift in Sources */,
-				61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */,
-				2E73391922122966009F9C54 /* AVenueModel.swift in Sources */,
 				2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */,
-				2E73392122126224009F9C54 /* CollectionPersistanceHelper.swift in Sources */,
-				12C5D9DD22137C40006F0849 /* MainView.swift in Sources */,
 				2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */,
 				2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */,
-				614BEE2E22124B7600B985C6 /* ListTableViewCell.swift in Sources */,
 				2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */,
 				2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */,
-				2E73391D22125CB0009F9C54 /* CreateTipModel.swift in Sources */,
 				2E57C3C0220E256300C89FFC /* AppError.swift in Sources */,
-				61387FB6220E6DFB005907B2 /* FavoritesViewController.swift in Sources */,
 				2E57C3BE220E256300C89FFC /* String+Extension.swift in Sources */,
 				2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */,
-				61387FB8220E7904005907B2 /* FavoriteCell.swift in Sources */,
 				2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */,
 				2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */,
-				614BEE302212640200B985C6 /* ListDetailViewController.swift in Sources */,
-				2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */,
-				2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */,
-				2E73391F221260E0009F9C54 /* TipCreatorHelper.swift in Sources */,
-				2E73391B22125923009F9C54 /* CollectionModel.swift in Sources */,
-				2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */,
+				2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */,
+				2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +311,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,7 +329,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
