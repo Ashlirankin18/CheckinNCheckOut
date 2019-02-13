@@ -9,16 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var mainView = MainView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        print("hello")
-        print("this is a test")
-        print("not thie again")
-        print("not thie again too")
+       view.addSubview(mainView)
         
     }
-    // would theis work/
+     
     
     
     
