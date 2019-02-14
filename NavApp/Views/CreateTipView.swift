@@ -15,7 +15,7 @@ class CreateTipView: UIView {
         return textField
     }()
     
-    lazy var createTipName: UITextField = {
+    lazy var createTipVenueName: UITextField = {
         let textField = UITextField()
         textField.text = "Enter venue name"
         return textField
@@ -53,7 +53,7 @@ class CreateTipView: UIView {
 extension CreateTipView {
     private func setConstraints() {
         addSubview(submitButton)
-        addSubview(createTipName)
+        addSubview(createTipVenueName)
         addSubview(collectionName)
         addSubview(createTipTextView)
         
@@ -63,13 +63,13 @@ extension CreateTipView {
         collectionName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         collectionName.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
-        createTipName.translatesAutoresizingMaskIntoConstraints = false
-        createTipName.topAnchor.constraint(equalTo: collectionName.bottomAnchor).isActive = true
-        createTipName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        createTipName.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        createTipVenueName.translatesAutoresizingMaskIntoConstraints = false
+        createTipVenueName.topAnchor.constraint(equalTo: collectionName.bottomAnchor).isActive = true
+        createTipVenueName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        createTipVenueName.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
         createTipTextView.translatesAutoresizingMaskIntoConstraints = false
-        createTipTextView.topAnchor.constraint(equalTo: createTipName.bottomAnchor).isActive = true
+        createTipTextView.topAnchor.constraint(equalTo: createTipVenueName.bottomAnchor).isActive = true
         createTipTextView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         createTipTextView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
