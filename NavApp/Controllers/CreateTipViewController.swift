@@ -10,14 +10,18 @@ import UIKit
 
 class CreateTipViewController: UIViewController {
 
-    var createTipView = CreateTipView()
-    
+   private var createTipView = CreateTipView()
+    private var tip = [CreateTipModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
 view.addSubview(createTipView)
-        
-    }
-    
+       
 
+    }
+
+    func createTipButtonPressed() {
     
+    }
 }
+
+

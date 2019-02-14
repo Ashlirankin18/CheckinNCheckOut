@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA17E352215FF0300084F1C /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA17E342215FF0300084F1C /* SecretKeys.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
 		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
 		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DA17E342215FF0300084F1C /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 				2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */,
 				2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */,
 				2EBA68CC2214F512009FD8D1 /* CollectionPersistanceHelper.swift */,
-				2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */,
+				0DA17E342215FF0300084F1C /* SecretKeys.swift */,
 				2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */,
 				2EBA68CD2214F512009FD8D1 /* Extensions */,
 			);
@@ -271,7 +273,6 @@
 				2EBA68FB2214F513009FD8D1 /* CreateTipView.swift in Sources */,
 				2EBA69012214F513009FD8D1 /* VenueApiClient.swift in Sources */,
 				2EBA69032214F513009FD8D1 /* AppError.swift in Sources */,
-				2EBA69072214FB8B009FD8D1 /* SecretKeys.swift in Sources */,
 				2EBA68F42214F513009FD8D1 /* FavoritesViewController.swift in Sources */,
 				2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */,
 				2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */,
@@ -282,6 +283,7 @@
 				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
 				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
 				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,
+				0DA17E352215FF0300084F1C /* SecretKeys.swift in Sources */,
 				2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */,
 				2EBA68EE2214F513009FD8D1 /* CollectionPersistanceHelper.swift in Sources */,
 				2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */,
@@ -433,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,6 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
