@@ -10,8 +10,6 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    //JOSHUA
-    
     var venue = [Venues](){
         didSet {
             DispatchQueue.main.async {
@@ -32,9 +30,6 @@ class ListViewController: UIViewController {
         
     }
     
-    //JOSHUA
-    
-
   var venueInfo: Venue?
 
     
@@ -83,8 +78,12 @@ extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = FavoritesViewController()
+        
+        
+        let vc = ListDetailViewController()
         navigationController?.pushViewController(vc, animated: true)
+        
+        
         print("Dont touch me")
        
         // getvenueDetails -> give you the venue ID
