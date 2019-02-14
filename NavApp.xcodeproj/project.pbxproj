@@ -309,7 +309,6 @@
 		2E57C3B1220E251200C89FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = NavApp/Info.plist;
@@ -328,7 +327,6 @@
 		2E57C3B2220E251200C89FFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = NavApp/Info.plist;
