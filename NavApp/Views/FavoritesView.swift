@@ -13,10 +13,9 @@ class FavoritesView: UIView {
     
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top:0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: 200, height: 300)
         var cv = UICollectionView(frame:  self.bounds, collectionViewLayout: layout)
-        
         cv.showsVerticalScrollIndicator = false
         return cv
     }()

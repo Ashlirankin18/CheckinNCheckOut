@@ -36,6 +36,7 @@
 		2EBA69032214F513009FD8D1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68E72214F513009FD8D1 /* AppError.swift */; };
 		2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */; };
 		2EBA69072214FB8B009FD8D1 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */; };
+		6123487B221616DE009C41DD /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123487A221616DE009C41DD /* ListDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		2EBA68E72214F513009FD8D1 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiController+Alerts.swift"; sourceTree = "<group>"; };
 		2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		6123487A221616DE009C41DD /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				6123487A221616DE009C41DD /* ListDetailView.swift */,
 				2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */,
 				2EBA68DB2214F513009FD8D1 /* ListView.swift */,
 				2EBA68DC2214F513009FD8D1 /* CreateTipView.swift */,
@@ -276,6 +279,7 @@
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
 				2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */,
+				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
 				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
 				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,
 				2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */,
