@@ -14,7 +14,7 @@ class ListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "Venue:"
+        label.text = "Title"
         return label
     }()
     
@@ -24,20 +24,13 @@ class ListTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    public lazy var favoriteButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .yellow
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-        button.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
-        return button
+    public lazy var venueSubtitle: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.text = "Subtitle"
+        return label
     }()
-    
-    
-    @objc func favoriteButtonPressed() {
-   //send to favorites Array
-    }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,7 +47,7 @@ class ListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setTitleConstraints()
         setImageConstraints()
-        setButtonConstraints()
+        setSubtitleConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,13 +76,11 @@ extension ListTableViewCell{
         venueTitle.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
-    private func setButtonConstraints() {
-        self.addSubview(favoriteButton)
-        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
-        favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        favoriteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        favoriteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        favoriteButton.widthAnchor.constraint(equalToConstant:50).isActive = true
-        favoriteButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    private func setSubtitleConstraints() {
+        self.addSubview(venueSubtitle)
+        venueSubtitle.translatesAutoresizingMaskIntoConstraints = false
+        venueSubtitle.topAnchor.constraint(equalTo: venueTitle.bottomAnchor).isActive = true
+        venueSubtitle.leadingAnchor.constraint(equalTo: centerXAnchor, constant: -90).isActive = true
+        venueSubtitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
