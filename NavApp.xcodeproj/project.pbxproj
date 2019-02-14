@@ -7,39 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3A1220E251100C89FFC /* AppDelegate.swift */; };
-		2E57C3A9220E251200C89FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3A8220E251200C89FFC /* Assets.xcassets */; };
-		2E57C3AC220E251200C89FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */; };
-		2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B3220E256300C89FFC /* VenueModel.swift */; };
-		2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */; };
-		2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B5220E256300C89FFC /* Date+Extension.swift */; };
-		2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B6220E256300C89FFC /* NetworkHelper.swift */; };
-		2E57C3BE220E256300C89FFC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B7220E256300C89FFC /* String+Extension.swift */; };
-		2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B8220E256300C89FFC /* VenueApiClient.swift */; };
-		2E57C3C0220E256300C89FFC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3B9220E256300C89FFC /* AppError.swift */; };
-		2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */; };
-		2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F3220F212F00E10E2C /* ListViewController.swift */; };
-		2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F5220F214700E10E2C /* SecretKeys.swift */; };
-		2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */; };
+		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
+		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
+		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
+		2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C82214F512009FD8D1 /* CollectionModel.swift */; };
+		2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */; };
+		2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */; };
+		2EBA68EE2214F513009FD8D1 /* CollectionPersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CC2214F512009FD8D1 /* CollectionPersistanceHelper.swift */; };
+		2EBA68EF2214F513009FD8D1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CE2214F512009FD8D1 /* Date+Extension.swift */; };
+		2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CF2214F512009FD8D1 /* String+Extension.swift */; };
+		2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D22214F512009FD8D1 /* ListViewController.swift */; };
+		2EBA68F32214F513009FD8D1 /* CreateTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */; };
+		2EBA68F42214F513009FD8D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */; };
+		2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D52214F512009FD8D1 /* MainViewController.swift */; };
+		2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D62214F512009FD8D1 /* ListDetailViewController.swift */; };
+		2EBA68F72214F513009FD8D1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D72214F512009FD8D1 /* TabBarViewController.swift */; };
+		2EBA68F82214F513009FD8D1 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */; };
+		2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */; };
+		2EBA68FA2214F513009FD8D1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68DB2214F513009FD8D1 /* ListView.swift */; };
+		2EBA68FB2214F513009FD8D1 /* CreateTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68DC2214F513009FD8D1 /* CreateTipView.swift */; };
+		2EBA68FC2214F513009FD8D1 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68DD2214F513009FD8D1 /* ListTableViewCell.swift */; };
+		2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68DE2214F513009FD8D1 /* MainView.swift */; };
+		2EBA68FE2214F513009FD8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA68E02214F513009FD8D1 /* Assets.xcassets */; };
+		2EBA68FF2214F513009FD8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA68E12214F513009FD8D1 /* LaunchScreen.storyboard */; };
+		2EBA69002214F513009FD8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68E32214F513009FD8D1 /* AppDelegate.swift */; };
+		2EBA69012214F513009FD8D1 /* VenueApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68E52214F513009FD8D1 /* VenueApiClient.swift */; };
+		2EBA69022214F513009FD8D1 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68E62214F513009FD8D1 /* NetworkHelper.swift */; };
+		2EBA69032214F513009FD8D1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68E72214F513009FD8D1 /* AppError.swift */; };
+		2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */; };
+		2EBA69072214FB8B009FD8D1 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E57C3A1220E251100C89FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E57C3A8220E251200C89FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E57C3AB220E251200C89FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E57C3B3220E256300C89FFC /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
-		2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
-		2E57C3B5220E256300C89FFC /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		2E57C3B6220E256300C89FFC /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		2E57C3B7220E256300C89FFC /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		2E57C3B8220E256300C89FFC /* VenueApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueApiClient.swift; sourceTree = "<group>"; };
-		2E57C3B9220E256300C89FFC /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		2E5999F3220F212F00E10E2C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		2E5999F5220F214700E10E2C /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
-		2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
+		2EBA68C62214F512009FD8D1 /* AVenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVenueModel.swift; sourceTree = "<group>"; };
+		2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTipModel.swift; sourceTree = "<group>"; };
+		2EBA68C82214F512009FD8D1 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
+		2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCreatorHelper.swift; sourceTree = "<group>"; };
+		2EBA68CC2214F512009FD8D1 /* CollectionPersistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPersistanceHelper.swift; sourceTree = "<group>"; };
+		2EBA68CE2214F512009FD8D1 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		2EBA68CF2214F512009FD8D1 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2EBA68D22214F512009FD8D1 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTipViewController.swift; sourceTree = "<group>"; };
+		2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2EBA68D52214F512009FD8D1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2EBA68D62214F512009FD8D1 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		2EBA68D72214F512009FD8D1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2EBA68DB2214F513009FD8D1 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		2EBA68DC2214F513009FD8D1 /* CreateTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTipView.swift; sourceTree = "<group>"; };
+		2EBA68DD2214F513009FD8D1 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		2EBA68DE2214F513009FD8D1 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2EBA68E02214F513009FD8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EBA68E22214F513009FD8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EBA68E32214F513009FD8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2EBA68E52214F513009FD8D1 /* VenueApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueApiClient.swift; sourceTree = "<group>"; };
+		2EBA68E62214F513009FD8D1 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		2EBA68E72214F513009FD8D1 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiController+Alerts.swift"; sourceTree = "<group>"; };
+		2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,23 +102,94 @@
 		2E57C3A0220E251100C89FFC /* NavApp */ = {
 			isa = PBXGroup;
 			children = (
-				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
-				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
-				2E5999F5220F214700E10E2C /* SecretKeys.swift */,
-				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
-				2E57C3A1220E251100C89FFC /* AppDelegate.swift */,
-				2E57C3B9220E256300C89FFC /* AppError.swift */,
-				2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */,
-				2E57C3B5220E256300C89FFC /* Date+Extension.swift */,
-				2E57C3B6220E256300C89FFC /* NetworkHelper.swift */,
-				2E57C3B7220E256300C89FFC /* String+Extension.swift */,
-				2E57C3B8220E256300C89FFC /* VenueApiClient.swift */,
-				2E57C3B3220E256300C89FFC /* VenueModel.swift */,
-				2E57C3A8220E251200C89FFC /* Assets.xcassets */,
-				2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */,
+				2EBA68D12214F512009FD8D1 /* Controllers */,
+				2EBA68C92214F512009FD8D1 /* HelperMethods */,
+				2EBA68C42214F512009FD8D1 /* Models */,
+				2EBA68E42214F513009FD8D1 /* NetworkServices */,
+				2EBA68DF2214F513009FD8D1 /* SupportingFiles */,
+				2EBA68D82214F513009FD8D1 /* Views */,
 				2E57C3AD220E251200C89FFC /* Info.plist */,
 			);
 			path = NavApp;
+			sourceTree = "<group>";
+		};
+		2EBA68C42214F512009FD8D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68C52214F512009FD8D1 /* VenuesModel.swift */,
+				2EBA68C62214F512009FD8D1 /* AVenueModel.swift */,
+				2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */,
+				2EBA68C82214F512009FD8D1 /* CollectionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2EBA68C92214F512009FD8D1 /* HelperMethods */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */,
+				2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */,
+				2EBA68CC2214F512009FD8D1 /* CollectionPersistanceHelper.swift */,
+				2EBA69062214FB8B009FD8D1 /* SecretKeys.swift */,
+				2EBA69042214FB2A009FD8D1 /* UiController+Alerts.swift */,
+				2EBA68CD2214F512009FD8D1 /* Extensions */,
+			);
+			path = HelperMethods;
+			sourceTree = "<group>";
+		};
+		2EBA68CD2214F512009FD8D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68CE2214F512009FD8D1 /* Date+Extension.swift */,
+				2EBA68CF2214F512009FD8D1 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2EBA68D12214F512009FD8D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68D22214F512009FD8D1 /* ListViewController.swift */,
+				2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */,
+				2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */,
+				2EBA68D52214F512009FD8D1 /* MainViewController.swift */,
+				2EBA68D62214F512009FD8D1 /* ListDetailViewController.swift */,
+				2EBA68D72214F512009FD8D1 /* TabBarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2EBA68D82214F513009FD8D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */,
+				2EBA68DB2214F513009FD8D1 /* ListView.swift */,
+				2EBA68DC2214F513009FD8D1 /* CreateTipView.swift */,
+				2EBA68DD2214F513009FD8D1 /* ListTableViewCell.swift */,
+				2EBA68DE2214F513009FD8D1 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EBA68DF2214F513009FD8D1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68E02214F513009FD8D1 /* Assets.xcassets */,
+				2EBA68E12214F513009FD8D1 /* LaunchScreen.storyboard */,
+				2EBA68E32214F513009FD8D1 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2EBA68E42214F513009FD8D1 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA68E52214F513009FD8D1 /* VenueApiClient.swift */,
+				2EBA68E62214F513009FD8D1 /* NetworkHelper.swift */,
+				2EBA68E72214F513009FD8D1 /* AppError.swift */,
+			);
+			path = NetworkServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +224,7 @@
 				TargetAttributes = {
 					2E57C39D220E251100C89FFC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -149,8 +251,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E57C3AC220E251200C89FFC /* LaunchScreen.storyboard in Resources */,
-				2E57C3A9220E251200C89FFC /* Assets.xcassets in Resources */,
+				2EBA68FE2214F513009FD8D1 /* Assets.xcassets in Resources */,
+				2EBA68FF2214F513009FD8D1 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,28 +263,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */,
-				2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */,
-				2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */,
-				2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */,
-				2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */,
-				2E57C3C0220E256300C89FFC /* AppError.swift in Sources */,
-				2E57C3BE220E256300C89FFC /* String+Extension.swift in Sources */,
-				2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */,
-				2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */,
-				2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */,
-				2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */,
-				2E5999F6220F214700E10E2C /* SecretKeys.swift in Sources */,
+				2EBA68F72214F513009FD8D1 /* TabBarViewController.swift in Sources */,
+				2EBA68FA2214F513009FD8D1 /* ListView.swift in Sources */,
+				2EBA68FB2214F513009FD8D1 /* CreateTipView.swift in Sources */,
+				2EBA69012214F513009FD8D1 /* VenueApiClient.swift in Sources */,
+				2EBA69032214F513009FD8D1 /* AppError.swift in Sources */,
+				2EBA69072214FB8B009FD8D1 /* SecretKeys.swift in Sources */,
+				2EBA68F42214F513009FD8D1 /* FavoritesViewController.swift in Sources */,
+				2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */,
+				2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */,
+				2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */,
+				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
+				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
+				2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */,
+				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
+				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,
+				2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */,
+				2EBA68EE2214F513009FD8D1 /* CollectionPersistanceHelper.swift in Sources */,
+				2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */,
+				2EBA68FC2214F513009FD8D1 /* ListTableViewCell.swift in Sources */,
+				2EBA69022214F513009FD8D1 /* NetworkHelper.swift in Sources */,
+				2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */,
+				2EBA68F32214F513009FD8D1 /* CreateTipViewController.swift in Sources */,
+				2EBA68EF2214F513009FD8D1 /* Date+Extension.swift in Sources */,
+				2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */,
+				2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */,
+				2EBA68F82214F513009FD8D1 /* FavoriteCell.swift in Sources */,
+				2EBA69002214F513009FD8D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */ = {
+		2EBA68E12214F513009FD8D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E57C3AB220E251200C89FFC /* Base */,
+				2EBA68E22214F513009FD8D1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -310,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -319,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wmn4future.NavApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
