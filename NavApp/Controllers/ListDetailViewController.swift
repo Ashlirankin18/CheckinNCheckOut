@@ -24,5 +24,10 @@ class ListDetailViewController: UIViewController {
     @objc func addButtonPressed(){
        //segue to the create TabViewController
         
+        //testing the segue
+         let creatVC = CreateTipViewController()
+        let navController = UINavigationController(rootViewController: creatVC)
+        self.present(navController, animated: true, completion: nil)
     }
+    //delete beofre committing
 }

@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
         mainVC.tabBarItem.title = "Main"
         mainVC.tabBarItem.image = #imageLiteral(resourceName: "icons8-active-state-25")
         favVc.tabBarItem.title = "Favorites"
-        favVc.tabBarItem.image = #imageLiteral(resourceName: "icons8-star-25")
+        favVc.tabBarItem.image = #imageLiteral(resourceName: "icons8-star-25")        
         self.viewControllers = [navController,mainVC,favVc]
     }
     
