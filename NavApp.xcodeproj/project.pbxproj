@@ -5,9 +5,14 @@
 	};
 	objectVersion = 50;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		122577BE22146653002F4C25 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122577BD22146653002F4C25 /* MapView.swift */; };
+		122577C42214BF97002F4C25 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122577C32214BF97002F4C25 /* MapViewController.swift */; };
+		122577C622167337002F4C25 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122577C522167336002F4C25 /* SecretKeys.swift */; };
+		122577C8221676B0002F4C25 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122577C7221676B0002F4C25 /* ListView.swift */; };
+		122577CA221678B4002F4C25 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122577C9221678B4002F4C25 /* ListCell.swift */; };
 		12C5D9DD22137C40006F0849 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D9DC22137C40006F0849 /* MainView.swift */; };
-		12C5D9DF22137D5C006F0849 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D9DE22137D5C006F0849 /* SecretKeys.swift */; };
 		2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3A1220E251100C89FFC /* AppDelegate.swift */; };
 		2E57C3A9220E251200C89FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3A8220E251200C89FFC /* Assets.xcassets */; };
 		2E57C3AC220E251200C89FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E57C3AA220E251200C89FFC /* LaunchScreen.storyboard */; };
@@ -21,7 +26,6 @@
 		2E57C3C4220E2A5B00C89FFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */; };
 		2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F3220F212F00E10E2C /* ListViewController.swift */; };
 		2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */; };
-		2E7339152211E793009F9C54 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7339142211E793009F9C54 /* SecretKeys.swift */; };
 		2E73391922122966009F9C54 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391822122966009F9C54 /* AVenueModel.swift */; };
 		2E73391B22125923009F9C54 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391A22125923009F9C54 /* CollectionModel.swift */; };
 		2E73391D22125CB0009F9C54 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73391C22125CB0009F9C54 /* CreateTipModel.swift */; };
@@ -31,9 +35,14 @@
 		61387FB6220E6DFB005907B2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */; };
 		61387FB8220E7904005907B2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61387FB7220E7904005907B2 /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		122577BD22146653002F4C25 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		122577C32214BF97002F4C25 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		122577C522167336002F4C25 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		122577C7221676B0002F4C25 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		122577C9221678B4002F4C25 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		12C5D9DC22137C40006F0849 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		12C5D9DE22137D5C006F0849 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3A1220E251100C89FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E57C3A8220E251200C89FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +58,6 @@
 		2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2E5999F3220F212F00E10E2C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		2E7339142211E793009F9C54 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		2E73391822122966009F9C54 /* AVenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVenueModel.swift; sourceTree = "<group>"; };
 		2E73391A22125923009F9C54 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		2E73391C22125CB0009F9C54 /* CreateTipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTipModel.swift; sourceTree = "<group>"; };
@@ -98,13 +106,16 @@
 				2E73392022126224009F9C54 /* CollectionPersistanceHelper.swift */,
 				61387FB7220E7904005907B2 /* FavoriteCell.swift */,
 				2E57C3C3220E2A5B00C89FFC /* MainViewController.swift */,
+				122577C32214BF97002F4C25 /* MapViewController.swift */,
 				12C5D9DC22137C40006F0849 /* MainView.swift */,
+				122577BD22146653002F4C25 /* MapView.swift */,
 				2E5999F3220F212F00E10E2C /* ListViewController.swift */,
+				122577C7221676B0002F4C25 /* ListView.swift */,
+				122577C9221678B4002F4C25 /* ListCell.swift */,
 				61387FB3220E6DE9005907B2 /* FavoritesView.swift */,
 				61387FB5220E6DFB005907B2 /* FavoritesViewController.swift */,
-				12C5D9DE22137D5C006F0849 /* SecretKeys.swift */,
 				2E5999F7220F26CC00E10E2C /* TabBarViewController.swift */,
-				2E7339142211E793009F9C54 /* SecretKeys.swift */,
+				122577C522167336002F4C25 /* SecretKeys.swift */,
 				2E57C3A1220E251100C89FFC /* AppDelegate.swift */,
 				2E57C3B9220E256300C89FFC /* AppError.swift */,
 				2E57C3B4220E256300C89FFC /* DataPersistanceManager.swift */,
@@ -190,13 +201,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				61387FB4220E6DE9005907B2 /* FavoritesView.swift in Sources */,
+				122577BE22146653002F4C25 /* MapView.swift in Sources */,
 				2E73391922122966009F9C54 /* AVenueModel.swift in Sources */,
 				2E57C3BB220E256300C89FFC /* DataPersistanceManager.swift in Sources */,
 				2E73392122126224009F9C54 /* CollectionPersistanceHelper.swift in Sources */,
+				122577CA221678B4002F4C25 /* ListCell.swift in Sources */,
+				122577C622167337002F4C25 /* SecretKeys.swift in Sources */,
 				12C5D9DD22137C40006F0849 /* MainView.swift in Sources */,
+				122577C8221676B0002F4C25 /* ListView.swift in Sources */,
 				2E57C3BC220E256300C89FFC /* Date+Extension.swift in Sources */,
 				2E57C3BD220E256300C89FFC /* NetworkHelper.swift in Sources */,
-				12C5D9DF22137D5C006F0849 /* SecretKeys.swift in Sources */,
+				122577C42214BF97002F4C25 /* MapViewController.swift in Sources */,
 				2E57C3A2220E251100C89FFC /* AppDelegate.swift in Sources */,
 				2E5999F8220F26CC00E10E2C /* TabBarViewController.swift in Sources */,
 				2E73391D22125CB0009F9C54 /* CreateTipModel.swift in Sources */,
@@ -208,10 +223,9 @@
 				2E57C3BF220E256300C89FFC /* VenueApiClient.swift in Sources */,
 				2E5999F4220F212F00E10E2C /* ListViewController.swift in Sources */,
 				2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */,
-				2E7339152211E793009F9C54 /* SecretKeys.swift in Sources */,
 				2E73391F221260E0009F9C54 /* TipCreatorHelper.swift in Sources */,
 				2E73391B22125923009F9C54 /* CollectionModel.swift in Sources */,
-				2E57C3BA220E256300C89FFC /* VenueModel.swift in Sources */,
+				2E57C3BA220E256300C89FFC /* VenuesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

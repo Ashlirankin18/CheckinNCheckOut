@@ -2,13 +2,16 @@
 //  SecretKeys.swift
 //  NavApp
 //
-//  Created by Ashli Rankin on 2/11/19.
+//  Created by Olimpia on 2/14/19.
 //  Copyright © 2019 Ashli Rankin. All rights reserved.
 //
 
 import Foundation
 
 struct SecretKeys {
-  static let clientKey = "OFSN5X4ANHR0YMAJX5IVNKTX1XBXT5T5JROXTG0TAD24WOQM"
-  static let clientId = "ZGIKNICUTDAG0TVJOLI0OH52EGDXEO5CVH2Z05M000JVF5WU"
+    public static var clientId = "L3CIH4RVZUOEC2D5V5ST2522B4PM1PBVHLDKZ2IVSHMEOZ1G"
+    public static var clientKey = "F3MJQBYY0C2YDDSI3WJ3GMSV5PJERCYXCYKPJVI0K4FAQF30"
 }
+
+
+

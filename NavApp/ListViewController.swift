@@ -9,15 +9,32 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    
+  var listView = ListView()
   var venue = [Venues]()
   var venueInfo: Venue?
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+      view.backgroundColor = .blue
+        view.addSubview(listView)
+        self.listView.tableView.register(ListCell.self, forCellReuseIdentifier: "ListCell")
+        listView.tableView.delegate = self
+        listView.tableView.dataSource = self
+        title = "NAV APP"
+        let dismiss = UIBarButtonItem(title: "map", style: .plain, target: self, action: #selector(toggleToMap))
+        self.navigationItem.rightBarButtonItem = dismiss
+       
+
+        
+        
     //  getVenuesInArea(lattitude: "40.7", longitude: "-74", date: "20190215")
     // getVenueDetails(venueId: "4bddccbe6198c9b67bb911ff", date: "20190211")
+    }
+    
+    @objc func toggleToMap() {
+        let mapCV = MapViewController()
+        present(mapCV, animated: true)
     }
     
   private func getVenuesInArea(lattitude:String,longitude:String,date:String){
@@ -44,6 +61,21 @@ class ListViewController: UIViewController {
     }
   }
 }
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell else { return UITableViewCell() }
+//        let dataToSet = venue[indexPath.row]
+//        cell.detailTextLabel?.text = dataToSet.response.venues.first!.id
+         return cell
+    }
+    
+    
+}
+
 
 
