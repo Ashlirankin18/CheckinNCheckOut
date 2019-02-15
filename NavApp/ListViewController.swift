@@ -73,8 +73,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 //        cell.detailTextLabel?.text = dataToSet.response.venues.first!.id
          return cell
     }
-    
-    
 }
 
 

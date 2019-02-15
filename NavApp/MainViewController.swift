@@ -13,10 +13,11 @@ class MainViewController: UIViewController {
     var mainView = MainView()
    override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.backgroundColor = .white
         view.addSubview(mainView)
         mainView.delegate = self 
         mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
+       mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
         gimeMeData()
     }
     @objc func presentMapView(){
@@ -24,6 +25,11 @@ class MainViewController: UIViewController {
     let navController = UINavigationController(rootViewController: mapViewController)
         self.present(navController, animated: true, completion: nil)
         
+    }
+    
+    @objc func presentListVC() {
+        let listVC = ListViewController()
+        self.present(listVC, animated: true, completion: nil)
     }
     
     func gimeMeData() {

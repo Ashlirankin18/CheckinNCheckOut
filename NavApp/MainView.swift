@@ -35,63 +35,82 @@ class MainView: UIView {
     
     lazy var button1: UIButton = {
         let button1 = UIButton()
-        button1.setTitle("red", for: .normal)
-        button1.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+//        button1.setTitle("red", for: .normal)
+        button1.backgroundColor = .white
         button1.layer.cornerRadius = 5
         button1.layer.borderWidth = 1
-        button1.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        button1.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
+        let myImage = UIImage(named: "coffee")
+        button1.setImage(myImage, for: UIControl.State.normal)
+        button1.setImage(UIImage(named: "coffee"), for: UIControl.State.highlighted)
         return button1
     }()
     
     lazy var button2: UIButton = {
         let button2 = UIButton()
-        button2.setTitle("blue", for: .normal)
+        //button2.setTitle("blue", for: .normal)
         button2.layer.cornerRadius = 5
         button2.layer.borderWidth = 1
-        button2.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        button2.backgroundColor = #colorLiteral(red: 0.7041909695, green: 0.7041909695, blue: 0.7041909695, alpha: 1)
+        button2.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
+        button2.backgroundColor = .white
+        let myImage = UIImage(named: "movies")
+        button2.setImage(myImage, for: UIControl.State.normal)
+        button2.setImage(UIImage(named: "movies"), for: UIControl.State.highlighted)
         return button2
     }()
     
     lazy var button3: UIButton = {
         let button3 = UIButton()
-        button3.setTitle("green", for: .normal)
+        //button3.setTitle("green", for: .normal)
         button3.layer.cornerRadius = 5
         button3.layer.borderWidth = 1
-        button3.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        button3.backgroundColor = #colorLiteral(red: 0.7041909695, green: 0.7041909695, blue: 0.7041909695, alpha: 1)
+        button3.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
+        button3.backgroundColor = .white
+        let myImage = UIImage(named: "burger")
+        button3.setImage(myImage, for: UIControl.State.normal)
+        button3.setImage(UIImage(named: "burger"), for: UIControl.State.highlighted)
         return button3
     }()
     
     lazy var button4: UIButton = {
         let button4 = UIButton()
-        button4.setTitle("magenta", for: .normal)
+       // button4.setTitle("magenta", for: .normal)
         button4.layer.cornerRadius = 5
         button4.layer.borderWidth = 1
-        button4.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        button4.backgroundColor = #colorLiteral(red: 0.7041909695, green: 0.7041909695, blue: 0.7041909695, alpha: 1)
+        button4.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
+        button4.backgroundColor = .white
+        let myImage = UIImage(named: "yoga")
+        button4.setImage(myImage, for: UIControl.State.normal)
+        button4.setImage(UIImage(named: "yoga"), for: UIControl.State.highlighted)
         return button4
     }()
     
     lazy var button5: UIButton = {
         let button5 = UIButton()
-        button5.setTitle("other", for: .normal)
+        //button5.setTitle("bar", for: .normal)
         button5.layer.cornerRadius = 5
         button5.layer.borderWidth = 1
-        button5.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        button5.backgroundColor = #colorLiteral(red: 0.7041909695, green: 0.7041909695, blue: 0.7041909695, alpha: 1)
+        button5.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
+        button5.backgroundColor = .white
+        let myImage = UIImage(named: "bar")
+        button5.setImage(myImage, for: UIControl.State.normal)
+        button5.setImage(UIImage(named: "button5"), for: UIControl.State.highlighted)
         return button5
     }()
     
-    lazy var buttonToMap: UIButton = {
-        let buttonToMap = UIButton()
-        buttonToMap.backgroundColor = .clear
-        buttonToMap.layer.cornerRadius = 5
-        buttonToMap.layer.borderWidth = 1
-        buttonToMap.layer.borderColor = UIColor.lightGray.cgColor
-        buttonToMap.setTitle("See it in the map", for: .normal)
-        buttonToMap.backgroundColor = #colorLiteral(red: 0.6980392157, green: 0.8431372549, blue: 1, alpha: 1)
-        return buttonToMap
+    lazy var seeAllEvents: UIButton = {
+        let SeeAllEvents = UIButton()
+        SeeAllEvents.backgroundColor = .clear
+        SeeAllEvents.layer.cornerRadius = 5
+        SeeAllEvents.layer.borderWidth = 1
+        SeeAllEvents.layer.borderColor = UIColor.lightGray.cgColor
+        SeeAllEvents.setTitle("See all events", for: .normal)
+        SeeAllEvents.backgroundColor = #colorLiteral(red: 0.231372549, green: 0.6, blue: 0.9882352941, alpha: 1)
+        SeeAllEvents.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        SeeAllEvents.layer.cornerRadius = 0.5 * SeeAllEvents.bounds.size.width
+        SeeAllEvents.clipsToBounds = true
+      
+        return SeeAllEvents
     }()
     
     lazy var titleLablel: UILabel = {
@@ -103,7 +122,8 @@ class MainView: UIView {
         nameOfapp.layer.cornerRadius = 5
         nameOfapp.numberOfLines = 0
         nameOfapp.textAlignment = .center
-        nameOfapp.font = UIFont(name: "Copperplate", size: 35)!
+        nameOfapp.font = UIFont(name: "Copperplate", size: 40)!
+    
         //add animation to the label 
         return nameOfapp
         
@@ -111,13 +131,15 @@ class MainView: UIView {
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.layer.cornerRadius = 5
+      searchBar.layer.borderWidth = 0.5
         return searchBar
     }()
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         addSubview(searchBar)
-        addSubview(buttonToMap)
+        addSubview(seeAllEvents)
         addSubview(button1)
         addSubview(button2)
         addSubview(button3)
@@ -141,9 +163,9 @@ class MainView: UIView {
         
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         [searchBar.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 35), searchBar.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), searchBar.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40)].forEach{ $0.isActive = true }
-//
-//        buttonToMap.translatesAutoresizingMaskIntoConstraints = false
-//        [buttonToMap.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 35), buttonToMap.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 120), buttonToMap.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -120)].forEach{ $0.isActive = true }
+
+        seeAllEvents.translatesAutoresizingMaskIntoConstraints = false
+        [seeAllEvents.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 40), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
         
         titleLablel.translatesAutoresizingMaskIntoConstraints = false
         [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50)].forEach{ $0.isActive = true }
