@@ -116,7 +116,7 @@ class MainView: UIView {
     lazy var titleLablel: UILabel = {
         let nameOfapp = UILabel()
         nameOfapp.text = "Nav App"
-        nameOfapp.backgroundColor = UIColor(patternImage: UIImage(named: "laugh")!).withAlphaComponent(0.8)
+//        nameOfapp.backgroundColor = UIColor(patternImage: UIImage(named: "laugh")!).withAlphaComponent(0.8)
         nameOfapp.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         nameOfapp.layer.masksToBounds = true
         nameOfapp.layer.cornerRadius = 5

@@ -18,11 +18,10 @@ class FavoritesViewController: UIViewController {
         view.addSubview(favView)
         favView.collectionview.delegate = self
         favView.collectionview.dataSource = self
-        // Do any additional setup after loading the view.
     }
-    
 
 }
+
 extension FavoritesViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
