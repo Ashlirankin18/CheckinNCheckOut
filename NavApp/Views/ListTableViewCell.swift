@@ -70,8 +70,8 @@ extension ListTableViewCell{
     private func setTitleConstraints(){
         self.addSubview(venueTitle)
         venueTitle.translatesAutoresizingMaskIntoConstraints = false
-        venueTitle.leadingAnchor.constraint(equalTo: centerXAnchor, constant: -90).isActive = true
-        venueTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        venueTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+        venueTitle.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
         venueTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         venueTitle.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
@@ -80,7 +80,7 @@ extension ListTableViewCell{
         self.addSubview(venueSubtitle)
         venueSubtitle.translatesAutoresizingMaskIntoConstraints = false
         venueSubtitle.topAnchor.constraint(equalTo: venueTitle.bottomAnchor).isActive = true
-        venueSubtitle.leadingAnchor.constraint(equalTo: centerXAnchor, constant: -90).isActive = true
+        venueSubtitle.leadingAnchor.constraint(equalTo: centerXAnchor).isActive = true
         venueSubtitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
