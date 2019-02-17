@@ -27,8 +27,15 @@ view.addSubview(createTipView)
         self.dismiss(animated: true, completion: nil)
     }
    @objc func submitButtonPressed() {
-    self.showAlert(title: "Tip Created", message: "Success")
+//    self.showAlert(title: "Ok", message: "Tip Created") { alertController in
+//        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (<#UIAlertAction#>) in
+//            <#code#>
+//        })
+//    }
     }
+
+
+    
 }
 
 

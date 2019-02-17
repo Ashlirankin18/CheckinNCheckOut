@@ -22,8 +22,6 @@ class ListDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonPressed))
     }
     @objc func addButtonPressed(){
-       //segue to the create TabViewController
-        
         //testing the segue
          let creatVC = CreateTipViewController()
         let navController = UINavigationController(rootViewController: creatVC)
