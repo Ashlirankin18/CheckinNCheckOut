@@ -18,20 +18,20 @@ class ListViewController: UIViewController {
         }
     }
     
-    var listView = ListView()
+  var items: Items?
+  var listView = ListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(listView)
         listView.myTableView.delegate = self
         listView.myTableView.dataSource = self
-        
         view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        
+      getVenuesInArea(lattitude: "37.2", longitude: "44.3", date: "20190215")
     }
     
   var venueInfo: Venue?
-
+  
     
   private func getVenuesInArea(lattitude:String,longitude:String,date:String){
     VenueApiClient.getVenues(lattitude: lattitude, longitude: longitude, date: date) { (error, venue) in
@@ -40,21 +40,41 @@ class ListViewController: UIViewController {
       }
       if let venue = venue{
         self.venue = venue
-        dump(venue)
-        print("I have\(venue.count) items")
+          }
+     
       }
     }
-  }
-  private func getVenueDetails(venueId:String,date:String){
-    VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
+  
+
+  
+private func getTheVenueImages(venueId:String) {
+    VenueApiClient.getVenueImageData(venueId: venueId, date: "20190216") { (error, items) in
       if let error = error {
         print(error.errorMessage())
       }
-      if let venueInfo = venueInfo {
-        self.venueInfo = venueInfo
-        dump(venueInfo)
+      if let items = items {
+       self.items = items
+
       }
     }
+  }
+
+  func getImagesFromPrefixandSuffix(prefix:String,suffix:String,imageView:UIImageView){
+    let urlString = prefix + "300x500" + suffix
+    if let image = ImageCache.shared.fetchImageFromCache(urlString: urlString){
+      imageView.image = image
+    }else{
+      ImageCache.shared.fetchImageFromNetwork(urlString: urlString) { (error, image) in
+        if let error = error{
+          print(error.errorMessage())
+        }
+        if let image = image {
+          DispatchQueue.main.async {
+             imageView.image = image
+          }
+        }
+        }
+      }
   }
 }
 
@@ -64,13 +84,27 @@ class ListViewController: UIViewController {
 extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //getVenuesInArea
+      if let venue = venue.first {
+        return venue.response.venues.count
+      }
+      return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = listView.myTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {return UITableViewCell()}
-        return cell
+      
+        let aVenue =  venue.first?.response.venues[indexPath.row]
+      cell.venueTitle.text = aVenue?.name.capitalized
+      cell.venueSubtitle.text = aVenue?.location.formattedAddress.first
+      if let venueId  = aVenue?.id {
+        //getTheVenueImages(venueId: venueId)
+        if let urlComponents = items {
+          //getImagesFromPrefixandSuffix(prefix: urlComponents.prefix, suffix: urlComponents.suffix, imageView: cell.venueImage)
+        }else{
+          print("no components found")
+        }
+      }
+      return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,3 +125,4 @@ extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     }
     
 }
+
