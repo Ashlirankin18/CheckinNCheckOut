@@ -10,6 +10,8 @@
 		1290CDD322175F940061C036 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290CDD222175F940061C036 /* SecretKeys.swift */; };
 		12C71D9B22176B410047849B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C71D9822176B410047849B /* MapViewController.swift */; };
 		12C71D9C22176B410047849B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C71D9922176B410047849B /* MapView.swift */; };
+		12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1530221CB6D4005E94E7 /* AllEventsViewController.swift */; };
+		12FB1533221CB6FA005E94E7 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1532221CB6FA005E94E7 /* AllEventsView.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
 		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
 		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
@@ -45,6 +47,8 @@
 		1290CDD222175F940061C036 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		12C71D9822176B410047849B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = NavApp/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		12C71D9922176B410047849B /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = NavApp/MapView.swift; sourceTree = SOURCE_ROOT; };
+		12FB1530221CB6D4005E94E7 /* AllEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsViewController.swift; sourceTree = "<group>"; };
+		12FB1532221CB6FA005E94E7 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */,
 				12C71D9822176B410047849B /* MapViewController.swift */,
 				2EBA68D52214F512009FD8D1 /* MainViewController.swift */,
+				12FB1530221CB6D4005E94E7 /* AllEventsViewController.swift */,
 				2EBA68D62214F512009FD8D1 /* ListDetailViewController.swift */,
 				2EBA68D72214F512009FD8D1 /* TabBarViewController.swift */,
 			);
@@ -172,6 +177,7 @@
 			children = (
 				12C71D9922176B410047849B /* MapView.swift */,
 				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				12FB1532221CB6FA005E94E7 /* AllEventsView.swift */,
 				6123487A221616DE009C41DD /* ListDetailView.swift */,
 				2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */,
 				2EBA68DB2214F513009FD8D1 /* ListView.swift */,
@@ -284,6 +290,7 @@
 				2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */,
 				2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */,
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
+				12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
 				2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */,
 				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
@@ -294,6 +301,7 @@
 				2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */,
 				2EBA68FC2214F513009FD8D1 /* ListTableViewCell.swift in Sources */,
 				2EBA69022214F513009FD8D1 /* NetworkHelper.swift in Sources */,
+				12FB1533221CB6FA005E94E7 /* AllEventsView.swift in Sources */,
 				2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */,
 				2EBA68F32214F513009FD8D1 /* CreateTipViewController.swift in Sources */,
 				2EBA68EF2214F513009FD8D1 /* Date+Extension.swift in Sources */,

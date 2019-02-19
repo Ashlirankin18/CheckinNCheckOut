@@ -13,7 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     
-    
+    var annotations = [MKAnnotation]()
     var appMapView = MapView()
     var myMapView = MKMapView()
     var locationToPin = [Location]()
@@ -24,6 +24,14 @@ class MapViewController: UIViewController {
     let nycLocation: CLLocation = CLLocation.init(latitude:  40.730610, longitude: -73.935242)
     var previousLocation: CLLocation?
     
+    init(annotations: [MKAnnotation]) {
+        super.init(nibName: nil, bundle: nil)
+        self.annotations = annotations
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +43,7 @@ class MapViewController: UIViewController {
         appMapView.mapView.delegate = self 
       //  appMapView = self
     
+        appMapView.mapView.showAnnotations(annotations, animated: true)
     }
     
     func butonsSetUp() {
@@ -146,3 +155,4 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
 }
+

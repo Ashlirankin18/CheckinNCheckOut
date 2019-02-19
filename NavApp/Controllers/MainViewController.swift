@@ -11,10 +11,10 @@ import MapKit
 class MainViewController: UIViewController {
     var venueString = ""
     var dateString = ""
-    var latitud = ""
-    var longitud = ""
+    var latitude = ""
+    var longitude = ""
 
-    var venues = [Venue]() {
+    var venues = [VenuesInfo]() {
         didSet {
             DispatchQueue.main.async {
                 self.makeAnnotations()
@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
             }
         }
     }
-   private var annoation = [MKAnnotation]()
+   private var annoations = [MKAnnotation]()
     var mainView = MainView()
     var mapView = MapView()
     
@@ -39,27 +39,36 @@ class MainViewController: UIViewController {
         view.addSubview(mainView)
         mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
         mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
-       
-        mainView.textFied.delegate = self
+         mainView.textFied.delegate = self
+        
+        mainView.seeAllEvents.addTarget(self, action: #selector(presentList), for: .touchUpInside)
     }
     @objc func presentMapView(){
-        let mapViewController = MapViewController()
+        let mapViewController = MapViewController.init(annotations: annoations)
         let navController = UINavigationController(rootViewController: mapViewController)
         self.present(navController, animated: true, completion: nil)
         
     }
     
+    @objc func presentList() {
+        let allEvents = AllEventsViewController()
+        self.present(allEvents, animated: true, completion: nil)
+    }
+    
     func makeAnnotations() {
-        mapView.mapView.removeAnnotations(annoation)
-        annoation.removeAll()
+        mapView.mapView.removeAnnotations(annoations)
+        annoations.removeAll()
+        var ann = [MKAnnotation]()
         for vuenueToSet in venues {
             let annotation = MKPointAnnotation()
-            annotation.coordinate.latitude = vuenueToSet.response.venue.location.unsafelyUnwrapped.lat
-            annotation.coordinate.longitude = vuenueToSet.response.venue.location.unsafelyUnwrapped.lng
-            annotation.title = vuenueToSet.response.venue.name
-        
+            annotation.coordinate.latitude = vuenueToSet.location.lat
+            annotation.coordinate.longitude = vuenueToSet.location.lng
+            annotation.title = vuenueToSet.name
+            ann.append(annotation)
         }
-        mapView.mapView.showAnnotations(annoation, animated: true)
+        annoations = ann
+        
+        mapView.mapView.showAnnotations(annoations, animated: true)
     }
     
     
@@ -76,7 +85,14 @@ class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let textToSet = textField.text else { return false }
-        
+        VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190219") { (error, venues) in
+            if let error = error {
+                print(error)
+            } else if let venues = venues {
+                        self.venues = venues
+            
+            }
+        }
         return true
     }
    
