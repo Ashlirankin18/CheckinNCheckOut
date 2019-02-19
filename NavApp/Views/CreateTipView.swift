@@ -13,11 +13,9 @@ class CreateTipView: UIView {
     lazy var createTipTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Enter Tip here."
+        textView.font = UIFont(name: "Helvetica", size: 20)
         textView.backgroundColor = .blue
         textView.layer.cornerRadius = 15
-
-        
-        
         return textView
     }()
     

@@ -11,4 +11,5 @@ struct CreateTipModel:Codable{
   let venueName: String
   let venueDescription:String
   let id: String
+    let createdAt: String
 }

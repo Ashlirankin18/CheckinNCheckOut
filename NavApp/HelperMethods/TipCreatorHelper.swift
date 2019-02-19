@@ -7,6 +7,7 @@
 //
 
 import Foundation
+// refactor this class to match its file name
 final class PersistanceHelper {
   private static let filename = "TipCreated.plist"
   private static var tips = [CreateTipModel]()
@@ -33,6 +34,7 @@ final class PersistanceHelper {
   
   static func saveItemToDirectory(){
     let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: filename)
+    print(path)
     do{
       let data = try PropertyListEncoder().encode(tips)
       try data.write(to: path, options: Data.WritingOptions.atomic)

@@ -12,7 +12,10 @@ class ListDetailViewController: UIViewController {
     
     
     let listDetailView = ListDetailView()
-   
+    
+    // take out or change from being hardcoded
+   let titleTest = "Coffeed"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class ListDetailViewController: UIViewController {
     @objc func addButtonPressed(){
         //testing the segue
          let creatVC = CreateTipViewController()
+        creatVC.venueBeingReviewed = titleTest
         let navController = UINavigationController(rootViewController: creatVC)
         self.present(navController, animated: true, completion: nil)
     }
