@@ -14,6 +14,7 @@ class ListDetailViewController: UIViewController {
     let listDetailView = ListDetailView()
     
     // take out or change from being hardcoded
+    
    let titleTest = "Coffeed"
     
     
@@ -31,5 +32,6 @@ class ListDetailViewController: UIViewController {
         let navController = UINavigationController(rootViewController: creatVC)
         self.present(navController, animated: true, completion: nil)
     }
+    
     //delete beofre committing
 }

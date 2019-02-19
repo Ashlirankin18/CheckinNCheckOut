@@ -10,7 +10,7 @@
 		1290CDD322175F940061C036 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290CDD222175F940061C036 /* SecretKeys.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
 		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
-		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
+		2EBA68EA2214F513009FD8D1 /* TipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* TipDetails.swift */; };
 		2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C82214F512009FD8D1 /* CollectionModel.swift */; };
 		2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */; };
 		2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */; };
@@ -45,7 +45,7 @@
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
 		2EBA68C62214F512009FD8D1 /* AVenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVenueModel.swift; sourceTree = "<group>"; };
-		2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTipModel.swift; sourceTree = "<group>"; };
+		2EBA68C72214F512009FD8D1 /* TipDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipDetails.swift; sourceTree = "<group>"; };
 		2EBA68C82214F512009FD8D1 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCreatorHelper.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			children = (
 				2EBA68C52214F512009FD8D1 /* VenuesModel.swift */,
 				2EBA68C62214F512009FD8D1 /* AVenueModel.swift */,
-				2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */,
+				2EBA68C72214F512009FD8D1 /* TipDetails.swift */,
 				2EBA68C82214F512009FD8D1 /* CollectionModel.swift */,
 			);
 			path = Models;
@@ -278,7 +278,7 @@
 				2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */,
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
-				2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */,
+				2EBA68EA2214F513009FD8D1 /* TipDetails.swift in Sources */,
 				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
 				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
 				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,

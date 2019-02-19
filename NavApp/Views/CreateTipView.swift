@@ -14,11 +14,10 @@ class CreateTipView: UIView {
         let textView = UITextView()
         textView.text = "Enter Tip here."
         textView.font = UIFont(name: "Helvetica", size: 20)
-        textView.backgroundColor = .blue
-        textView.layer.cornerRadius = 15
+        textView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        textView.layer.cornerRadius = 5
         return textView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -29,11 +28,10 @@ class CreateTipView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     private func commonInit() {
         setConstraints()
     }
-    
-    
     
 }
 

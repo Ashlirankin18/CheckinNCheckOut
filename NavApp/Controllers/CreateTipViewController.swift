@@ -19,11 +19,10 @@ class CreateTipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTipView.createTipTextView.delegate = self
-       
-       setupTextView()
+        setupTextView()
         createTipView.createTipTextView.becomeFirstResponder()
-        
         self.view.backgroundColor = .gray
+        
         navigationItem.title = "Create Tip"
         view.addSubview(createTipView)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CancelButtonPressed))
@@ -48,16 +47,17 @@ class CreateTipViewController: UIViewController {
         
         //get venueName
         //Rename venueDescription to userTipForVenue
-        //createdAt use dateformatter - PhotoJournal - NYTBestSellers
         let date = Date.getISOTimestamp()
         let id = UUID().uuidString
         let venueName = venueBeingReviewed ?? "no venue name found"
-  
-        let userTip = CreateTipModel.init(venueName: venueName, venueDescription: tip, id: id, createdAt: date)
+        
+        let userTip = TipDetails.init(venueName: venueName, venueDescription: tip, id: id, createdAt: date)
         
         PersistanceHelper.addItemsToDirectory(tip: userTip)
         
         self.showAlert(title: "Tip Created", message: "Tip saved")
+        
+        
         
     }
     
@@ -73,8 +73,6 @@ extension CreateTipViewController: UITextViewDelegate {
         if createTipView.createTipTextView.text == createTipPlaceholder {
             textView.text = ""
             textView.textColor = .green
-            
-            //where are you storign the input? ->
         }
         
         userTipFromTextView = textView.text
@@ -82,13 +80,21 @@ extension CreateTipViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-                if textView == createTipView.createTipTextView {
-                    textView.text = createTipPlaceholder
-                    textView.textColor = .lightGray
-                }
+            if textView == createTipView.createTipTextView {
+                textView.text = createTipPlaceholder
+                textView.textColor = .lightGray
             }
         }
+    }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+        
+        return changedText.count <= 200
+    }
     
 }
 

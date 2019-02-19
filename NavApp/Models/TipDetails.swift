@@ -7,9 +7,12 @@
 //
 
 import Foundation
-struct CreateTipModel:Codable{
-  let venueName: String
-  let venueDescription:String
-  let id: String
+struct CreateTipModel:Codable {
+    let tips :[TipDetails]
+}
+struct TipDetails:Codable{
+    let venueName: String
+    let venueDescription:String
+    let id: String
     let createdAt: String
 }
