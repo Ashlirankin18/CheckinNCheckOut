@@ -29,18 +29,18 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
-    
+   private var annoation = [MKAnnotation]()
     var mainView = MainView()
+    var mapView = MapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(mainView)
-        mainView.delegate = self
         mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
         mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
-        gimeMeData()
+       
+        mainView.textFied.delegate = self
     }
     @objc func presentMapView(){
         let mapViewController = MapViewController()
@@ -50,7 +50,16 @@ class MainViewController: UIViewController {
     }
     
     func makeAnnotations() {
+        mapView.mapView.removeAnnotations(annoation)
+        annoation.removeAll()
+        for vuenueToSet in venues {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = vuenueToSet.response.venue.location.unsafelyUnwrapped.lat
+            annotation.coordinate.longitude = vuenueToSet.response.venue.location.unsafelyUnwrapped.lng
+            annotation.title = vuenueToSet.response.venue.name
         
+        }
+        mapView.mapView.showAnnotations(annoation, animated: true)
     }
     
     
@@ -59,50 +68,20 @@ class MainViewController: UIViewController {
         let listVC = ListViewController()
         self.present(listVC, animated: true, completion: nil)
     }
-    
-    func gimeMeData() {
-        VenueApiClient.getVenueInformation(venueId: venueString, date: dateString) { (error, venues) in
-            if let error = error {
-                print(error)
-            }
-            
-            if let venues = venues {
 
-            }
-        }
-    }
-    
-    func zipCodeSearch(zipCode: [Location])  {
-        VenueApiClient.getVenues(lattitude: latitud, longitude: longitud, date: dateString) { (error , venue) in
-            if let error = error {
-                print(error)
-            }
-            if let venue = venue {
-                //pass the coordinated from the map to here 
-            }
-        }
-    }
-    
-    
+
     
 }
 
-extension MainViewController: MainViewDelegate {
-    func showObjectFromUser(keyword: String) {
-        guard let keyword = mainView.textFied.text else { return }
-       
-        VenueApiClient.getVenues(lattitude: latitud, longitude: longitud, date: dateString) { (error, venues) in
-            if let error = error {
-                print(error)
-            }
-            if let venues = venues {
-                
-            }
-        }
+extension MainViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let textToSet = textField.text else { return false }
         
+        return true
     }
-    
-    
+   
 }
+
+
 
 

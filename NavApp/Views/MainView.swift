@@ -128,7 +128,7 @@ class MainView: UIView {
         let textField = UITextField()
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 0.5
-        textField.placeholder = "Enter a zipcode"
+        textField.placeholder = "Type a place"
         textField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
         return textField
     }()
