@@ -12,26 +12,25 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
-    
+    var annotationData = [VenuesInfo]()
     var annotations = [MKAnnotation]()
     var appMapView = MapView()
     var myMapView = MKMapView()
     var locationToPin = [Location]()
     let locationManager = CLLocationManager()
     let regionInMetters: Double = 10000
-    let latitude: CLLocationDegrees = 40.730610
-    let longitude: CLLocationDegrees = 73.935242
-    let nycLocation: CLLocation = CLLocation.init(latitude:  40.730610, longitude: -73.935242)
-    var previousLocation: CLLocation?
+   var previousLocation: CLLocation?
     
-    init(annotations: [MKAnnotation]) {
+    init(annotations: [MKAnnotation], venues: [VenuesInfo]) {
         super.init(nibName: nil, bundle: nil)
         self.annotations = annotations
+        self.annotationData = venues
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +40,18 @@ class MapViewController: UIViewController {
         checkLocationServices()
         butonsSetUp()
         appMapView.mapView.delegate = self 
-      //  appMapView = self
-    
         appMapView.mapView.showAnnotations(annotations, animated: true)
+        annotationViewSetUp()
+       dump(annotationData)
+        
+    }
+    
+    func annotationViewSetUp() {
+        appMapView.annotationView.isHidden = true
+        appMapView.addressVenue.isHidden = true
+        appMapView.venueImage.isHidden = true
+        appMapView.nameLabel.isHidden = true
+        appMapView.reviews.isHidden = true
     }
     
     func butonsSetUp() {
@@ -93,6 +101,8 @@ class MapViewController: UIViewController {
             trakingUserLocation()
             case .denied:
                 // show alert instructing them how to turn on permission
+                // handle location stuff
+                
                 break
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
@@ -139,8 +149,9 @@ extension MapViewController: MKMapViewDelegate {
         self.previousLocation = center
         
         geoCoder.reverseGeocodeLocation(center) { [weak self ](placemarks, error) in
-            guard let self = self else { return }
+            guard self != nil else { return }
             if let error = error {
+                print(error)
                 //TODO: Show alert informing user
                 return
             }
@@ -150,9 +161,36 @@ extension MapViewController: MKMapViewDelegate {
             }
             let streetNumber = placemarks.subThoroughfare ?? ""
             let streetName = placemarks.thoroughfare ?? ""
-            self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
+            //self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
           
         }
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        appMapView.annotationView.isHidden = false
+        appMapView.addressVenue.isHidden = false
+        appMapView.venueImage.isHidden = false
+        appMapView.nameLabel.isHidden = false
+        appMapView.reviews.isHidden = false
+        
+        guard let annotation = view.annotation else { return }
+        
+        let index = annotationData.index{
+            $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude
+        }
+        print(index)
+        if let venueIndex = index {
+        let venue = annotationData[venueIndex]
+            appMapView.nameLabel.text = venue.name
+        } else {
+            print("no index")
+        }
+        
+        appMapView.mapView.deselectAnnotation(annotation, animated: true )
+        }
+    
+        //callout
+
 }
+
 
