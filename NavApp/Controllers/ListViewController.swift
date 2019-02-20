@@ -10,16 +10,29 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    var venue = [Venues](){
-        didSet {
-            DispatchQueue.main.async {
-                self.listView.myTableView.reloadData()
-            }
+    var venues = [VenuesInfo](){
+        didSet{
+            self.listView.myTableView.reloadData()
         }
     }
     
+<<<<<<< HEAD
   var items: Items?
   var listView = ListView()
+=======
+    
+    init(venues:[VenuesInfo]){
+        super.init(nibName: nil, bundle: nil)
+        self.venues = venues
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+    
+    var listView = ListView()
+    var venueInfo: Venue?
+>>>>>>> 3bc5074137d1c61dd2890a181e5417c274fdbc8e
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +43,7 @@ class ListViewController: UIViewController {
       getVenuesInArea(lattitude: "37.2", longitude: "44.3", date: "20190215")
     }
     
+<<<<<<< HEAD
   var venueInfo: Venue?
   
     
@@ -63,6 +77,12 @@ private func getTheVenueImages(venueId:String) {
 //      }
 //    }
 //  }
+=======
+
+
+    
+
+>>>>>>> 3bc5074137d1c61dd2890a181e5417c274fdbc8e
   private func getVenueDetails(venueId:String,date:String){
     VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
 >>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
@@ -101,10 +121,15 @@ private func getTheVenueImages(venueId:String) {
 extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+<<<<<<< HEAD
       if let venue = venue.first {
         return venue.response.venues.count
       }
       return 0
+=======
+        return venues.count
+        //getVenuesInArea
+>>>>>>> 3bc5074137d1c61dd2890a181e5417c274fdbc8e
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
