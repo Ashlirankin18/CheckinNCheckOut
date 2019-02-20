@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnotationView: UIView {
+class AnotationDetailedView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)

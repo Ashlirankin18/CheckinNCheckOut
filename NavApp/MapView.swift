@@ -48,6 +48,7 @@ class MapView: UIView {
     lazy var annotationView: UIView = {
         let annotationView = UIView()
         return annotationView
+        
     }()
     
     lazy var mapPin: UIImageView = {

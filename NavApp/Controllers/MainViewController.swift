@@ -75,8 +75,9 @@ class MainViewController: UIViewController {
     
     
     @objc func presentListVC() {
-        let listVC = ListViewController()
-        self.present(listVC, animated: true, completion: nil)
+        let listVC = ListViewController(venues: venues)
+        let listNavigation = UINavigationController(rootViewController: listVC)
+        self.present(listNavigation, animated: true, completion: nil)
     }
 
 

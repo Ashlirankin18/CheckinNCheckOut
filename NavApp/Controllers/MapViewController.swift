@@ -12,6 +12,7 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
+    
     var annotationData = [VenuesInfo]()
     var annotations = [MKAnnotation]()
     var appMapView = MapView()
@@ -30,7 +31,9 @@ class MapViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+    //        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+    //        tap.delegate = self
+    //        myView.addGesture(tap)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +45,22 @@ class MapViewController: UIViewController {
         appMapView.mapView.delegate = self 
         appMapView.mapView.showAnnotations(annotations, animated: true)
         annotationViewSetUp()
-       dump(annotationData)
+        dump(annotationData)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
+       appMapView.annotationView.addGestureRecognizer(tap)
+      
+        
         
     }
+    
+    @objc func handleTap() {
+    // injection dependecy here
+        let detailAnotation = AnnotationDetailedViewController()
+        present(detailAnotation, animated: true, completion: nil)
+        
+    }
+    
+    
     
     func annotationViewSetUp() {
         appMapView.annotationView.isHidden = true
@@ -65,7 +81,7 @@ class MapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc func toggleListMap() {
-        let listVC = ListViewController()
+        let listVC = ListViewController(venues: annotationData)
         present(listVC, animated: true)
     }
     
@@ -173,7 +189,9 @@ extension MapViewController: MKMapViewDelegate {
         appMapView.nameLabel.isHidden = false
         appMapView.reviews.isHidden = false
         
+        
         guard let annotation = view.annotation else { return }
+        
         
         let index = annotationData.index{
             $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude

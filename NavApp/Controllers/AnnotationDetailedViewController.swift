@@ -10,7 +10,7 @@ import UIKit
 
 class AnnotationDetailedViewController: UIViewController {
 
-    var annotationView = AnotationView()
+    var annotationView = AnotationDetailedView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
