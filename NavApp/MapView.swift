@@ -12,6 +12,24 @@ import CoreLocation
 
 class MapView: UIView {
     
+<<<<<<< HEAD
+=======
+    lazy var labelToSet: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+//        label.text = "Label goes here"
+        label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 )!
+        label.textColor = .black
+        return label
+    }()
+    
+    lazy var mapPin: UIImageView = {
+        let mapPin = UIImageView()
+        mapPin.image = UIImage(named: "pin")
+        return mapPin
+    }()
+    
+>>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         return mapView
@@ -19,16 +37,34 @@ class MapView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
+<<<<<<< HEAD
         
         addSubview(mapView)
         setConstrains()
         
     }
+=======
+        addSubview(mapView)
+        addSubview(mapPin)
+        addSubview(labelToSet)
+        setConstrains()
+        }
+>>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
     
     func setConstrains() {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
+<<<<<<< HEAD
         [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)].forEach{ $0.isActive = true }
+=======
+        [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -65)].forEach{ $0.isActive = true }
+        
+        mapPin.translatesAutoresizingMaskIntoConstraints = false
+        [mapPin.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor), mapPin.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)].forEach{ $0.isActive = true }
+        
+        labelToSet.translatesAutoresizingMaskIntoConstraints = false
+        [labelToSet.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), labelToSet.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), labelToSet.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), labelToSet.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
+>>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         
     }
     
