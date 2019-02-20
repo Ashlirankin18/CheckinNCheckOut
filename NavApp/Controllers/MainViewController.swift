@@ -42,17 +42,18 @@ class MainViewController: UIViewController {
          mainView.textFied.delegate = self
         
         mainView.seeAllEvents.addTarget(self, action: #selector(presentList), for: .touchUpInside)
+
     }
+    
     @objc func presentMapView(){
-        let mapViewController = MapViewController.init(annotations: annoations)
+        let mapViewController = MapViewController.init(annotations: annoations, venues: venues)
         let navController = UINavigationController(rootViewController: mapViewController)
         self.present(navController, animated: true, completion: nil)
         
     }
     
     @objc func presentList() {
-        let allEvents = AllEventsViewController()
-        self.present(allEvents, animated: true, completion: nil)
+
     }
     
     func makeAnnotations() {

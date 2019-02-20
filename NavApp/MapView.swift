@@ -12,13 +12,42 @@ import CoreLocation
 
 class MapView: UIView {
     
-    lazy var labelToSet: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-//        label.text = "Label goes here"
-        label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 )!
-        label.textColor = .black
-        return label
+    lazy var reviews: UILabel = {
+        let reviews = UILabel()
+        reviews.textAlignment = .center
+        reviews.textColor = .black
+        reviews.text = "review stars go here (maybe)"
+        reviews.adjustsFontForContentSizeCategory = true
+        reviews.numberOfLines = 0 
+        return reviews
+    }()
+    
+    lazy var nameLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.textAlignment = .center
+        nameLabel.textColor = .black
+        nameLabel.text = "Name of venue goes here"
+        return nameLabel
+    }()
+    
+    lazy var addressVenue: UILabel = {
+        let addressVenue = UILabel()
+        addressVenue.textAlignment = .center
+        addressVenue.textColor = .black
+        addressVenue.text = "Venue address goes here"
+        return addressVenue
+    }()
+    
+    
+    lazy var venueImage: UIImageView = {
+        let venueImage = UIImageView()
+        let image = UIImageView(image: UIImage(named: "placeholder"))
+        return image
+    }()
+    
+    lazy var annotationView: UIView = {
+        let annotationView = UIView()
+        return annotationView
     }()
     
     lazy var mapPin: UIImageView = {
@@ -36,20 +65,36 @@ class MapView: UIView {
         super.init(frame: UIScreen.main.bounds)
         addSubview(mapView)
         addSubview(mapPin)
-        addSubview(labelToSet)
+        addSubview(annotationView)
+        addSubview(venueImage)
+        addSubview(nameLabel)
+        addSubview(addressVenue)
+        addSubview(reviews)
         setConstrains()
         }
     
     func setConstrains() {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -65)].forEach{ $0.isActive = true }
+        [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)].forEach{ $0.isActive = true }
         
         mapPin.translatesAutoresizingMaskIntoConstraints = false
         [mapPin.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor), mapPin.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)].forEach{ $0.isActive = true }
         
-        labelToSet.translatesAutoresizingMaskIntoConstraints = false
-        [labelToSet.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), labelToSet.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), labelToSet.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), labelToSet.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
+        annotationView.translatesAutoresizingMaskIntoConstraints = false
+        [annotationView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), annotationView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), annotationView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), annotationView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
+        
+        venueImage.translatesAutoresizingMaskIntoConstraints = false
+        [venueImage.centerYAnchor.constraint(equalTo: annotationView.centerYAnchor, constant: 0), venueImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), venueImage.bottomAnchor.constraint(equalTo: annotationView.bottomAnchor, constant: -11), venueImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -250)].forEach{ $0.isActive = true }
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        [nameLabel.topAnchor.constraint(equalTo: annotationView.topAnchor, constant: 11), nameLabel.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), nameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
+        
+        addressVenue.translatesAutoresizingMaskIntoConstraints = false
+        [addressVenue.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 11), addressVenue.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), addressVenue.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
+        
+        reviews.translatesAutoresizingMaskIntoConstraints = false
+        [reviews.topAnchor.constraint(equalTo: addressVenue.bottomAnchor, constant: 34), reviews.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), reviews.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
         
     }
     

@@ -12,6 +12,9 @@
 		12C71D9C22176B410047849B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C71D9922176B410047849B /* MapView.swift */; };
 		12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1530221CB6D4005E94E7 /* AllEventsViewController.swift */; };
 		12FB1533221CB6FA005E94E7 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1532221CB6FA005E94E7 /* AllEventsView.swift */; };
+		12FB1537221CFDBE005E94E7 /* AllListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1536221CFDBE005E94E7 /* AllListCell.swift */; };
+		12FB1539221DD5F6005E94E7 /* AnnotationDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */; };
+		12FB153B221DD612005E94E7 /* AnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153A221DD612005E94E7 /* AnotationView.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
 		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
 		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
@@ -49,6 +52,9 @@
 		12C71D9922176B410047849B /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = NavApp/MapView.swift; sourceTree = SOURCE_ROOT; };
 		12FB1530221CB6D4005E94E7 /* AllEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsViewController.swift; sourceTree = "<group>"; };
 		12FB1532221CB6FA005E94E7 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
+		12FB1536221CFDBE005E94E7 /* AllListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListCell.swift; sourceTree = "<group>"; };
+		12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailedViewController.swift; sourceTree = "<group>"; };
+		12FB153A221DD612005E94E7 /* AnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationView.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBA68D22214F512009FD8D1 /* ListViewController.swift */,
+				12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */,
 				2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */,
 				2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */,
 				12C71D9822176B410047849B /* MapViewController.swift */,
@@ -177,6 +184,8 @@
 			children = (
 				12C71D9922176B410047849B /* MapView.swift */,
 				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				12FB1536221CFDBE005E94E7 /* AllListCell.swift */,
+				12FB153A221DD612005E94E7 /* AnotationView.swift */,
 				12FB1532221CB6FA005E94E7 /* AllEventsView.swift */,
 				6123487A221616DE009C41DD /* ListDetailView.swift */,
 				2EBA68DA2214F513009FD8D1 /* FavoritesView.swift */,
@@ -289,6 +298,7 @@
 				2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */,
 				2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */,
 				2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */,
+				12FB1537221CFDBE005E94E7 /* AllListCell.swift in Sources */,
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
 				12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
@@ -298,6 +308,7 @@
 				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,
 				2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */,
 				2EBA68EE2214F513009FD8D1 /* CollectionPersistanceHelper.swift in Sources */,
+				12FB1539221DD5F6005E94E7 /* AnnotationDetailedViewController.swift in Sources */,
 				2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */,
 				2EBA68FC2214F513009FD8D1 /* ListTableViewCell.swift in Sources */,
 				2EBA69022214F513009FD8D1 /* NetworkHelper.swift in Sources */,
@@ -309,6 +320,7 @@
 				2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */,
 				2EBA68F82214F513009FD8D1 /* FavoriteCell.swift in Sources */,
 				12C71D9B22176B410047849B /* MapViewController.swift in Sources */,
+				12FB153B221DD612005E94E7 /* AnotationView.swift in Sources */,
 				2EBA69002214F513009FD8D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
