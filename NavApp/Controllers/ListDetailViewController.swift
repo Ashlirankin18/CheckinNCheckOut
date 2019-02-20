@@ -12,11 +12,11 @@ class ListDetailViewController: UIViewController {
     
     
     let listDetailView = ListDetailView()
-    
+    var isSucessfullyCreated: Bool?
     // take out or change from being hardcoded
     
    let titleTest = "Coffeed"
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

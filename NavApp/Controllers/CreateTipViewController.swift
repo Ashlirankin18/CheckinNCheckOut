@@ -24,6 +24,7 @@ class CreateTipViewController: UIViewController {
         self.view.backgroundColor = .gray
         
         navigationItem.title = "Create Tip"
+    
         view.addSubview(createTipView)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CancelButtonPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(submitButtonPressed))
@@ -52,13 +53,16 @@ class CreateTipViewController: UIViewController {
         let venueName = venueBeingReviewed ?? "no venue name found"
         
         let userTip = TipDetails.init(venueName: venueName, venueDescription: tip, id: id, createdAt: date)
-        
+       
         PersistanceHelper.addItemsToDirectory(tip: userTip)
-        
-        self.showAlert(title: "Tip Created", message: "Tip saved")
-        
-        
-        
+        showAlert(title: "Tip Created", message: "Sucess") { (alertController) in
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
 }
@@ -81,6 +85,10 @@ extension CreateTipViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
             if textView == createTipView.createTipTextView {
+                textView.text = createTipPlaceholder
+                textView.textColor = .lightGray
+               //textView.beginningOfDocument
+            } else if textView == createTipView.createTipTextView {
                 textView.text = createTipPlaceholder
                 textView.textColor = .lightGray
             }
