@@ -10,15 +10,24 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    var venue = [Venues](){
-        didSet {
-            DispatchQueue.main.async {
-                self.listView.myTableView.reloadData()
-            }
+    var venues = [VenuesInfo](){
+        didSet{
+            self.listView.myTableView.reloadData()
         }
     }
     
+    
+    init(venues:[VenuesInfo]){
+        super.init(nibName: nil, bundle: nil)
+        self.venues = venues
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+    
     var listView = ListView()
+    var venueInfo: Venue?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +39,7 @@ class ListViewController: UIViewController {
         
     }
     
-  var venueInfo: Venue?
+
 
     
 
@@ -53,7 +62,7 @@ class ListViewController: UIViewController {
 extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return venues.count
         //getVenuesInArea
     }
     
