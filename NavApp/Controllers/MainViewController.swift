@@ -138,13 +138,9 @@ extension MainViewController: UITextFieldDelegate {
         
         switch textField {
         case mainView.textFied:
-             print("This may work ")
              let regularString = "New York"
              let urlString = regularString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
             guard let textToSet = textField.text else { return false }
-             
-          
-             
              VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190220") { (error, venues) in
                 if let error = error {
                     print(error)
@@ -156,11 +152,16 @@ extension MainViewController: UITextFieldDelegate {
             print("This may work ")
             let regularString = "New York"
             let urlString = regularString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+
             guard let secondTextToSet = textField.text else { return false }
             
-            
-            
-            VenueApiClient.searchPlace(keyword: secondTextToSet, location: <#T##String#>, date: <#T##String#>, completionHandler: <#T##(AppError?, [VenuesInfo]?) -> Void#>)
+            VenueApiClient.searchPlace(keyword: secondTextToSet, location: secondTextToSet, date: "20190220") { (error, venues) in
+                if let error = error {
+                    print(error)
+                } else if let venues = venues {
+                    self.venues = venues
+                }
+            }
         
             
         default:
