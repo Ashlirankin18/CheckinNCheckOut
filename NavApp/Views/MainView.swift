@@ -32,19 +32,19 @@ class MainView: UIView {
         return listButton
     }()
     
-    lazy var seeAllEvents: UIButton = {
-        let SeeAllEvents = UIButton()
-        SeeAllEvents.layer.cornerRadius = 5
-        SeeAllEvents.layer.borderWidth = 1
-        SeeAllEvents.layer.borderColor = UIColor.lightGray.cgColor
-        SeeAllEvents.setTitle("See all events", for: .normal)
-        SeeAllEvents.backgroundColor = #colorLiteral(red: 0.231372549, green: 0.6, blue: 0.9882352941, alpha: 1)
-        SeeAllEvents.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
-        SeeAllEvents.layer.cornerRadius = 0.5 * SeeAllEvents.bounds.size.width
-        SeeAllEvents.clipsToBounds = true
-      
-        return SeeAllEvents
-    }()
+//    lazy var seeAllEvents: UIButton = {
+//        let SeeAllEvents = UIButton()
+//        SeeAllEvents.layer.cornerRadius = 5
+//        SeeAllEvents.layer.borderWidth = 1
+//        SeeAllEvents.layer.borderColor = UIColor.lightGray.cgColor
+//        SeeAllEvents.setTitle("See all events", for: .normal)
+//        SeeAllEvents.backgroundColor = #colorLiteral(red: 0.231372549, green: 0.6, blue: 0.9882352941, alpha: 1)
+//        SeeAllEvents.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+//        SeeAllEvents.layer.cornerRadius = 0.5 * SeeAllEvents.bounds.size.width
+//        SeeAllEvents.clipsToBounds = true
+//
+//        return SeeAllEvents
+//    }()
     
     lazy var titleLablel: UILabel = {
         let nameOfapp = UILabel()
@@ -82,7 +82,6 @@ class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         addSubview(textFied)
-        addSubview(seeAllEvents)
         addSubview(mapButton)
         addSubview(listButton)
         addSubview(titleLablel)
@@ -106,8 +105,7 @@ class MainView: UIView {
         secondTextField.translatesAutoresizingMaskIntoConstraints = false
         [secondTextField.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 11), secondTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), secondTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), secondTextField.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
 
-        seeAllEvents.translatesAutoresizingMaskIntoConstraints = false
-        [seeAllEvents.topAnchor.constraint(equalTo: secondTextField.bottomAnchor, constant: 44), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
+       
         
         titleLablel.translatesAutoresizingMaskIntoConstraints = false
         [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.65)].forEach{ $0.isActive = true }

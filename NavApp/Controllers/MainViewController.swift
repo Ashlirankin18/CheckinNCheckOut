@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
          mainView.textFied.delegate = self
         mainView.secondTextField.delegate = self
         
-        mainView.seeAllEvents.addTarget(self, action: #selector(presentList), for: .touchUpInside)
+        
     
     }
     
