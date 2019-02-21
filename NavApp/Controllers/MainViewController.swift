@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     var dateString = ""
     var latitude = ""
     var longitude = ""
-
+     var catego = [CategoryInfo]()
     var venues = [VenuesInfo]() {
         didSet {
             DispatchQueue.main.async {
@@ -42,7 +42,18 @@ class MainViewController: UIViewController {
          mainView.textFied.delegate = self
         
         mainView.seeAllEvents.addTarget(self, action: #selector(presentList), for: .touchUpInside)
+        
+       categoryButtonsSetup()
+        
 
+    }
+    
+    func categoryButtonsSetup() {
+           mainView.button1.addTarget(self, action: #selector(presentCategory), for: .touchUpInside)
+        mainView.button2.addTarget(self, action: #selector(presentCategory), for: .touchUpInside)
+        mainView.button3.addTarget(self, action: #selector(presentCategory), for: .touchUpInside)
+        mainView.button4.addTarget(self, action: #selector(presentCategory), for: .touchUpInside)
+        mainView.button5.addTarget(self, action: #selector(presentCategory), for: .touchUpInside)
     }
     
     @objc func presentMapView(){
@@ -52,8 +63,21 @@ class MainViewController: UIViewController {
         
     }
     
+    @objc func presentCategory() {
+        let categoryVC = CathegoryViewController.init(category: catego)
+        let categoryController = UINavigationController(rootViewController: categoryVC)
+        self.present(categoryController, animated: true, completion: nil)
+        print("got a category")
+        
+    }
+    
+   
+    
+    
+    
     @objc func presentList() {
-
+//     let allEvents = AllEventsViewController()
+//        present(allEvents,animated: true,completion: nil)
     }
     
     func makeAnnotations() {

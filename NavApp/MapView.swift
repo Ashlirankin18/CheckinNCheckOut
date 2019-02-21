@@ -25,6 +25,8 @@ class MapView: UIView {
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 0
+        nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.textColor = .black
         nameLabel.text = "Name of venue goes here"
         return nameLabel
@@ -33,7 +35,9 @@ class MapView: UIView {
     lazy var addressVenue: UILabel = {
         let addressVenue = UILabel()
         addressVenue.textAlignment = .center
-        addressVenue.textColor = .black
+        addressVenue.textColor = #colorLiteral(red: 0.26, green: 0.47, blue: 0.96, alpha: 1)
+        addressVenue.numberOfLines = 0
+        addressVenue.adjustsFontSizeToFitWidth = true
         addressVenue.text = "Venue address goes here"
         return addressVenue
     }()

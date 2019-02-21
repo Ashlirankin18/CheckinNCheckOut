@@ -9,25 +9,47 @@
 import UIKit
 
 class AnnotationDetailedViewController: UIViewController {
-
+    
     var annotationView = AnotationDetailedView()
+    var venueData = [VenuesInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(annotationView)
-        view.backgroundColor = #colorLiteral(red: 0.7743045092, green: 0.5028291345, blue: 0.9905084968, alpha: 1)
-     
+        let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(dismissAction))
+        self.navigationItem.leftBarButtonItem  = backButton
+            setViewUp()
+        //view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).withAlphaComponent(1.0)
+        
+        
+    }
+    
+    func setViewUp() {
+    annotationView.nameLabel.text = venueData.first!.name
+        annotationView.addressLable.text = venueData.first?.location.formattedAddress.first
+      
+        
+    }
+    
+    
+    init(vanues: [VenuesInfo]) {
+        super.init(nibName: nil, bundle: nil)
+        self.venueData = vanues
+    }
+    
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    
+    
+
+    @objc func dismissAction() {
+        dismiss(animated: true, completion: nil)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -31,9 +31,7 @@ class MapViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    //        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
-    //        tap.delegate = self
-    //        myView.addGesture(tap)
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +44,22 @@ class MapViewController: UIViewController {
         appMapView.mapView.showAnnotations(annotations, animated: true)
         annotationViewSetUp()
         dump(annotationData)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
-       appMapView.annotationView.addGestureRecognizer(tap)
+        tapRecogSetup()
       
         
         
     }
     
     @objc func handleTap() {
-    // injection dependecy here
-        let detailAnotation = AnnotationDetailedViewController()
-        present(detailAnotation, animated: true, completion: nil)
+       let detailedPinData = AnnotationDetailedViewController.init(vanues: annotationData)
+        let navController = UINavigationController(rootViewController: detailedPinData)
+        self.present(navController, animated: true, completion:  nil)
         
+    }
+    
+    func tapRecogSetup() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
+        appMapView.annotationView.addGestureRecognizer(tap)
     }
     
     
@@ -149,13 +151,10 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
-    
-    
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
-    
+
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
@@ -178,7 +177,6 @@ extension MapViewController: MKMapViewDelegate {
             let streetNumber = placemarks.subThoroughfare ?? ""
             let streetName = placemarks.thoroughfare ?? ""
             //self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
-          
         }
     }
     
@@ -189,22 +187,20 @@ extension MapViewController: MKMapViewDelegate {
         appMapView.nameLabel.isHidden = false
         appMapView.reviews.isHidden = false
         
-        
         guard let annotation = view.annotation else { return }
         
+        let index = annotationData.index{ $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude }
         
-        let index = annotationData.index{
-            $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude
-        }
-        print(index)
         if let venueIndex = index {
         let venue = annotationData[venueIndex]
             appMapView.nameLabel.text = venue.name
+            appMapView.addressVenue.text = venue.location.formattedAddress.first!
         } else {
             print("no index")
         }
         
         appMapView.mapView.deselectAnnotation(annotation, animated: true )
+        
         }
     
         //callout

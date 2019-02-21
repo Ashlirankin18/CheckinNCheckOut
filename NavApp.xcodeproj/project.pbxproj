@@ -15,6 +15,9 @@
 		12FB1537221CFDBE005E94E7 /* AllListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1536221CFDBE005E94E7 /* AllListCell.swift */; };
 		12FB1539221DD5F6005E94E7 /* AnnotationDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */; };
 		12FB153B221DD612005E94E7 /* AnotationDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */; };
+		12FB153D221E6666005E94E7 /* CathegoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153C221E6666005E94E7 /* CathegoryViewController.swift */; };
+		12FB153F221E66E5005E94E7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153E221E66E5005E94E7 /* CategoryView.swift */; };
+		12FB1541221E6A41005E94E7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1540221E6A41005E94E7 /* CategoryCell.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
 		2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C62214F512009FD8D1 /* AVenueModel.swift */; };
 		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
@@ -55,6 +58,9 @@
 		12FB1536221CFDBE005E94E7 /* AllListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListCell.swift; sourceTree = "<group>"; };
 		12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailedViewController.swift; sourceTree = "<group>"; };
 		12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationDetailedView.swift; sourceTree = "<group>"; };
+		12FB153C221E6666005E94E7 /* CathegoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryViewController.swift; sourceTree = "<group>"; };
+		12FB153E221E66E5005E94E7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		12FB1540221E6A41005E94E7 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E57C3AD220E251200C89FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBA68D22214F512009FD8D1 /* ListViewController.swift */,
+				12FB153C221E6666005E94E7 /* CathegoryViewController.swift */,
 				12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */,
 				2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */,
 				2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */,
@@ -183,7 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				12C71D9922176B410047849B /* MapView.swift */,
+				12FB153E221E66E5005E94E7 /* CategoryView.swift */,
 				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				12FB1540221E6A41005E94E7 /* CategoryCell.swift */,
 				12FB1536221CFDBE005E94E7 /* AllListCell.swift */,
 				12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */,
 				12FB1532221CB6FA005E94E7 /* AllEventsView.swift */,
@@ -288,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EBA68F72214F513009FD8D1 /* TabBarViewController.swift in Sources */,
+				12FB1541221E6A41005E94E7 /* CategoryCell.swift in Sources */,
 				2EBA68FA2214F513009FD8D1 /* ListView.swift in Sources */,
 				2EBA68FB2214F513009FD8D1 /* CreateTipView.swift in Sources */,
 				2EBA69012214F513009FD8D1 /* VenueApiClient.swift in Sources */,
@@ -316,6 +326,8 @@
 				2EBA68E92214F513009FD8D1 /* AVenueModel.swift in Sources */,
 				2EBA68F32214F513009FD8D1 /* CreateTipViewController.swift in Sources */,
 				2EBA68EF2214F513009FD8D1 /* Date+Extension.swift in Sources */,
+				12FB153F221E66E5005E94E7 /* CategoryView.swift in Sources */,
+				12FB153D221E6666005E94E7 /* CathegoryViewController.swift in Sources */,
 				2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */,
 				2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */,
 				2EBA68F82214F513009FD8D1 /* FavoriteCell.swift in Sources */,
