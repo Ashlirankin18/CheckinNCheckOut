@@ -35,7 +35,7 @@ class ListViewController: UIViewController {
     
     
     private func getVenueDetails(venueId:String,date:String){
-        VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
+        VenueApiClient.getSpecificVenueInfo(venueId: venueId, date: date) { (error, venueInfo) in
             if let error = error {
                 print(error.errorMessage())
             }

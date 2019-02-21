@@ -15,8 +15,8 @@ class ListDetailViewController: UIViewController {
     var isSucessfullyCreated: Bool?
     // take out or change from being hardcoded
     
-   let titleTest = "Coffeed"
-   
+    let titleTest = "Coffeed"
+    private var testVenueName = ListTableViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,13 @@ class ListDetailViewController: UIViewController {
     }
     @objc func addButtonPressed(){
         //testing the segue
-//         let creatVC = CreateTipViewController()
-//        creatVC.venueBeingReviewed = titleTest
-//        let navController = UINavigationController(rootViewController: creatVC)
-//        self.present(navController, animated: true, completion: nil)
+                 let creatVC = CreateTipViewController()
+                creatVC.venueBeingReviewed = titleTest
+                let navController = UINavigationController(rootViewController: creatVC)
+                self.present(navController, animated: true, completion: nil)
         let venueToAddToCollection = CollectionPersistanceHelper.getUserInfo()
+        
+        
         
     }
     
@@ -41,4 +43,7 @@ class ListDetailViewController: UIViewController {
         let navController = UINavigationController(rootViewController: creatVC)
         self.present(navController, animated: true, completion: nil)
     }
+    
+    
+    
 }
