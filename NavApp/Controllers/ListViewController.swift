@@ -9,7 +9,7 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    
     var venue = [Venues](){
         didSet {
             DispatchQueue.main.async {
@@ -30,32 +30,21 @@ class ListViewController: UIViewController {
         
     }
     
-  var venueInfo: Venue?
-
+    var venueInfo: Venue?
     
-//  private func getVenuesInArea(lattitude:String,longitude:String,date:String){
-//    VenueApiClient.getVenues(lattitude: lattitude, longitude: longitude, date: date) { (error, venue) in
-//      if let error = error {
-//        print(error.errorMessage())
-//      }
-//      if let venue = venue{
-//        self.venue = venue
-//        dump(venue)
-//        print("I have\(venue.count) items")
-//      }
-//    }
-//  }
-  private func getVenueDetails(venueId:String,date:String){
-    VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
-      if let error = error {
-        print(error.errorMessage())
-      }
-      if let venueInfo = venueInfo {
-        self.venueInfo = venueInfo
-        dump(venueInfo)
-      }
+    
+    
+    private func getVenueDetails(venueId:String,date:String){
+        VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
+            if let error = error {
+                print(error.errorMessage())
+            }
+            if let venueInfo = venueInfo {
+                self.venueInfo = venueInfo
+                dump(venueInfo)
+            }
+        }
     }
-  }
 }
 
 

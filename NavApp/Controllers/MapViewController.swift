@@ -142,6 +142,7 @@ extension MapViewController: MKMapViewDelegate {
             guard let self = self else { return }
             if let error = error {
                 //TODO: Show alert informing user
+                print(error)
                 return
             }
             guard let placemarks = placemarks?.first else {

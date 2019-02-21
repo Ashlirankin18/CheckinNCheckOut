@@ -20,18 +20,25 @@ class ListDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        listDetailView.createTipButton.addTarget(self, action: #selector(addTipButtonPressed), for: .touchUpInside)
         view.addSubview(listDetailView)
         view.backgroundColor = .yellow
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to Collection", style: .plain, target: self, action: #selector(addButtonPressed))
     }
     @objc func addButtonPressed(){
         //testing the segue
-         let creatVC = CreateTipViewController()
+//         let creatVC = CreateTipViewController()
+//        creatVC.venueBeingReviewed = titleTest
+//        let navController = UINavigationController(rootViewController: creatVC)
+//        self.present(navController, animated: true, completion: nil)
+        let venueToAddToCollection = CollectionPersistanceHelper.getUserInfo()
+        
+    }
+    
+    @objc func addTipButtonPressed(){
+        let creatVC = CreateTipViewController()
         creatVC.venueBeingReviewed = titleTest
         let navController = UINavigationController(rootViewController: creatVC)
         self.present(navController, animated: true, completion: nil)
     }
-    
-    //delete beofre committing
 }

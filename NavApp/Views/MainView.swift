@@ -8,35 +8,21 @@
 
 import UIKit
 
-<<<<<<< HEAD
-protocol MainViewDelegate: AnyObject {
-    func showMapInDetailedView()
-=======
 
 
 protocol MainViewDelegate: AnyObject {
     func showObjectFromUser(keyword: String)
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
 }
 
 class MainView: UIView {
     
-<<<<<<< HEAD
-    var delegate: MainViewDelegate?
-=======
-   weak var delegate: MainViewDelegate?
+    weak var delegate: MainViewDelegate?
     
-  
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
+    
     
     lazy var mapButton: UIButton = {
         let cameraButton = UIButton()
         cameraButton.setImage(UIImage(named:"map"), for: .normal)
-<<<<<<< HEAD
-       // cameraButton.addTarget(self, action: #selector(showMap), for: .touchUpInside)
-        return cameraButton
-    }()
-=======
         return cameraButton
     }()
     
@@ -46,24 +32,10 @@ class MainView: UIView {
         return listButton
     }()
     
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
     
-   // @objc func showMap() {
-   //     delegate?.showMapInDetailedView()
-   // }
-    
-    lazy var listButton: UIButton = {
-        let listButton = UIButton()
-        listButton.setImage(UIImage(named: "list"), for: .normal)
-        return listButton
-    }()
     
     lazy var button1: UIButton = {
         let button1 = UIButton()
-<<<<<<< HEAD
-//        button1.setTitle("red", for: .normal)
-=======
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         button1.backgroundColor = .white
         button1.layer.cornerRadius = 5
         button1.layer.borderWidth = 1
@@ -76,10 +48,6 @@ class MainView: UIView {
     
     lazy var button2: UIButton = {
         let button2 = UIButton()
-<<<<<<< HEAD
-        //button2.setTitle("blue", for: .normal)
-=======
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         button2.layer.cornerRadius = 5
         button2.layer.borderWidth = 1
         button2.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
@@ -92,10 +60,6 @@ class MainView: UIView {
     
     lazy var button3: UIButton = {
         let button3 = UIButton()
-<<<<<<< HEAD
-        //button3.setTitle("green", for: .normal)
-=======
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         button3.layer.cornerRadius = 5
         button3.layer.borderWidth = 1
         button3.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
@@ -108,10 +72,6 @@ class MainView: UIView {
     
     lazy var button4: UIButton = {
         let button4 = UIButton()
-<<<<<<< HEAD
-       // button4.setTitle("magenta", for: .normal)
-=======
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         button4.layer.cornerRadius = 5
         button4.layer.borderWidth = 1
         button4.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
@@ -124,10 +84,6 @@ class MainView: UIView {
     
     lazy var button5: UIButton = {
         let button5 = UIButton()
-<<<<<<< HEAD
-        //button5.setTitle("bar", for: .normal)
-=======
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         button5.layer.cornerRadius = 5
         button5.layer.borderWidth = 1
         button5.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
@@ -149,7 +105,7 @@ class MainView: UIView {
         SeeAllEvents.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         SeeAllEvents.layer.cornerRadius = 0.5 * SeeAllEvents.bounds.size.width
         SeeAllEvents.clipsToBounds = true
-      
+        
         return SeeAllEvents
     }()
     
@@ -163,23 +119,11 @@ class MainView: UIView {
         nameOfapp.numberOfLines = 0
         nameOfapp.textAlignment = .center
         nameOfapp.font = UIFont(name: "Copperplate", size: 40)!
-<<<<<<< HEAD
-    
-        //add animation to the label 
-=======
         //add animation to the label
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         return nameOfapp
         
     }()
     
-<<<<<<< HEAD
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.layer.cornerRadius = 5
-      searchBar.layer.borderWidth = 0.5
-        return searchBar
-=======
     lazy var textFied: UITextField = {
         let textField = UITextField()
         textField.layer.cornerRadius = 5
@@ -187,16 +131,11 @@ class MainView: UIView {
         textField.placeholder = "Type a place"
         textField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
         return textField
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-<<<<<<< HEAD
-        addSubview(searchBar)
-=======
         addSubview(textFied)
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         addSubview(seeAllEvents)
         addSubview(button1)
         addSubview(button2)
@@ -213,16 +152,6 @@ class MainView: UIView {
     func setConstrains() {
         
         listButton.translatesAutoresizingMaskIntoConstraints = false
-<<<<<<< HEAD
-        [listButton.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 45), listButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), listButton.trailingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 0)].forEach{ $0.isActive = true }
-        
-        mapButton.translatesAutoresizingMaskIntoConstraints = false
-        [mapButton.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 45), mapButton.leadingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: 0), mapButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0)].forEach{ $0.isActive = true }
-        
-        
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        [searchBar.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 35), searchBar.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), searchBar.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40)].forEach{ $0.isActive = true }
-=======
         [listButton.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 45), listButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), listButton.trailingAnchor.constraint(equalTo: textFied.leadingAnchor, constant: 0)].forEach{ $0.isActive = true }
         
         mapButton.translatesAutoresizingMaskIntoConstraints = false
@@ -231,8 +160,7 @@ class MainView: UIView {
         
         textFied.translatesAutoresizingMaskIntoConstraints = false
         [textFied.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 35), textFied.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), textFied.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), textFied.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
-
+        
         seeAllEvents.translatesAutoresizingMaskIntoConstraints = false
         [seeAllEvents.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 40), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
         
@@ -240,37 +168,20 @@ class MainView: UIView {
         [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50)].forEach{ $0.isActive = true }
         
         button1.translatesAutoresizingMaskIntoConstraints = false
-<<<<<<< HEAD
-        [button1.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 70), button1.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.08), button1.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.15), button1.centerXAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.centerXAnchor, multiplier: 1.0)].forEach{ $0.isActive = true }
-        
-
-        button2.translatesAutoresizingMaskIntoConstraints = false
-        [button2.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 70), button2.heightAnchor.constraint(equalTo: button1.heightAnchor, constant: 0.08), button2.widthAnchor.constraint(equalTo: button1.widthAnchor), button2.leadingAnchor.constraint(equalTo: button1.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
-        button3.translatesAutoresizingMaskIntoConstraints = false
-        [button3.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 70), button3.heightAnchor.constraint(equalTo: button2.heightAnchor), button3.widthAnchor.constraint(equalTo: button1.widthAnchor), button3.leadingAnchor.constraint(equalTo: button2.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
-        button4.translatesAutoresizingMaskIntoConstraints = false
-        [button4.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 70), button4.heightAnchor.constraint(equalTo: button2.heightAnchor), button4.widthAnchor.constraint(equalTo: button1.widthAnchor), button4.trailingAnchor.constraint(equalTo: button1.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
-        
-        button5.translatesAutoresizingMaskIntoConstraints = false
-        [button5.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 70), button5.heightAnchor.constraint(equalTo: button4.heightAnchor), button5.widthAnchor.constraint(equalTo: button4.widthAnchor), button5.trailingAnchor.constraint(equalTo: button4.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
-=======
         [button1.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button1.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.08), button1.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.15), button1.centerXAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.centerXAnchor, multiplier: 1.0)].forEach{ $0.isActive = true }
         
-
+        
         button2.translatesAutoresizingMaskIntoConstraints = false
         [button2.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button2.heightAnchor.constraint(equalTo: button1.heightAnchor, constant: 0.08), button2.widthAnchor.constraint(equalTo: button1.widthAnchor), button2.leadingAnchor.constraint(equalTo: button1.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
+        
         button3.translatesAutoresizingMaskIntoConstraints = false
         [button3.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button3.heightAnchor.constraint(equalTo: button2.heightAnchor), button3.widthAnchor.constraint(equalTo: button1.widthAnchor), button3.leadingAnchor.constraint(equalTo: button2.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
+        
         button4.translatesAutoresizingMaskIntoConstraints = false
         [button4.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button4.heightAnchor.constraint(equalTo: button2.heightAnchor), button4.widthAnchor.constraint(equalTo: button1.widthAnchor), button4.trailingAnchor.constraint(equalTo: button1.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
         
         button5.translatesAutoresizingMaskIntoConstraints = false
         [button5.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button5.heightAnchor.constraint(equalTo: button4.heightAnchor), button5.widthAnchor.constraint(equalTo: button4.widthAnchor), button5.trailingAnchor.constraint(equalTo: button4.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
->>>>>>> 5546c18028e1489c58d5ea738329a3f2afa20eb5
         
     }
     

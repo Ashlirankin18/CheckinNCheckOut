@@ -12,28 +12,29 @@ class CreateTipViewController: UIViewController {
     
     private var createTipView = CreateTipView()
     private var userTipFromTextView = String()
-    
+    private var addTipButton = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(submitButtonPressed))
     var venueBeingReviewed: String?
-    //Todo: get rid of this if not needed
+    //Todo: get rid of placeholder if not needed
     private var createTipPlaceholder = "Enter tip here"
     override func viewDidLoad() {
         super.viewDidLoad()
         createTipView.createTipTextView.delegate = self
         setupTextView()
         createTipView.createTipTextView.becomeFirstResponder()
-        self.view.backgroundColor = .gray
+        self.view.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
         navigationItem.title = "Create Tip"
-    
+        
         view.addSubview(createTipView)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CancelButtonPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(submitButtonPressed))
+        
     }
     
     private func setupTextView() {
         createTipView.createTipTextView.delegate = self
         createTipView.createTipTextView.text = createTipPlaceholder
-        createTipView.createTipTextView.textColor = .lightGray
+        createTipView.createTipTextView.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
     
     
@@ -53,7 +54,7 @@ class CreateTipViewController: UIViewController {
         let venueName = venueBeingReviewed ?? "no venue name found"
         
         let userTip = TipDetails.init(venueName: venueName, venueDescription: tip, id: id, createdAt: date)
-       
+        
         PersistanceHelper.addItemsToDirectory(tip: userTip)
         showAlert(title: "Tip Created", message: "Sucess") { (alertController) in
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
@@ -76,7 +77,7 @@ extension CreateTipViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if createTipView.createTipTextView.text == createTipPlaceholder {
             textView.text = ""
-            textView.textColor = .green
+            textView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
         
         userTipFromTextView = textView.text
@@ -87,7 +88,6 @@ extension CreateTipViewController: UITextViewDelegate {
             if textView == createTipView.createTipTextView {
                 textView.text = createTipPlaceholder
                 textView.textColor = .lightGray
-               //textView.beginningOfDocument
             } else if textView == createTipView.createTipTextView {
                 textView.text = createTipPlaceholder
                 textView.textColor = .lightGray
