@@ -15,6 +15,15 @@
 		12FB1537221CFDBE005E94E7 /* AllListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1536221CFDBE005E94E7 /* AllListCell.swift */; };
 		12FB1539221DD5F6005E94E7 /* AnnotationDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */; };
 		12FB153B221DD612005E94E7 /* AnotationDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */; };
+		12FB153D221E6666005E94E7 /* CathegoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153C221E6666005E94E7 /* CathegoryViewController.swift */; };
+		12FB153F221E66E5005E94E7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB153E221E66E5005E94E7 /* CategoryView.swift */; };
+		12FB1541221E6A41005E94E7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1540221E6A41005E94E7 /* CategoryCell.swift */; };
+		12FB1543221F1E6C005E94E7 /* OneVenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1542221F1E6C005E94E7 /* OneVenueModel.swift */; };
+		12FB1545221F1F3F005E94E7 /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1544221F1F3F005E94E7 /* ImageDataModel.swift */; };
+		12FB1547221F200E005E94E7 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1546221F200E005E94E7 /* ImageCache.swift */; };
+		12FB1549221F5545005E94E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB1548221F5545005E94E7 /* LocationServices.swift */; };
+		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
+		2EBA68EA2214F513009FD8D1 /* CreateTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */; };
 		2E017960221E079100CEB931 /* VenueApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E01795F221E079100CEB931 /* VenueApiClient.swift */; };
 		2E373A262218801B007A92FA /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E373A252218801B007A92FA /* ImageDataModel.swift */; };
 		2E984786221C651200204A42 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E984785221C651200204A42 /* ImageCache.swift */; };
@@ -58,6 +67,13 @@
 		12FB1536221CFDBE005E94E7 /* AllListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListCell.swift; sourceTree = "<group>"; };
 		12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailedViewController.swift; sourceTree = "<group>"; };
 		12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationDetailedView.swift; sourceTree = "<group>"; };
+		12FB153C221E6666005E94E7 /* CathegoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryViewController.swift; sourceTree = "<group>"; };
+		12FB153E221E66E5005E94E7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		12FB1540221E6A41005E94E7 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		12FB1542221F1E6C005E94E7 /* OneVenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneVenueModel.swift; sourceTree = "<group>"; };
+		12FB1544221F1F3F005E94E7 /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
+		12FB1546221F200E005E94E7 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		12FB1548221F5545005E94E7 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		2E01795F221E079100CEB931 /* VenueApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueApiClient.swift; sourceTree = "<group>"; };
 		2E373A252218801B007A92FA /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
 		2E57C39E220E251100C89FFC /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +82,7 @@
 		2EA89E7F221F236E00AAFD80 /* TipDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetails.swift; sourceTree = "<group>"; };
 		2EA89E81221F363900AAFD80 /* GroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCell.swift; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
+		2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTipModel.swift; sourceTree = "<group>"; };
 		2EBA68C82214F512009FD8D1 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCreatorHelper.swift; sourceTree = "<group>"; };
@@ -141,8 +158,12 @@
 				2E373A252218801B007A92FA /* ImageDataModel.swift */,
 				2EDD7956221E770D006505E0 /* OneVenueModel.swift */,
 				2EBA68C52214F512009FD8D1 /* VenuesModel.swift */,
+				12FB1544221F1F3F005E94E7 /* ImageDataModel.swift */,
+				2EBA68E52214F513009FD8D1 /* VenueApiClient.swift */,
+				2EBA68C72214F512009FD8D1 /* CreateTipModel.swift */,
 				2EA89E7F221F236E00AAFD80 /* TipDetails.swift */,
 				2EBA68C82214F512009FD8D1 /* CollectionModel.swift */,
+				12FB1542221F1E6C005E94E7 /* OneVenueModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,8 +171,10 @@
 		2EBA68C92214F512009FD8D1 /* HelperMethods */ = {
 			isa = PBXGroup;
 			children = (
+				12FB1546221F200E005E94E7 /* ImageCache.swift */,
 				2E984785221C651200204A42 /* ImageCache.swift */,
 				2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */,
+				12FB1548221F5545005E94E7 /* LocationServices.swift */,
 				2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */,
 				1290CDD222175F940061C036 /* SecretKeys.swift */,
 				2EBA68CC2214F512009FD8D1 /* CollectionPersistanceHelper.swift */,
@@ -174,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBA68D22214F512009FD8D1 /* ListViewController.swift */,
+				12FB153C221E6666005E94E7 /* CathegoryViewController.swift */,
 				12FB1538221DD5F6005E94E7 /* AnnotationDetailedViewController.swift */,
 				2EBA68D32214F512009FD8D1 /* CreateTipViewController.swift */,
 				2EBA68D42214F512009FD8D1 /* FavoritesViewController.swift */,
@@ -190,7 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				12C71D9922176B410047849B /* MapView.swift */,
+				12FB153E221E66E5005E94E7 /* CategoryView.swift */,
 				2EBA68D92214F513009FD8D1 /* FavoriteCell.swift */,
+				12FB1540221E6A41005E94E7 /* CategoryCell.swift */,
 				12FB1536221CFDBE005E94E7 /* AllListCell.swift */,
 				12FB153A221DD612005E94E7 /* AnotationDetailedView.swift */,
 				12FB1532221CB6FA005E94E7 /* AllEventsView.swift */,
@@ -298,6 +324,7 @@
 			files = (
 				2E984786221C651200204A42 /* ImageCache.swift in Sources */,
 				2EBA68F72214F513009FD8D1 /* TabBarViewController.swift in Sources */,
+				12FB1541221E6A41005E94E7 /* CategoryCell.swift in Sources */,
 				2EDD7957221E770D006505E0 /* OneVenueModel.swift in Sources */,
 				2EBA68FA2214F513009FD8D1 /* ListView.swift in Sources */,
 				2E373A262218801B007A92FA /* ImageDataModel.swift in Sources */,
@@ -309,10 +336,13 @@
 				2EBA68F42214F513009FD8D1 /* FavoritesViewController.swift in Sources */,
 				12C71D9C22176B410047849B /* MapView.swift in Sources */,
 				2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */,
+				12FB1547221F200E005E94E7 /* ImageCache.swift in Sources */,
 				2EBA69052214FB2A009FD8D1 /* UiController+Alerts.swift in Sources */,
 				2EBA68F02214F513009FD8D1 /* String+Extension.swift in Sources */,
 				12FB1537221CFDBE005E94E7 /* AllListCell.swift in Sources */,
+				12FB1549221F5545005E94E7 /* LocationServices.swift in Sources */,
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
+				12FB1543221F1E6C005E94E7 /* OneVenueModel.swift in Sources */,
 				12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
 				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
@@ -320,6 +350,7 @@
 				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
 				2EBA68F92214F513009FD8D1 /* FavoritesView.swift in Sources */,
 				2EBA68F52214F513009FD8D1 /* MainViewController.swift in Sources */,
+				12FB1545221F1F3F005E94E7 /* ImageDataModel.swift in Sources */,
 				2EBA68EE2214F513009FD8D1 /* CollectionPersistanceHelper.swift in Sources */,
 				12FB1539221DD5F6005E94E7 /* AnnotationDetailedViewController.swift in Sources */,
 				2EBA68F62214F513009FD8D1 /* ListDetailViewController.swift in Sources */,
@@ -328,6 +359,8 @@
 				12FB1533221CB6FA005E94E7 /* AllEventsView.swift in Sources */,
 				2EBA68F32214F513009FD8D1 /* CreateTipViewController.swift in Sources */,
 				2EBA68EF2214F513009FD8D1 /* Date+Extension.swift in Sources */,
+				12FB153F221E66E5005E94E7 /* CategoryView.swift in Sources */,
+				12FB153D221E6666005E94E7 /* CathegoryViewController.swift in Sources */,
 				2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */,
 				2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */,
 				2EBA68F82214F513009FD8D1 /* FavoriteCell.swift in Sources */,
