@@ -32,71 +32,8 @@ class MainView: UIView {
         return listButton
     }()
     
-    
-    
-    lazy var button1: UIButton = {
-        let button1 = UIButton()
-        button1.backgroundColor = .white
-        button1.layer.cornerRadius = 5
-        button1.layer.borderWidth = 1
-        button1.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
-        let myImage = UIImage(named: "coffee")
-        button1.setImage(myImage, for: UIControl.State.normal)
-        button1.setImage(UIImage(named: "coffee"), for: UIControl.State.highlighted)
-        return button1
-    }()
-    
-    lazy var button2: UIButton = {
-        let button2 = UIButton()
-        button2.layer.cornerRadius = 5
-        button2.layer.borderWidth = 1
-        button2.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
-        button2.backgroundColor = .white
-        let myImage = UIImage(named: "movies")
-        button2.setImage(myImage, for: UIControl.State.normal)
-        button2.setImage(UIImage(named: "movies"), for: UIControl.State.highlighted)
-        return button2
-    }()
-    
-    lazy var button3: UIButton = {
-        let button3 = UIButton()
-        button3.layer.cornerRadius = 5
-        button3.layer.borderWidth = 1
-        button3.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
-        button3.backgroundColor = .white
-        let myImage = UIImage(named: "burger")
-        button3.setImage(myImage, for: UIControl.State.normal)
-        button3.setImage(UIImage(named: "burger"), for: UIControl.State.highlighted)
-        return button3
-    }()
-    
-    lazy var button4: UIButton = {
-        let button4 = UIButton()
-        button4.layer.cornerRadius = 5
-        button4.layer.borderWidth = 1
-        button4.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
-        button4.backgroundColor = .white
-        let myImage = UIImage(named: "yoga")
-        button4.setImage(myImage, for: UIControl.State.normal)
-        button4.setImage(UIImage(named: "yoga"), for: UIControl.State.highlighted)
-        return button4
-    }()
-    
-    lazy var button5: UIButton = {
-        let button5 = UIButton()
-        button5.layer.cornerRadius = 5
-        button5.layer.borderWidth = 1
-        button5.layer.borderColor = #colorLiteral(red: 0.3387981057, green: 0.6084808707, blue: 0.9888109565, alpha: 1)
-        button5.backgroundColor = .white
-        let myImage = UIImage(named: "bar")
-        button5.setImage(myImage, for: UIControl.State.normal)
-        button5.setImage(UIImage(named: "button5"), for: UIControl.State.highlighted)
-        return button5
-    }()
-    
     lazy var seeAllEvents: UIButton = {
         let SeeAllEvents = UIButton()
-        SeeAllEvents.backgroundColor = .clear
         SeeAllEvents.layer.cornerRadius = 5
         SeeAllEvents.layer.borderWidth = 1
         SeeAllEvents.layer.borderColor = UIColor.lightGray.cgColor
@@ -128,23 +65,28 @@ class MainView: UIView {
         let textField = UITextField()
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 0.5
-        textField.placeholder = "Type a place"
+        textField.placeholder = "eg. Coffe, Pizza"
         textField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
         return textField
+    }()
+    
+    lazy var secondTextField: UITextField = {
+        let secondTextField = UITextField()
+        secondTextField.layer.cornerRadius = 5
+        secondTextField.layer.borderWidth = 0.5
+        secondTextField.placeholder = "Type a place eg. New York"
+        secondTextField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
+        return secondTextField
     }()
 
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         addSubview(textFied)
         addSubview(seeAllEvents)
-        addSubview(button1)
-        addSubview(button2)
-        addSubview(button3)
-        addSubview(button4)
-        addSubview(button5)
         addSubview(mapButton)
         addSubview(listButton)
         addSubview(titleLablel)
+        addSubview(secondTextField)
         setConstrains()
         
     }
@@ -160,28 +102,15 @@ class MainView: UIView {
         
         textFied.translatesAutoresizingMaskIntoConstraints = false
         [textFied.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 35), textFied.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), textFied.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), textFied.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
+        
+        secondTextField.translatesAutoresizingMaskIntoConstraints = false
+        [secondTextField.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 11), secondTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), secondTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), secondTextField.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
 
         seeAllEvents.translatesAutoresizingMaskIntoConstraints = false
-        [seeAllEvents.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 40), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
+        [seeAllEvents.topAnchor.constraint(equalTo: secondTextField.bottomAnchor, constant: 44), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
         
         titleLablel.translatesAutoresizingMaskIntoConstraints = false
-        [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50)].forEach{ $0.isActive = true }
-        
-        button1.translatesAutoresizingMaskIntoConstraints = false
-        [button1.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button1.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.08), button1.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.15), button1.centerXAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.centerXAnchor, multiplier: 1.0)].forEach{ $0.isActive = true }
-        
-
-        button2.translatesAutoresizingMaskIntoConstraints = false
-        [button2.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button2.heightAnchor.constraint(equalTo: button1.heightAnchor, constant: 0.08), button2.widthAnchor.constraint(equalTo: button1.widthAnchor), button2.leadingAnchor.constraint(equalTo: button1.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
-        button3.translatesAutoresizingMaskIntoConstraints = false
-        [button3.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button3.heightAnchor.constraint(equalTo: button2.heightAnchor), button3.widthAnchor.constraint(equalTo: button1.widthAnchor), button3.leadingAnchor.constraint(equalTo: button2.trailingAnchor, constant: 5)].forEach{ $0.isActive = true }
-
-        button4.translatesAutoresizingMaskIntoConstraints = false
-        [button4.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button4.heightAnchor.constraint(equalTo: button2.heightAnchor), button4.widthAnchor.constraint(equalTo: button1.widthAnchor), button4.trailingAnchor.constraint(equalTo: button1.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
-        
-        button5.translatesAutoresizingMaskIntoConstraints = false
-        [button5.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button5.heightAnchor.constraint(equalTo: button4.heightAnchor), button5.widthAnchor.constraint(equalTo: button4.widthAnchor), button5.trailingAnchor.constraint(equalTo: button4.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
+        [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.65)].forEach{ $0.isActive = true }
         
     }
     

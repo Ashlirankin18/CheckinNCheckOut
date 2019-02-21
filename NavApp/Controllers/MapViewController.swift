@@ -112,15 +112,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    
-        func checkLocationAuthorization() {
+    func checkLocationAuthorization() {
             switch CLLocationManager.authorizationStatus() {
             case .authorizedWhenInUse:
             trakingUserLocation()
             case .denied:
-                // show alert instructing them how to turn on permission
-                // handle location stuff
-                
                 break
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
@@ -162,6 +158,8 @@ extension MapViewController: MKMapViewDelegate {
         guard let previousLocation = self.previousLocation else { return }
         guard center.distance(from: previousLocation) > 50 else { return }
         self.previousLocation = center
+        
+        
         
         geoCoder.reverseGeocodeLocation(center) { [weak self ](placemarks, error) in
             guard self != nil else { return }

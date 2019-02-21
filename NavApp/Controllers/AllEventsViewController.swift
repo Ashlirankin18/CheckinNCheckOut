@@ -13,7 +13,7 @@ class AllEventsViewController: UIViewController {
 
     var allEvents = AllEventsView()
     
-    var list = [VenueInfo]()
+    var list = [VenuesInfo]()
 //        didSet {
 //            DispatchQueue.main.async {
 //                self.allEvents.collectionView.reloadData()
@@ -35,7 +35,7 @@ class AllEventsViewController: UIViewController {
         
     }
     
-    init(list: [VenueInfo]) {
+    init(list: [VenuesInfo]) {
         super.init(nibName: nil, bundle: nil)
         self.list = list
     }
@@ -65,8 +65,8 @@ extension AllEventsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let cell = collectionView.cellForItem(at: indexPath) as? AllListCell else { return UICollectionViewCell() }
         let venueToSet = list[indexPath.row]
-        cell.textLabel.text! = venueToSet.name!
-        cell.textView.text! = venueToSet.description!
+        cell.textLabel.text! = venueToSet.name
+       // cell.textView.text! = venueToSet.description!
         return cell
     }
     
