@@ -11,8 +11,7 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-    
-    
+  
     var annotationData = [VenuesInfo]()
     var annotations = [MKAnnotation]()
     var appMapView = MapView()
@@ -20,13 +19,17 @@ class MapViewController: UIViewController {
     var locationToPin = [Location]()
     let locationManager = CLLocationManager()
     let regionInMetters: Double = 10000
-   var previousLocation: CLLocation?
-    
+    var previousLocation: CLLocation?
+  var urlStrings: [String]?
+  var items : Items?
+  var venueImage: UIImage?
     init(annotations: [MKAnnotation], venues: [VenuesInfo]) {
         super.init(nibName: nil, bundle: nil)
         self.annotations = annotations
         self.annotationData = venues
-    }
+      
+      
+  }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,11 +46,13 @@ class MapViewController: UIViewController {
         appMapView.mapView.delegate = self 
         appMapView.mapView.showAnnotations(annotations, animated: true)
         annotationViewSetUp()
+
         dump(annotationData)
         tapRecogSetup()
-      
-        
-        
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
+       appMapView.annotationView.addGestureRecognizer(tap)
+   
     }
     
     @objc func handleTap() {
@@ -83,8 +88,11 @@ class MapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc func toggleListMap() {
-        let listVC = ListViewController(venues: annotationData)
-        present(listVC, animated: true)
+      let listVC = ListViewController(venues: annotationData)
+      let navigationController = UINavigationController(rootViewController: listVC)
+      listVC.modalPresentationStyle = .currentContext
+      listVC.modalTransitionStyle = .crossDissolve
+        present(navigationController, animated: true)
     }
     
     
@@ -140,7 +148,26 @@ class MapViewController: UIViewController {
         let longitud = myMapView.centerCoordinate.longitude
         return CLLocation(latitude: latitud, longitude: longitud)
     }
-    
+  
+  func getImagesFromPrefixandSuffix(urlString:String,imageView:UIImageView){
+    if let image = ImageCache.shared.fetchImageFromCache(urlString: urlString){
+      DispatchQueue.main.async {
+        imageView.image = image
+      }
+    }else{
+      ImageCache.shared.fetchImageFromNetwork(urlString: urlString) { (error, image) in
+        if let error = error{
+          print(error.errorMessage())
+        }
+        if let image = image {
+          DispatchQueue.main.async {
+            imageView.image = image
+            self.venueImage = image
+          }
+        }
+      }
+    }
+  }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -185,9 +212,9 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
                 //TODO: Show alert informing the user
                 return
             }
-            let streetNumber = placemarks.subThoroughfare ?? ""
-            let streetName = placemarks.thoroughfare ?? ""
-            //self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
+          _ = placemarks.subThoroughfare ?? ""
+          _ = placemarks.thoroughfare ?? ""
+           
         }
     }
     
@@ -198,17 +225,42 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         appMapView.addressVenue.isHidden = false
         appMapView.venueImage.isHidden = false
         appMapView.nameLabel.isHidden = false
+
         appMapView.buttonToMap.isHidden = false
+        appMapView.reviews.isHidden = false
+        appMapView.heightAnchor.constraint(equalToConstant: 0).isActive = true
         
         guard let annotation = view.annotation else { return }
         
         let index = annotationData.index{ $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude }
         
+
         if let venueIndex = index {
         let venue = annotationData[venueIndex]
             appMapView.nameLabel.text = venue.name
             appMapView.addressVenue.text = venue.location.formattedAddress.first!
-//            appMapView.buttonToMap.addTarget(self, action: #selector(), for: .touchUpInside)
+
+        let index = annotationData.index{
+            $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude
+        }
+        if let venueIndex = index {
+        let venue = annotationData[venueIndex]
+        let venueId = venue.id
+       
+    VenueApiClient.getItemsPrefixAndSuffix(venueId: venueId, date: "20190220"){ (error, items) in
+            if let error = error {
+              print(error.errorMessage())
+            }
+            if let items = items{
+              self.items = items
+              let urlString = items.prefix + "300x500" + items.suffix
+              self.getImagesFromPrefixandSuffix(urlString: urlString, imageView: self.appMapView.venueImage)
+              DispatchQueue.main.async {
+                self.appMapView.nameLabel.text = venue.name
+                self.appMapView.addressVenue.text = venue.location.formattedAddress.first
+              }
+            }
+          }
         } else {
             print("no index")
         }

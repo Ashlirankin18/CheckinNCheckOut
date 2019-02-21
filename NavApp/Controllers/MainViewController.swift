@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     
     var currentLocation: CLLocation? {
         didSet {
-//            getVenues(lat: <#Double#>, long: <#Double#>)
             self.makeAnnotations()
         }
     }
@@ -44,11 +43,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(mainView)
-        mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
-        mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
          mainView.textFied.delegate = self
         mainView.secondTextField.delegate = self
-        
         
     
     }
@@ -66,10 +62,7 @@ class MainViewController: UIViewController {
         print("got a category")
         
     }
-    
-    @objc func presentList() {
-
-    }
+  
     
     func makeAnnotations() {
         mapView.mapView.removeAnnotations(annoations)
@@ -85,15 +78,7 @@ class MainViewController: UIViewController {
         annoations = ann
         mapView.mapView.showAnnotations(annoations, animated: true)
     }
-    
-    
-    
-    @objc func presentListVC() {
-        let listVC = ListViewController(venues: venues)
-        let listNavigation = UINavigationController(rootViewController: listVC)
-        self.present(listNavigation, animated: true, completion: nil)
-    }
-
+   
     func getVenues(lat: Double, long: Double) {
        
         guard let coorditane = currentLocation?.coordinate else { return }
@@ -117,43 +102,9 @@ class MainViewController: UIViewController {
 }
 
 
-//extension MainViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField == mainView.secondTextField {
-//
-//            guard let secondTexToSet = textField.text else { return false }
-//
-//
-//
-//        VenueApiClient.getVenues(keyword: "\(String(describing: input))", lattitude: "40.75", longitude: "-74", date: "20190219") { (error, venues) in
-//                if let error = error {
-//                   print(error)
-//                } else if let venues = venues {
-//                    self.venues = venues
-//                }
-//            }
-//
-//
-//        } else {
-//            guard let textToSet = textField.text else { return false }
-//            VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190219") { (error, venues) in
-//                if let error = error {
-//                    print(error)
-//                } else if let venues = venues {
-//                    self.venues = venues
-//
-//                }
-//            }
-//
-//        }
-//        return true
-//    }
-//
-//}
-
-
 extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
         if let venuePlace = mainView.secondTextField
             .text {
             venueString = venuePlace
@@ -189,56 +140,21 @@ extension MainViewController: UITextFieldDelegate {
                
             }
         }
-        
-        
-//        switch textField {
-//        case mainView.textFied:
-//             let regularString = "New York"
-//             let urlString = regularString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-//            guard let textToSet = textField.text else { return false }
-//             VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190220") { (error, venues) in
-//                if let error = error {
-//                    print(error)
-//                } else if let venues = venues {
-//
-//                    self.venues = venues
-//                }
-//            }
-//        case mainView.secondTextField:
-//            print("This may work ")
-//            let regularString = "New York"
-//            let urlString = regularString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-//
-//            guard let secondTextToSet = textField.text else { return false }
-//            guard let keyword = textField.text else { return false
-//
-//            }
-            
-//            VenueApiClient.searchPlace(keyword: keyword, location: secondTextToSet, date: "20190220") { (error, venues) in
-//                if let error = error {
-//                    print(error)
-//                } else if let venues = venues {
-//                    self.venues = venues
-//                }
-//            }
-//
-//
-//        default:
-//            print("Yeah!")
-//        }
-//         if textField == mainView.textFied {
-//
-//            guard let textToSet = textField.text else { return false }
-//            VenueApiClient.searchPlace(keyword: textToSet, location: <#T##String#>, date: <#T##String#>) { (error, venues) in
-//                if let error = error {
-//                    print(error)
-//                } else if let venues = venues {
-//                    self.venues = venues
-//                }
-//            }
-//
-//        }
-        return true
+       
+        guard let textToSet = textField.text else { return false }
+        VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190219") { (error, venues) in
+            if let error = error {
+                print(error)
+            } else if let venues = venues {
+              DispatchQueue.main.async {
+                let mapViewController = MapViewController.init(annotations: self.annoations, venues: venues)
+                let navController = UINavigationController(rootViewController: mapViewController)
+                self.present(navController, animated: true, completion: nil)
+              }
+             
+            }
+        }
+     
         }
     
     }

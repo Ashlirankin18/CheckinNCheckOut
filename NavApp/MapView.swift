@@ -29,6 +29,9 @@ class MapView: UIView {
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.textColor = .black
         nameLabel.text = "Name of venue goes here"
+        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.numberOfLines = 0
         return nameLabel
     }()
     
@@ -39,6 +42,8 @@ class MapView: UIView {
         addressVenue.numberOfLines = 0
         addressVenue.adjustsFontSizeToFitWidth = true
         addressVenue.text = "Venue address goes here"
+        addressVenue.adjustsFontForContentSizeCategory = true
+        addressVenue.adjustsFontSizeToFitWidth = true
         return addressVenue
     }()
     
@@ -46,6 +51,7 @@ class MapView: UIView {
     lazy var venueImage: UIImageView = {
         let venueImage = UIImageView()
         let image = UIImageView(image: UIImage(named: "placeholder"))
+        image.layer.cornerRadius = 10
         return image
     }()
     

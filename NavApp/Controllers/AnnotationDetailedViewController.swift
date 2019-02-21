@@ -41,13 +41,9 @@ class AnnotationDetailedViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    
-    
-
     @objc func dismissAction() {
         dismiss(animated: true, completion: nil)
     }
-    
 
 
 }

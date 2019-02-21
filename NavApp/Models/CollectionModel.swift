@@ -9,5 +9,5 @@
 import Foundation
 struct FavoriteVenueCollection:Codable {
   let name:String
-  let contents : Venue
+  let contents : Venues
 }
