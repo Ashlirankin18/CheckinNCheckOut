@@ -19,7 +19,6 @@ struct Venue:Codable {
   let name:String
   let contact: ContactInfo
   let location: VenueLocation
-  let url: String
   let categories: [CategoryInfo]
   let listed: IsListed
 }

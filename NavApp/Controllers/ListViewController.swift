@@ -19,7 +19,7 @@ class ListViewController: UIViewController {
     
 
   var listView = ListView()
-  
+  var venueId = ""
   init(venues:[VenuesInfo]){
         super.init(nibName: nil, bundle: nil)
         self.venues = venues
@@ -65,9 +65,7 @@ class ListViewController: UIViewController {
       }
     }
   }
-  func getPlaceInfo(venueId:String,date:String){
-    
-  }
+  
   
 }
 
@@ -82,23 +80,21 @@ extension ListViewController : UITableViewDataSource , UITableViewDelegate {
         guard let cell = listView.myTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {return UITableViewCell()}
       let venue = venues[indexPath.row]
       let venueId = venue.id
+      self.venueId = venue.id
       cell.venueTitle.text = venue.name
       cell.venueSubtitle.text = venue.location.formattedAddress.first
-      VenueApiClient.getSpecificVenueInfo(venueId: venueId, date: "20190221") { (error, venue) in
+      VenueApiClient.getItemsPrefixAndSuffix(venueId: venueId, date: "20190221") { (error, items) in
         if let error = error{
           print(error.errorMessage())
         }
-        if let venue = venue {
-          if let urlCredentials = venue.listed.groups.first?.items.first?.user.photo{
-            let urlString = urlCredentials.prefix + "300x500" + urlCredentials.suffix
-            DispatchQueue.main.async {
-               self.getImagesFromPrefixandSuffix(urlString: urlString, imageView: cell.venueImage)
-            }
+        if let items = items{
+          let urlString = items.prefix + "300x500" + items.suffix
+          DispatchQueue.main.async {
+              self.getImagesFromPrefixandSuffix(urlString: urlString, imageView: cell.venueImage)
           }
-         
+        
         }
       }
-      
       return cell
     }
     
@@ -107,10 +103,7 @@ extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let venue = venues[indexPath.row]
-      getPlaceInfo(venueId: venue.id, date: "20190221")
-      
-        let vc = ListDetailViewController.init(venue: venues[indexPath.row])
+        let vc = ListDetailViewController.init(venueId: venueId)
         let navigationController = UINavigationController(rootViewController: vc)
        self.present(navigationController, animated: true, completion: nil)
     }

@@ -16,6 +16,7 @@ class TabBarViewController: UITabBarController {
         view.backgroundColor = .white
         let mainVC = MainViewController()
         let favVc = FavoritesViewController()
+      
         mainVC.tabBarItem.title = "Main"
         mainVC.tabBarItem.image = #imageLiteral(resourceName: "icons8-active-state-25")
         favVc.tabBarItem.title = "Favorites"
