@@ -37,25 +37,21 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(mainView)
-        mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
-        mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
+        //mainView.mapButton.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
+     //   mainView.listButton.addTarget(self, action:#selector(presentListVC), for: .touchUpInside)
          mainView.textFied.delegate = self
         
-        mainView.seeAllEvents.addTarget(self, action: #selector(presentList), for: .touchUpInside)
+
 
     }
     
-    @objc func presentMapView(){
-        let mapViewController = MapViewController.init(annotations: annoations, venues: venues)
-        let navController = UINavigationController(rootViewController: mapViewController)
-        self.present(navController, animated: true, completion: nil)
+    //@objc func presentMapView(){
+    //    let mapViewController = MapViewController.init(annotations: annoations, venues: venues)
+     //   let navController = UINavigationController(rootViewController: mapViewController)//
+     //   self.present(navController, animated: true, completion: nil)
         
-    }
-    
-    @objc func presentList() {
-
-    }
-    
+  // }
+  
     func makeAnnotations() {
         mapView.mapView.removeAnnotations(annoations)
         annoations.removeAll()
@@ -74,11 +70,11 @@ class MainViewController: UIViewController {
     
     
     
-    @objc func presentListVC() {
-        let listVC = ListViewController(venues: venues)
-        let listNavigation = UINavigationController(rootViewController: listVC)
-        self.present(listNavigation, animated: true, completion: nil)
-    }
+//    @objc func presentListVC() {
+//        let listVC = ListViewController(venues: venues)
+//        let listNavigation = UINavigationController(rootViewController: listVC)
+//        self.present(listNavigation, animated: true, completion: nil)
+//    }
 
 
     
@@ -91,10 +87,15 @@ extension MainViewController: UITextFieldDelegate {
             if let error = error {
                 print(error)
             } else if let venues = venues {
-                        self.venues = venues
-            
+              DispatchQueue.main.async {
+                let mapViewController = MapViewController.init(annotations: self.annoations, venues: venues)
+                let navController = UINavigationController(rootViewController: mapViewController)
+                self.present(navController, animated: true, completion: nil)
+              }
+             
             }
         }
+     
         return true
     }
    
