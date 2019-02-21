@@ -44,20 +44,7 @@ final class ImageCache {
     
     
     
-    // Example Use Case:
-    /*
-     if let image = ImageCache.shared.fetchImageFromCache(urlString: photoURL.absoluteString) {
-     profileImageButton.setImage(image, for: .normal)
-     } else {
-     ImageCache.shared.fetchImageFromNetwork(urlString: photoURL.absoluteString) { (appError, image) in
-     if let appError = appError {
-     self.showAlert(title: "Fetching Image Error", message: appError.errorMessage())
-     } else if let image = image {
-     self.profileImageButton.setImage(image, for: .normal)
-     }
-     }
-     }
-     */
+    
     
 }
 

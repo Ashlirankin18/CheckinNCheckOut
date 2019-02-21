@@ -69,7 +69,7 @@ class MapViewController: UIViewController {
         appMapView.addressVenue.isHidden = true
         appMapView.venueImage.isHidden = true
         appMapView.nameLabel.isHidden = true
-        appMapView.reviews.isHidden = true
+        appMapView.buttonToMap.isHidden = true
     }
     
     func butonsSetUp() {
@@ -150,8 +150,21 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
-
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .blue
+        return renderer
+    }
+    
+   
+        
+      
+   
+    
+   
+    
+func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
         
@@ -179,11 +192,13 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        
         appMapView.annotationView.isHidden = false
         appMapView.addressVenue.isHidden = false
         appMapView.venueImage.isHidden = false
         appMapView.nameLabel.isHidden = false
-        appMapView.reviews.isHidden = false
+        appMapView.buttonToMap.isHidden = false
         
         guard let annotation = view.annotation else { return }
         
@@ -193,17 +208,73 @@ extension MapViewController: MKMapViewDelegate {
         let venue = annotationData[venueIndex]
             appMapView.nameLabel.text = venue.name
             appMapView.addressVenue.text = venue.location.formattedAddress.first!
+//            appMapView.buttonToMap.addTarget(self, action: #selector(), for: .touchUpInside)
         } else {
             print("no index")
         }
         
         appMapView.mapView.deselectAnnotation(annotation, animated: true )
         
+    
+    
+//        set up an action sheet to go to detalVC or the directions
+        guard let userLocation = locationManager.location?.coordinate,
+            let destination = view.annotation?.coordinate else {
+                guard let venueLat = self.annotationData.first?.location.lat,
+                    let venueLong = self.annotationData.first?.location.lng else {return}
+                let coordinate = CLLocationCoordinate2DMake(venueLat,venueLong)
+                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                mapItem.name = "Target location"
+                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+                return
         }
-    
-    
-    
+        getDirections(from: userLocation, destination: destination)
+
+    }
+
+    private func getDirections(from: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {
+        let request = createDirectionsRequest(fromCoordinate: from, toDestination: destination)
+        let directions = MKDirections(request: request)
+        resetMapView(newDirections: directions)
+
+        directions.calculate { [unowned self] (response, error) in
+            if let error = error {
+                print("Can't get directions: \(error)")
+                self.showAlert(title: "Can't get Directions", message: "\(error)" )
+            } else if let response = response {
+                for route in response.routes {
+                    //                    // extra TODO: show directions word
+                    var stepsStr = ""
+                    let steps = route.steps
+                    steps.forEach { stepsStr += "\($0.instructions)\n" }
+                    self.appMapView.mapView.addOverlay(route.polyline)
+                    self.appMapView.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                    self.showAlert(title: "Directions", message: stepsStr)
+                    break
+                }
+            }
+        }
+    }
+
+    private func createDirectionsRequest(fromCoordinate: CLLocationCoordinate2D, toDestination: CLLocationCoordinate2D) -> MKDirections.Request {
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: fromCoordinate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: toDestination))
+        request.transportType = .automobile
+        request.requestsAlternateRoutes = true
+        return request
+    }
+
+    private func resetMapView(newDirections: MKDirections) {
+        var directions = [MKDirections]()
+        appMapView.mapView.removeOverlays(appMapView.mapView.overlays)
+        directions.append(newDirections)
+        let _ = directions.map { $0.cancel() }
+    }
 
 }
+
+
+
 
 

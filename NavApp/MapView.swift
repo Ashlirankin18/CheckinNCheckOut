@@ -10,16 +10,16 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewDelegate: AnyObject {
+    func takeMeToMap()
+}
+
 class MapView: UIView {
     
-    lazy var reviews: UILabel = {
-        let reviews = UILabel()
-        reviews.textAlignment = .center
-        reviews.textColor = .black
-        reviews.text = "review stars go here (maybe)"
-        reviews.adjustsFontForContentSizeCategory = true
-        reviews.numberOfLines = 0 
-        return reviews
+    lazy var buttonToMap: UIButton = {
+        let buttonToMap = UIButton()
+      buttonToMap.setTitle("See in map", for: .normal)
+        return buttonToMap
     }()
     
     lazy var nameLabel: UILabel = {
@@ -74,7 +74,7 @@ class MapView: UIView {
         addSubview(venueImage)
         addSubview(nameLabel)
         addSubview(addressVenue)
-        addSubview(reviews)
+        addSubview(buttonToMap)
         setConstrains()
         }
     
@@ -98,8 +98,8 @@ class MapView: UIView {
         addressVenue.translatesAutoresizingMaskIntoConstraints = false
         [addressVenue.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 11), addressVenue.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), addressVenue.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
         
-        reviews.translatesAutoresizingMaskIntoConstraints = false
-        [reviews.topAnchor.constraint(equalTo: addressVenue.bottomAnchor, constant: 34), reviews.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), reviews.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
+        buttonToMap.translatesAutoresizingMaskIntoConstraints = false
+        [buttonToMap.topAnchor.constraint(equalTo: addressVenue.bottomAnchor, constant: 34), buttonToMap.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), buttonToMap.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
         
     }
     
