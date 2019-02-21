@@ -10,19 +10,27 @@ import UIKit
 
 class AllEventsView: UIView {
 
-    lazy var myTableView: UITableView = {
-        let myTableView = UITableView()
-        return myTableView
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize.init(width: 200, height: 275)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
+        let cv = UICollectionView.init(frame: UIScreen.main.bounds, collectionViewLayout: layout)
+        cv.backgroundColor = .white
+        return cv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        addSubview(myTableView)
+        addSubview(collectionView)
+        collectionView.register(AllListCell.self, forCellWithReuseIdentifier: "ListCell")
+        backgroundColor = .blue
+        
     }
     
     func setConstains() {
-       myTableView.translatesAutoresizingMaskIntoConstraints = false
-        [myTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), myTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), myTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), myTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
+       collectionView.translatesAutoresizingMaskIntoConstraints = false
+        [collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22), collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)].forEach{ $0.isActive = true }
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

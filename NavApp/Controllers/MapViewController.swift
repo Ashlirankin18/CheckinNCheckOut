@@ -11,27 +11,32 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-    
-    
+  
+    var annotationData = [VenuesInfo]()
     var annotations = [MKAnnotation]()
     var appMapView = MapView()
     var myMapView = MKMapView()
     var locationToPin = [Location]()
     let locationManager = CLLocationManager()
     let regionInMetters: Double = 10000
-    let latitude: CLLocationDegrees = 40.730610
-    let longitude: CLLocationDegrees = 73.935242
-    let nycLocation: CLLocation = CLLocation.init(latitude:  40.730610, longitude: -73.935242)
     var previousLocation: CLLocation?
-    
-    init(annotations: [MKAnnotation]) {
+  var urlStrings: [String]?
+  var items : Items?
+  var venueImage: UIImage?
+    init(annotations: [MKAnnotation], venues: [VenuesInfo]) {
         super.init(nibName: nil, bundle: nil)
         self.annotations = annotations
-    }
+        self.annotationData = venues
+      
+      
+  }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    //        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+    //        tap.delegate = self
+    //        myView.addGesture(tap)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +46,30 @@ class MapViewController: UIViewController {
         checkLocationServices()
         butonsSetUp()
         appMapView.mapView.delegate = self 
-      //  appMapView = self
-    
         appMapView.mapView.showAnnotations(annotations, animated: true)
+        annotationViewSetUp()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
+       appMapView.annotationView.addGestureRecognizer(tap)
+      
+        
+        
+    }
+    
+    @objc func handleTap() {
+    // injection dependecy here
+        let detailAnotation = AnnotationDetailedViewController()
+        present(detailAnotation, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    func annotationViewSetUp() {
+        appMapView.annotationView.isHidden = true
+        appMapView.addressVenue.isHidden = true
+        appMapView.venueImage.isHidden = true
+        appMapView.nameLabel.isHidden = true
+        appMapView.reviews.isHidden = true
     }
     
     func butonsSetUp() {
@@ -57,8 +83,11 @@ class MapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc func toggleListMap() {
-        let listVC = ListViewController()
-        present(listVC, animated: true)
+      let listVC = ListViewController(venues: annotationData)
+      let navigationController = UINavigationController(rootViewController: listVC)
+      listVC.modalPresentationStyle = .currentContext
+      listVC.modalTransitionStyle = .crossDissolve
+        present(navigationController, animated: true)
     }
     
     
@@ -93,6 +122,8 @@ class MapViewController: UIViewController {
             trakingUserLocation()
             case .denied:
                 // show alert instructing them how to turn on permission
+                // handle location stuff
+                
                 break
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
@@ -116,7 +147,26 @@ class MapViewController: UIViewController {
         let longitud = myMapView.centerCoordinate.longitude
         return CLLocation(latitude: latitud, longitude: longitud)
     }
-    
+  
+  func getImagesFromPrefixandSuffix(urlString:String,imageView:UIImageView){
+    if let image = ImageCache.shared.fetchImageFromCache(urlString: urlString){
+      DispatchQueue.main.async {
+        imageView.image = image
+      }
+    }else{
+      ImageCache.shared.fetchImageFromNetwork(urlString: urlString) { (error, image) in
+        if let error = error{
+          print(error.errorMessage())
+        }
+        if let image = image {
+          DispatchQueue.main.async {
+            imageView.image = image
+            self.venueImage = image
+          }
+        }
+      }
+    }
+  }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -139,8 +189,9 @@ extension MapViewController: MKMapViewDelegate {
         self.previousLocation = center
         
         geoCoder.reverseGeocodeLocation(center) { [weak self ](placemarks, error) in
-            guard let self = self else { return }
+            guard self != nil else { return }
             if let error = error {
+                print(error)
                 //TODO: Show alert informing user
                 print(error)
                 return
@@ -149,11 +200,54 @@ extension MapViewController: MKMapViewDelegate {
                 //TODO: Show alert informing the user
                 return
             }
-            let streetNumber = placemarks.subThoroughfare ?? ""
-            let streetName = placemarks.thoroughfare ?? ""
-            self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
+          _ = placemarks.subThoroughfare ?? ""
+          _ = placemarks.thoroughfare ?? ""
+            //self.appMapView.labelToSet.text = "\(streetNumber) \(streetName)"
           
         }
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        appMapView.annotationView.isHidden = false
+        appMapView.addressVenue.isHidden = false
+        appMapView.venueImage.isHidden = false
+        appMapView.nameLabel.isHidden = false
+        appMapView.reviews.isHidden = false
+        appMapView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        
+        guard let annotation = view.annotation else { return }
+        
+        
+        let index = annotationData.index{
+            $0.location.lat == annotation.coordinate.latitude && $0.location.lng == annotation.coordinate.longitude
+        }
+        if let venueIndex = index {
+        let venue = annotationData[venueIndex]
+        let venueId = venue.id
+            //appMapView.nameLabel.text = venue.name
+    VenueApiClient.getItemsPrefixAndSuffix(venueId: venueId, date: "20190220"){ (error, items) in
+            if let error = error {
+              print(error.errorMessage())
+            }
+            if let items = items{
+              self.items = items
+              let urlString = items.prefix + "300x500" + items.suffix
+              self.getImagesFromPrefixandSuffix(urlString: urlString, imageView: self.appMapView.venueImage)
+              DispatchQueue.main.async {
+                self.appMapView.nameLabel.text = venue.name
+                self.appMapView.addressVenue.text = venue.location.formattedAddress.first
+              }
+            }
+          }
+        } else {
+            print("no index")
+        }
+        
+        appMapView.mapView.deselectAnnotation(annotation, animated: true )
+        }
+    
+        //callout
+
 }
+
 

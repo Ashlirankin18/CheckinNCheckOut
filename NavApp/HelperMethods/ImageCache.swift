@@ -2,13 +2,18 @@
 //  ImageCache.swift
 //  NavApp
 //
+<<<<<<< HEAD
 //  Created by Jeffrey Almonte on 2/21/19.
+=======
+//  Created by Ashli Rankin on 2/19/19.
+>>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 //  Copyright © 2019 Ashli Rankin. All rights reserved.
 //
 
 import UIKit
 
 final class ImageCache {
+<<<<<<< HEAD
     private init() {}
     
     static let shared = ImageCache()
@@ -57,4 +62,54 @@ final class ImageCache {
      }
      */
     
+=======
+  private init() {}
+  
+  static let shared = ImageCache()
+  
+  private static var cache = NSCache<NSString, UIImage>()
+  
+  public func fetchImageFromNetwork(urlString: String, completion: @escaping (AppError?, UIImage?) -> Void) {
+    NetworkHelper.shared.performDataTask(endpointURLString: urlString, httpMethod: "GET", httpBody: nil) { (error, data) in
+      
+      
+      if let error = error {
+        DispatchQueue.main.async {
+          completion(error, nil)
+        }
+      } else if let data = data {
+        DispatchQueue.global().async {
+          if let image = UIImage(data: data) {
+            ImageCache.cache.setObject(image, forKey: urlString as NSString)
+            DispatchQueue.main.async {
+              completion(nil, image)
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  public func fetchImageFromCache(urlString: String) -> UIImage? {
+    return ImageCache.cache.object(forKey: urlString as NSString)
+  }
+  
+  
+  
+  // Example Use Case:
+  /*
+   if let image = ImageCache.shared.fetchImageFromCache(urlString: photoURL.absoluteString) {
+   profileImageButton.setImage(image, for: .normal)
+   } else {
+   ImageCache.shared.fetchImageFromNetwork(urlString: photoURL.absoluteString) { (appError, image) in
+   if let appError = appError {
+   self.showAlert(title: "Fetching Image Error", message: appError.errorMessage())
+   } else if let image = image {
+   self.profileImageButton.setImage(image, for: .normal)
+   }
+   }
+   }
+   */
+  
+>>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 }
