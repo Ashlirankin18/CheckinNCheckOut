@@ -206,6 +206,7 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             if let error = error {
                 print(error)
                 //TODO: Show alert informing user
+                print(error)
                 return
             }
             guard let placemarks = placemarks?.first else {

@@ -79,6 +79,14 @@ class ListDetailView: UIView {
         return imageView
     }()
     
+    lazy var createTipButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add Tip", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        button.layer.cornerRadius = 5.0
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -97,8 +105,17 @@ class ListDetailView: UIView {
 extension ListDetailView {
     
     private func setConstraints() {
+<<<<<<< HEAD
+        setVenueNameConstraints()
+        setAConstraint()
+        setBConstraint()
+        setCConstraint()
+        setVenueImageConstraints()
+        setAddTipButtonConstraints()
+=======
       setScrollViewConstraints()
 
+>>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
     }
   
   func setScrollViewConstraints(){
@@ -170,5 +187,11 @@ extension ListDetailView {
     AddTipButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
   }
     
+    func setAddTipButtonConstraints() {
+        addSubview(createTipButton)
+        createTipButton.translatesAutoresizingMaskIntoConstraints = false
+        createTipButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -11).isActive = true
+        createTipButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -11).isActive = true
+    }
 
 }

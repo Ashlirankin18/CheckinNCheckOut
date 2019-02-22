@@ -9,16 +9,16 @@
 
 import Foundation
 struct ImageDataModel:Codable{
-  let response: PhotoData
+
+    let response: PhotoData
 }
 struct PhotoData:Codable{
-  let photos: PhotoContents
+    let photos: PhotoContents
 }
 struct PhotoContents:Codable {
-  let items: [Items]
+    let items: [Items]
 }
 struct Items:Codable{
-  let prefix: String
-  let suffix: String
-
+    let prefix: String
+    let suffix: String
 }
