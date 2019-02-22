@@ -219,15 +219,10 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-        
         appMapView.annotationView.isHidden = false
         appMapView.addressVenue.isHidden = false
         appMapView.venueImage.isHidden = false
         appMapView.nameLabel.isHidden = false
-
-        appMapView.buttonToMap.isHidden = false
-        appMapView.reviews.isHidden = false
         appMapView.heightAnchor.constraint(equalToConstant: 0).isActive = true
         
         guard let annotation = view.annotation else { return }
@@ -282,8 +277,10 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         }
         getDirections(from: userLocation, destination: destination)
 
-    }
-
+    
+      }
+      
+  }
     private func getDirections(from: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {
         let request = createDirectionsRequest(fromCoordinate: from, toDestination: destination)
         let directions = MKDirections(request: request)
@@ -325,6 +322,7 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     }
 
 }
+
 
 
 

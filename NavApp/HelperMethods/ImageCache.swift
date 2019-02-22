@@ -2,7 +2,7 @@
 //  ImageCache.swift
 //  NavApp
 //
-//  Created by Ashli Rankin on 2/19/19.
+//  Created by Ashli Rankin on 2/21/19.
 //  Copyright © 2019 Ashli Rankin. All rights reserved.
 //
 
@@ -58,3 +58,4 @@ final class ImageCache {
    */
   
 }
+
