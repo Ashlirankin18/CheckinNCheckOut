@@ -24,10 +24,6 @@
 		2EA89E80221F236E00AAFD80 /* TipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA89E7F221F236E00AAFD80 /* TipDetails.swift */; };
 		2EA89E82221F363900AAFD80 /* GroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA89E81221F363900AAFD80 /* GroupsCell.swift */; };
 		2EBA68E82214F513009FD8D1 /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C52214F512009FD8D1 /* VenuesModel.swift */; };
-<<<<<<< HEAD
-		2EBA68EA2214F513009FD8D1 /* TipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C72214F512009FD8D1 /* TipDetails.swift */; };
-=======
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 		2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68C82214F512009FD8D1 /* CollectionModel.swift */; };
 		2EBA68EC2214F513009FD8D1 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */; };
 		2EBA68ED2214F513009FD8D1 /* TipCreatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */; };
@@ -76,10 +72,7 @@
 		2EA89E7F221F236E00AAFD80 /* TipDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetails.swift; sourceTree = "<group>"; };
 		2EA89E81221F363900AAFD80 /* GroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCell.swift; sourceTree = "<group>"; };
 		2EBA68C52214F512009FD8D1 /* VenuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		2EBA68C72214F512009FD8D1 /* TipDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipDetails.swift; sourceTree = "<group>"; };
-=======
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 		2EBA68C82214F512009FD8D1 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCreatorHelper.swift; sourceTree = "<group>"; };
@@ -152,17 +145,11 @@
 		2EBA68C42214F512009FD8D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				0DCDCCAE221F1F4800F095D3 /* ImageDataModel.swift */,
-				0DCDCCAC221F1E7100F095D3 /* OneVenueModel.swift */,
-				2EBA68C52214F512009FD8D1 /* VenuesModel.swift */,
-				2EBA68C72214F512009FD8D1 /* TipDetails.swift */,
-=======
+
 				2E373A252218801B007A92FA /* ImageDataModel.swift */,
 				2EDD7956221E770D006505E0 /* OneVenueModel.swift */,
 				2EBA68C52214F512009FD8D1 /* VenuesModel.swift */,
 				2EA89E7F221F236E00AAFD80 /* TipDetails.swift */,
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 				2EBA68C82214F512009FD8D1 /* CollectionModel.swift */,
 			);
 			path = Models;
@@ -171,11 +158,8 @@
 		2EBA68C92214F512009FD8D1 /* HelperMethods */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				0DCDCCB0221F205D00F095D3 /* ImageCache.swift */,
-=======
+
 				2E984785221C651200204A42 /* ImageCache.swift */,
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 				2EBA68CA2214F512009FD8D1 /* DataPersistanceManager.swift */,
 				2EBA68CB2214F512009FD8D1 /* TipCreatorHelper.swift */,
 				1290CDD222175F940061C036 /* SecretKeys.swift */,
@@ -243,11 +227,8 @@
 		2EBA68E42214F513009FD8D1 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				2EBA68E52214F513009FD8D1 /* VenueApiClient.swift */,
-=======
+
 				2E01795F221E079100CEB931 /* VenueApiClient.swift */,
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 				2EBA68E62214F513009FD8D1 /* NetworkHelper.swift */,
 				2EBA68E72214F513009FD8D1 /* AppError.swift */,
 			);
@@ -329,11 +310,7 @@
 				2EBA68F72214F513009FD8D1 /* TabBarViewController.swift in Sources */,
 				2EDD7957221E770D006505E0 /* OneVenueModel.swift in Sources */,
 				2EBA68FA2214F513009FD8D1 /* ListView.swift in Sources */,
-<<<<<<< HEAD
-				0DCDCCB1221F205D00F095D3 /* ImageCache.swift in Sources */,
-=======
 				2E373A262218801B007A92FA /* ImageDataModel.swift in Sources */,
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 				2EBA68FB2214F513009FD8D1 /* CreateTipView.swift in Sources */,
 				2EBA69032214F513009FD8D1 /* AppError.swift in Sources */,
 				2EA89E82221F363900AAFD80 /* GroupsCell.swift in Sources */,
@@ -349,10 +326,6 @@
 				2EBA68FD2214F513009FD8D1 /* MainView.swift in Sources */,
 				12FB1531221CB6D4005E94E7 /* AllEventsViewController.swift in Sources */,
 				2EBA68EB2214F513009FD8D1 /* CollectionModel.swift in Sources */,
-<<<<<<< HEAD
-				2EBA68EA2214F513009FD8D1 /* TipDetails.swift in Sources */,
-=======
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 				6123487B221616DE009C41DD /* ListDetailView.swift in Sources */,
 				2EA89E80221F236E00AAFD80 /* TipDetails.swift in Sources */,
 				2EBA68F22214F513009FD8D1 /* ListViewController.swift in Sources */,
