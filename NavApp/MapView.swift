@@ -10,9 +10,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewDelegate: AnyObject {
+    func takeMeToMap()
+}
+
 class MapView: UIView {
-    
-<<<<<<< HEAD
+
+    lazy var buttonToMap: UIButton = {
+        let buttonToMap = UIButton()
+      buttonToMap.setTitle("See in map", for: .normal)
+        return buttonToMap
+
 
     lazy var labelToSet: UILabel = {
         let label = UILabel()
@@ -21,7 +29,7 @@ class MapView: UIView {
         label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 )!
         label.textColor = .black
         return label
-=======
+
     lazy var reviews: UILabel = {
         let reviews = UILabel()
         reviews.textAlignment = .center
@@ -30,11 +38,14 @@ class MapView: UIView {
         reviews.adjustsFontForContentSizeCategory = true
         reviews.numberOfLines = 0 
         return reviews
+
     }()
     
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 0
+        nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.textColor = .black
         nameLabel.text = "Name of venue goes here"
         nameLabel.adjustsFontForContentSizeCategory = true
@@ -46,7 +57,9 @@ class MapView: UIView {
     lazy var addressVenue: UILabel = {
         let addressVenue = UILabel()
         addressVenue.textAlignment = .center
-        addressVenue.textColor = .black
+        addressVenue.textColor = #colorLiteral(red: 0.26, green: 0.47, blue: 0.96, alpha: 1)
+        addressVenue.numberOfLines = 0
+        addressVenue.adjustsFontSizeToFitWidth = true
         addressVenue.text = "Venue address goes here"
         addressVenue.adjustsFontForContentSizeCategory = true
         addressVenue.adjustsFontSizeToFitWidth = true
@@ -64,8 +77,7 @@ class MapView: UIView {
     lazy var annotationView: UIView = {
         let annotationView = UIView()
         return annotationView
-        
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
+
     }()
     
     lazy var mapPin: UIImageView = {
@@ -89,7 +101,7 @@ class MapView: UIView {
         addSubview(venueImage)
         addSubview(nameLabel)
         addSubview(addressVenue)
-        addSubview(reviews)
+        addSubview(buttonToMap)
         setConstrains()
     
     }
@@ -97,23 +109,20 @@ class MapView: UIView {
     func setConstrains() {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
-<<<<<<< HEAD
 
         [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)].forEach{ $0.isActive = true }
 
         [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -65)].forEach{ $0.isActive = true }
-=======
+
         [mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), mapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)].forEach{ $0.isActive = true }
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
+
         
         mapPin.translatesAutoresizingMaskIntoConstraints = false
         [mapPin.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor), mapPin.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)].forEach{ $0.isActive = true }
-        
-<<<<<<< HEAD
+
         labelToSet.translatesAutoresizingMaskIntoConstraints = false
         [labelToSet.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), labelToSet.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), labelToSet.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), labelToSet.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
 
-=======
         annotationView.translatesAutoresizingMaskIntoConstraints = false
         [annotationView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), annotationView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), annotationView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), annotationView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)].forEach{ $0.isActive = true }
         
@@ -125,11 +134,14 @@ class MapView: UIView {
         
         addressVenue.translatesAutoresizingMaskIntoConstraints = false
         [addressVenue.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 11), addressVenue.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), addressVenue.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
-        
+
+        buttonToMap.translatesAutoresizingMaskIntoConstraints = false
+        [buttonToMap.topAnchor.constraint(equalTo: addressVenue.bottomAnchor, constant: 34), buttonToMap.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), buttonToMap.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
+
         reviews.translatesAutoresizingMaskIntoConstraints = false
         [reviews.topAnchor.constraint(equalTo: addressVenue.bottomAnchor, constant: 34), reviews.leadingAnchor.constraint(equalTo: venueImage.trailingAnchor, constant: 22), reviews.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
-        
+
+
     }
     
     

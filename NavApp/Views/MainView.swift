@@ -32,8 +32,6 @@ class MainView: UIView {
         return listButton
     }()
     
-    
-    
     lazy var button1: UIButton = {
         let button1 = UIButton()
         button1.backgroundColor = .white
@@ -108,7 +106,7 @@ class MainView: UIView {
         
         return SeeAllEvents
     }()
-    
+
     lazy var titleLablel: UILabel = {
         let nameOfapp = UILabel()
         nameOfapp.text = "Nav App"
@@ -128,23 +126,28 @@ class MainView: UIView {
         let textField = UITextField()
         textField.layer.cornerRadius = 5
         textField.layer.borderWidth = 0.5
-        textField.placeholder = "Type a place"
+        textField.placeholder = "eg. Coffe, Pizza"
         textField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
         return textField
     }()
     
+
+    lazy var secondTextField: UITextField = {
+        let secondTextField = UITextField()
+        secondTextField.layer.cornerRadius = 5
+        secondTextField.layer.borderWidth = 0.5
+        secondTextField.placeholder = "Type a place eg. New York"
+        secondTextField.backgroundColor = #colorLiteral(red: 0.8023978472, green: 0.8596076369, blue: 0.9537505507, alpha: 1)
+        return secondTextField
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         addSubview(textFied)
-        addSubview(seeAllEvents)
-        addSubview(button1)
-        addSubview(button2)
-        addSubview(button3)
-        addSubview(button4)
-        addSubview(button5)
         addSubview(mapButton)
         addSubview(listButton)
         addSubview(titleLablel)
+        addSubview(secondTextField)
         setConstrains()
         
     }
@@ -160,6 +163,10 @@ class MainView: UIView {
         
         textFied.translatesAutoresizingMaskIntoConstraints = false
         [textFied.topAnchor.constraint(equalTo: titleLablel.bottomAnchor, constant: 35), textFied.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), textFied.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), textFied.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
+
+        
+        secondTextField.translatesAutoresizingMaskIntoConstraints = false
+        [secondTextField.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 11), secondTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40), secondTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40), secondTextField.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05)].forEach{ $0.isActive = true }
         
         seeAllEvents.translatesAutoresizingMaskIntoConstraints = false
         [seeAllEvents.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 40), seeAllEvents.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:90), seeAllEvents.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90)].forEach{ $0.isActive = true }
@@ -179,9 +186,9 @@ class MainView: UIView {
         
         button4.translatesAutoresizingMaskIntoConstraints = false
         [button4.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button4.heightAnchor.constraint(equalTo: button2.heightAnchor), button4.widthAnchor.constraint(equalTo: button1.widthAnchor), button4.trailingAnchor.constraint(equalTo: button1.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
-        
-        button5.translatesAutoresizingMaskIntoConstraints = false
-        [button5.topAnchor.constraint(equalTo: textFied.bottomAnchor, constant: 70), button5.heightAnchor.constraint(equalTo: button4.heightAnchor), button5.widthAnchor.constraint(equalTo: button4.widthAnchor), button5.trailingAnchor.constraint(equalTo: button4.leadingAnchor, constant: -5)].forEach{ $0.isActive = true }
+
+        titleLablel.translatesAutoresizingMaskIntoConstraints = false
+        [titleLablel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), titleLablel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), titleLablel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), titleLablel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.65)].forEach{ $0.isActive = true }
         
     }
     
