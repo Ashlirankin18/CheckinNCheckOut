@@ -24,10 +24,10 @@ struct Venue:Codable {
   let listed: IsListed
 }
 struct VenueLocation:Codable{
-  let address:String
-  let crossStreet:String
-  let postalCode:String
-  let city:String
+  let address:String?
+  let crossStreet:String?
+  let postalCode:String?
+  let city:String?
   let lat:Double
   let lng:Double
 }

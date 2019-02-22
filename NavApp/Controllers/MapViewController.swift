@@ -45,7 +45,7 @@ class MapViewController: UIViewController {
         butonsSetUp()
         appMapView.mapView.delegate = self 
         appMapView.mapView.showAnnotations(annotations, animated: true)
-        annotationViewSetUp()
+       // annotationViewSetUp()
 
         dump(annotationData)
         tapRecogSetup()
@@ -87,12 +87,11 @@ class MapViewController: UIViewController {
     @objc func dismmisAction() {
         dismiss(animated: true, completion: nil)
     }
+  
     @objc func toggleListMap() {
-      let listVC = ListViewController(venues: annotationData)
+      let listVC = ListViewController.init(venues: annotationData)
       let navigationController = UINavigationController(rootViewController: listVC)
-      listVC.modalPresentationStyle = .currentContext
-      listVC.modalTransitionStyle = .crossDissolve
-        present(navigationController, animated: true)
+        self.present(navigationController, animated: true)
     }
     
     

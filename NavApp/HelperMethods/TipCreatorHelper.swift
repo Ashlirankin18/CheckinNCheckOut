@@ -9,14 +9,14 @@
 import Foundation
 final class PersistanceHelper {
   private static let filename = "TipCreated.plist"
-  private static var tips = [CreateTipModel]()
+  private static var tips = [TipDetails]()
   
-  static func getUserInfo() ->[CreateTipModel]{
+  static func getUserInfo() ->[TipDetails]{
     let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: filename).path
     if FileManager.default.fileExists(atPath: path){
       if let data = FileManager.default.contents(atPath: path){
         do{
-          tips = try PropertyListDecoder().decode([CreateTipModel].self, from: data)
+          tips = try PropertyListDecoder().decode([TipDetails].self, from: data)
         }catch{
           print("no entries found")
         }
@@ -26,7 +26,7 @@ final class PersistanceHelper {
     }
     return tips
   }
-  static func addItemsToDirectory(tip:CreateTipModel){
+  static func addItemsToDirectory(tip:TipDetails){
     tips.append(tip)
     saveItemToDirectory()
   }
@@ -40,11 +40,11 @@ final class PersistanceHelper {
       print("propertyList encoding error")
     }
   }
-  static func deleteItemsFromDirectory(newBook:CreateTipModel,index:Int){
+  static func deleteItemsFromDirectory(newBook:TipDetails,index:Int){
     tips.remove(at: index)
     saveItemToDirectory()
   }
-  static func updatesTheDirectory(item:CreateTipModel,index:Int){
+  static func updatesTheDirectory(item:TipDetails,index:Int){
     tips.insert(item, at: index)
     saveItemToDirectory()
   }

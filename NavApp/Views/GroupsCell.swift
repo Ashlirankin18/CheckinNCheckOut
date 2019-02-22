@@ -18,7 +18,8 @@ class GroupsCell: UICollectionViewCell {
     textView.isSelectable = false
     textView.isScrollEnabled = false
     textView.textColor = .black
-    textView.font = UIFont.boldSystemFont(ofSize: 16)
+    textView.font = UIFont.boldSystemFont(ofSize: 18)
+    textView.textAlignment = .center
     return textView
   }()
   override init(frame: CGRect) {
@@ -33,7 +34,9 @@ class GroupsCell: UICollectionViewCell {
   
   func commonInit(){
     setUpView()
-    backgroundColor = .white
+    backgroundColor = #colorLiteral(red: 0.9328603371, green: 0.9755296445, blue: 1, alpha: 1)
+    layer.borderWidth = 10
+    layer.borderColor = UIColor.gray.cgColor
   }
   
 }
@@ -46,9 +49,9 @@ extension GroupsCell{
   func setUpTextViewConstraint(){
     addSubview(groupsTextView)
     groupsTextView.translatesAutoresizingMaskIntoConstraints = false
-    groupsTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-    groupsTextView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
-    groupsTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
-    groupsTextView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+    groupsTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    groupsTextView.widthAnchor.constraint(equalToConstant: 270).isActive = true
+    groupsTextView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+    groupsTextView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
   }
 }

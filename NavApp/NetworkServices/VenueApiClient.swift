@@ -48,7 +48,7 @@ final class VenueApiClient {
     }
   }
   static func getSpecificVenueInfo(venueId:String,date:String,completionHandler: @escaping (AppError?,Venue?) -> Void){
-    let urlString = "https://api.foursquare.com/v2/venues/\(venueId)?client_id=\(SecretKeys.clientId)&client_secret=\(SecretKeys.clientKey)&v=\(date)"
+    let urlString = "https://api.foursquare.com/v2/venues/\(venueId)?client_id=\(SecretKeys.clientId2)&client_secret=\(SecretKeys.clientKey2)&v=\(date)"
     NetworkHelper.shared.performDataTask(endpointURLString: urlString, httpMethod: "GET", httpBody: nil) { (error, data) in
       if let error = error{
        completionHandler(AppError.badURL(error.errorMessage()),nil)

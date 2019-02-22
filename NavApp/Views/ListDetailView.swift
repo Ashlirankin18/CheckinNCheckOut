@@ -14,8 +14,8 @@ class ListDetailView: UIView {
     //venue name
   lazy var DetailledScrollView:UIScrollView = {
     let scrollView = UIScrollView()
-    scrollView.contentSize.height = 1100
-    scrollView.backgroundColor = .white
+    scrollView.contentSize.height = 1000
+    scrollView.backgroundColor = #colorLiteral(red: 0.7362746098, green: 0.77075699, blue: 1, alpha: 1)
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     return scrollView
   }()
@@ -25,9 +25,12 @@ class ListDetailView: UIView {
         name.text = "Joshua"
         name.textColor = .black
         name.textAlignment = .center
-      name.backgroundColor = .gray
-        name.font = UIFont.boldSystemFont(ofSize: 12)
+      name.backgroundColor = #colorLiteral(red: 0.9328603371, green: 0.9755296445, blue: 1, alpha: 1)
+        name.font = UIFont.boldSystemFont(ofSize: 20)
+      name.numberOfLines = 0
       name.adjustsFontSizeToFitWidth = true
+      name.layer.cornerRadius = 10
+      name.layer.masksToBounds = true
         return name
     }()
     
@@ -37,30 +40,42 @@ class ListDetailView: UIView {
         name.text = "Joshua"
         name.textColor = .black
         name.textAlignment = .center
-        name.backgroundColor = .gray
-        name.font = UIFont.boldSystemFont(ofSize: 12)
+        name.backgroundColor = #colorLiteral(red: 0.9328603371, green: 0.9755296445, blue: 1, alpha: 1)
+        name.font = UIFont.boldSystemFont(ofSize: 16)
+       name.numberOfLines = 0
        name.adjustsFontSizeToFitWidth = true
+      name.layer.cornerRadius = 10
+       name.layer.masksToBounds = true
         return name
     }()
     //TODO chnage Name
     lazy var VenueGroups: UICollectionView = {
       let layout = UICollectionViewFlowLayout()
       layout.scrollDirection = .horizontal
-      layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
+      layout.sectionInset = UIEdgeInsets.init(top: 30, left: 10, bottom: 30, right: 10)
       let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
       collectionView.register(GroupsCell.self, forCellWithReuseIdentifier: "GroupsCell")
-      collectionView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+      collectionView.backgroundColor = #colorLiteral(red: 0.7362746098, green: 0.77075699, blue: 1, alpha: 1)
+      collectionView.layer.cornerRadius = 10
+      collectionView.layer.masksToBounds = true
+      collectionView.layer.borderColor = UIColor.gray.cgColor
+      
         return collectionView
     }()
     //TODO chnage Name
     lazy var ContactInfo: UILabel = {
-        let name = UILabel()
-        name.text = "Joshua"
-        name.textColor = .black
-        name.textAlignment = .center
-        name.font = UIFont.boldSystemFont(ofSize: 12)
-        name.backgroundColor = .gray
-       name.adjustsFontSizeToFitWidth = true
+      let name = UILabel()
+      name.text = "Joshua"
+      name.textColor = .black
+      name.textAlignment = .left
+      name.font = UIFont.boldSystemFont(ofSize: 16)
+      name.backgroundColor = #colorLiteral(red: 0.9328603371, green: 0.9755296445, blue: 1, alpha: 1)
+      name.adjustsFontSizeToFitWidth = true
+      name.numberOfLines = 0
+      name.adjustsFontForContentSizeCategory = true
+      name.layer.cornerRadius = 10
+       name.layer.masksToBounds = true
+      name.textAlignment = .center
         return name
     }()
   lazy var AddTipButton: UIButton = {
@@ -68,6 +83,10 @@ class ListDetailView: UIView {
     name.setTitle("Add Tip", for: .normal)
     name.backgroundColor = .white
     name.setTitleColor(.black, for: .normal)
+    name.layer.cornerRadius = 10
+    name.layer.masksToBounds = true
+    name.layer.borderWidth = 10
+    name.layer.borderColor = UIColor.gray.cgColor
     return name
   }()
     
@@ -140,7 +159,7 @@ extension ListDetailView {
         venueLocation.topAnchor.constraint(equalTo: venueName.bottomAnchor, constant: 10).isActive = true
         venueLocation.leadingAnchor.constraint(equalTo: DetailledScrollView.leadingAnchor, constant: 30).isActive = true
         venueLocation.widthAnchor.constraint(equalToConstant: 350).isActive = true
-        venueLocation.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        venueLocation.heightAnchor.constraint(equalToConstant: 50).isActive = true
       
     }
     
@@ -156,15 +175,15 @@ extension ListDetailView {
     func setContactInfoConstraint(){
         DetailledScrollView.addSubview(ContactInfo)
         ContactInfo.translatesAutoresizingMaskIntoConstraints = false
-      ContactInfo.topAnchor.constraint(equalTo: VenueGroups.bottomAnchor, constant: 10).isActive = true
+      ContactInfo.topAnchor.constraint(equalTo: VenueGroups.bottomAnchor, constant: 20).isActive = true
       ContactInfo.leadingAnchor.constraint(equalTo: DetailledScrollView.leadingAnchor, constant: 30).isActive = true
       ContactInfo.widthAnchor.constraint(equalToConstant: 350).isActive = true
-      ContactInfo.heightAnchor.constraint(equalToConstant: 100).isActive = true
+      ContactInfo.heightAnchor.constraint(equalToConstant: 160).isActive = true
     }
   func setAddTipConstraint(){
     DetailledScrollView.addSubview(AddTipButton)
     AddTipButton.translatesAutoresizingMaskIntoConstraints = false
-    AddTipButton.topAnchor.constraint(equalTo: ContactInfo.bottomAnchor, constant: 10).isActive = true
+    AddTipButton.topAnchor.constraint(equalTo: ContactInfo.bottomAnchor, constant: 15).isActive = true
     AddTipButton.trailingAnchor.constraint(equalTo: ContactInfo.trailingAnchor, constant: -30).isActive = true
     AddTipButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
     AddTipButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
