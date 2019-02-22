@@ -105,17 +105,14 @@ class ListDetailView: UIView {
 extension ListDetailView {
     
     private func setConstraints() {
-<<<<<<< HEAD
         setVenueNameConstraints()
         setAConstraint()
         setBConstraint()
         setCConstraint()
         setVenueImageConstraints()
         setAddTipButtonConstraints()
-=======
-      setScrollViewConstraints()
+        setScrollViewConstraints()
 
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
     }
   
   func setScrollViewConstraints(){

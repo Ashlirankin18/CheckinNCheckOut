@@ -24,23 +24,11 @@ class ListDetailViewController: UIViewController {
     super.init(nibName: nil, bundle: nil)
     self.venueId = venueId
     
-<<<<<<< HEAD
-    
-    let listDetailView = ListDetailView()
-    var isSucessfullyCreated: Bool?
-    // take out or change from being hardcoded
+    }
     
     let titleTest = "Coffeed"
     private var testVenueName = ListTableViewCell()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        listDetailView.createTipButton.addTarget(self, action: #selector(addTipButtonPressed), for: .touchUpInside)
-        view.addSubview(listDetailView)
-        view.backgroundColor = .yellow
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to Collection", style: .plain, target: self, action: #selector(addButtonPressed))
-=======
-  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -58,7 +46,7 @@ class ListDetailViewController: UIViewController {
     listDetailView.VenueGroups.dataSource = self
     listDetailView.VenueGroups.delegate = self
     getPlaceInfo(venueId: venueId, date: "20190221")
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
+
     }
     @objc func addButtonPressed(){
         //testing the segue
@@ -68,8 +56,6 @@ class ListDetailViewController: UIViewController {
                 self.present(navController, animated: true, completion: nil)
         let venueToAddToCollection = CollectionPersistanceHelper.getUserInfo()
         
-        
-        
     }
     
     @objc func addTipButtonPressed(){
@@ -78,12 +64,7 @@ class ListDetailViewController: UIViewController {
         let navController = UINavigationController(rootViewController: creatVC)
         self.present(navController, animated: true, completion: nil)
     }
-<<<<<<< HEAD
-    
-    
-    
-=======
-  
+ 
   @objc func backButtonPressed(){
     dismiss(animated: true, completion: nil)
   }
@@ -147,5 +128,5 @@ extension ListDetailViewController:UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize.init(width: 310, height: 300)
   }
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
+
 }

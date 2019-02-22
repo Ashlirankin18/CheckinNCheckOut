@@ -184,13 +184,8 @@ extension MapViewController: MKMapViewDelegate {
         return renderer
     }
     
-   
-        
-      
-   
-    
-   
-    
+
+
 func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
@@ -199,7 +194,7 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         guard center.distance(from: previousLocation) > 50 else { return }
         self.previousLocation = center
         
-        
+    
         
         geoCoder.reverseGeocodeLocation(center) { [weak self ](placemarks, error) in
             guard self != nil else { return }
@@ -227,8 +222,6 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         appMapView.venueImage.isHidden = false
         appMapView.nameLabel.isHidden = false
 
-        appMapView.buttonToMap.isHidden = false
-        appMapView.reviews.isHidden = false
         appMapView.heightAnchor.constraint(equalToConstant: 0).isActive = true
         
         guard let annotation = view.annotation else { return }
@@ -282,7 +275,7 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
                 return
         }
         getDirections(from: userLocation, destination: destination)
-
+        }
     }
 
     private func getDirections(from: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {
@@ -326,6 +319,7 @@ func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     }
 
 }
+
 
 
 

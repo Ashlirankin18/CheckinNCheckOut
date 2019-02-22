@@ -2,15 +2,14 @@
 //  ImageCache.swift
 //  NavApp
 //
-
-//  Created by Ashli Rankin on 2/19/19.
+//  Created by Jeffrey Almonte on 2/21/19.
 //  Copyright © 2019 Ashli Rankin. All rights reserved.
 //
+
 
 import UIKit
 
 final class ImageCache {
-
     private init() {}
     
     static let shared = ImageCache()
@@ -58,4 +57,5 @@ final class ImageCache {
      }
      }
      */
+    
 }

@@ -142,7 +142,7 @@ extension MainViewController: UITextFieldDelegate {
         }
        
         guard let textToSet = textField.text else { return false }
-        VenueApiClient.getVenues(keyword: textToSet, lattitude: "40.75", longitude: "-74", date: "20190219") { (error, venues) in
+        VenueApiClient.getVenues(keyword: textToSet, lattitude: 40.75, longitude: -74, date: "20190219") { (error, venues) in
             if let error = error {
                 print(error)
             } else if let venues = venues {

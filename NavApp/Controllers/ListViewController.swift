@@ -9,20 +9,19 @@
 import UIKit
 
 class ListViewController: UIViewController {
-<<<<<<< HEAD
+
     
     var venue = [Venues](){
         didSet {
             DispatchQueue.main.async {
                 self.listView.myTableView.reloadData()
             }
-=======
-  
+        }
+    }
     var urlStrings = [String]()
     var venues = [VenuesInfo](){
         didSet{
             self.listView.myTableView.reloadData()
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
         }
     }
     
@@ -50,7 +49,7 @@ class ListViewController: UIViewController {
       self.navigationItem.rightBarButtonItem = toggle
       self.navigationItem.title = "List of Places"
     }
-<<<<<<< HEAD
+
     
     var venueInfo: Venue?
     
@@ -67,8 +66,7 @@ class ListViewController: UIViewController {
             }
         }
     }
-=======
-  
+
   @objc func toggleListMap(){
     dismiss(animated: true, completion: nil)
   }
@@ -93,8 +91,6 @@ class ListViewController: UIViewController {
     }
   }
   
-  
->>>>>>> e97b5dd1c8742db6567b563858409a8c89fcd323
 }
 
 extension ListViewController : UITableViewDataSource , UITableViewDelegate {
