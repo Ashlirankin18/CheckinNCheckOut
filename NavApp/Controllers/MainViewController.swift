@@ -18,18 +18,12 @@ class MainViewController: UIViewController {
     var venues = [VenuesInfo]() {
         didSet {
             DispatchQueue.main.async {
-                self.makeAnnotations()
+              self.makeAnnotations(venues: self.venues)
             }
         }
     }
     
-    var location = [Location]() {
-        didSet {
-            DispatchQueue.main.async {
-            
-            }
-        }
-    }
+  
    private var annoations = [MKAnnotation]()
     var mainView = MainView()
     var mapView = MapView()
@@ -44,14 +38,9 @@ class MainViewController: UIViewController {
     
     }
     
-    @objc func presentMapView(){
-        let mapViewController = MapViewController.init(annotations: annoations, venues: venues)
-        let navController = UINavigationController(rootViewController: mapViewController)
-        self.present(navController, animated: true, completion: nil)
-    }
   
     
-    func makeAnnotations() {
+  func makeAnnotations(venues:[VenuesInfo]) {
         mapView.mapView.removeAnnotations(annoations)
         annoations.removeAll()
         var ann = [MKAnnotation]()
@@ -95,6 +84,7 @@ extension MainViewController: UITextFieldDelegate {
             }
             if let venues = venues{
               DispatchQueue.main.async {
+                self.makeAnnotations(venues: venues)
                 let mapViewController = MapViewController.init(annotations: self.annoations, venues: venues)
                 let navigationController = UINavigationController(rootViewController: mapViewController)
                 self.present(navigationController, animated: true, completion: nil)

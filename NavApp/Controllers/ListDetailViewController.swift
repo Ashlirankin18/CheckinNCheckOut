@@ -127,9 +127,6 @@ extension ListDetailViewController:UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     if let groups = venue?.listed.groups.first?.items {
         return groups.count
-    }else{
-    collectionView.isHidden = true
-    collectionView.heightAnchor.constraint(equalToConstant: 0).isActive = true
     }
     return 0
   }

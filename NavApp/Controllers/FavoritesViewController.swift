@@ -34,6 +34,9 @@ extension FavoritesViewController : UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
      let cell = favView.collectionview.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteCell
+      let venue = CollectionPersistanceHelper.getUserInfo()[indexPath.row]
+      cell.nameLabel.text = venue.contents.categories[indexPath.section].name
+      cell.descriptionLabel.text = venue.name
     return cell
     }
     

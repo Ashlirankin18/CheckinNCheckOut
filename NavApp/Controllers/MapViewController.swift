@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
   var urlStrings: [String]?
   var items : Items?
   var venueImage: UIImage?
+  
     init(annotations: [MKAnnotation], venues: [VenuesInfo]) {
         super.init(nibName: nil, bundle: nil)
         self.annotations = annotations
@@ -45,7 +46,7 @@ class MapViewController: UIViewController {
         butonsSetUp()
         appMapView.mapView.delegate = self 
         appMapView.mapView.showAnnotations(annotations, animated: true)
-       // annotationViewSetUp()
+        annotationViewSetUp()
 
         dump(annotationData)
         tapRecogSetup()
@@ -191,6 +192,7 @@ extension MapViewController: MKMapViewDelegate {
    
     
 func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+  
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
         
