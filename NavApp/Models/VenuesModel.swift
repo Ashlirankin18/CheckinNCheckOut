@@ -11,10 +11,10 @@ struct Venues:Codable {
   let response:Result
 }
 struct Result:Codable {
-  let venues: [VenuesInfo]
+  let venues: [VenuesInfo]?
 }
 struct VenuesInfo:Codable {
-  let id : String
+  let id   : String
   let name: String
   let contact: ContactInfo?
   let location:Location

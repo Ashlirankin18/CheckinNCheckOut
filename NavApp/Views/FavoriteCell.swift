@@ -10,53 +10,57 @@ import UIKit
 
 class FavoriteCell: UICollectionViewCell {
     
-    let profileImageButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-        return button
-    }()
+  
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.darkGray
-        label.text = "Joshua Viera"
-        return label
-    }()
-    
+  let nameLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.systemFont(ofSize: 14)
+    label.textColor = UIColor.darkGray
+    label.text = "Joshua Viera"
+    return label
+  }()
+  let descriptionLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.systemFont(ofSize: 14)
+    label.textColor = .black
+    label.text = "Joshua Viera"
+    return label
+  }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
+      layer.cornerRadius = 10
+      layer.borderWidth = 5
+      layer.masksToBounds = true
+      layer.borderColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
     }
     
     func addViews(){
         backgroundColor = .white
-        addSubview(profileImageButton)
+    
         addSubview(nameLabel)
+        addSubview(descriptionLabel)
         setConstraints()
     }
     
     func setConstraints(){
-        photoImageConstraints()
         nameLabelConstraints()
+      descriptionLabelConstraints()
     }
-    
-    func photoImageConstraints(){
-        profileImageButton.translatesAutoresizingMaskIntoConstraints = false
-        profileImageButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
-        profileImageButton.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        profileImageButton.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        profileImageButton.widthAnchor.constraint(equalToConstant: 36).isActive = true
-    }
-    
+  
     func nameLabelConstraints(){
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.leftAnchor.constraint(equalTo: profileImageButton.rightAnchor, constant: 5).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: profileImageButton.centerYAnchor, constant: -8).isActive = true
+      nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+      nameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+       nameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
     }
+  func descriptionLabelConstraints(){
+    descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 50).isActive = true
+     descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+     descriptionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 12).isActive = true
+  }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

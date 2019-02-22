@@ -18,17 +18,25 @@ class FavoritesViewController: UIViewController {
         view.addSubview(favView)
         favView.collectionview.delegate = self
         favView.collectionview.dataSource = self
+      self.navigationItem.title = "Collections"
     }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    self.favView.collectionview.reloadData()
+  }
 }
 
 extension FavoritesViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return CollectionPersistanceHelper.getUserInfo().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
      let cell = favView.collectionview.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteCell
+      let venue = CollectionPersistanceHelper.getUserInfo()[indexPath.row]
+      cell.nameLabel.text = venue.contents.categories[indexPath.section].name
+      cell.descriptionLabel.text = venue.name
     return cell
     }
     

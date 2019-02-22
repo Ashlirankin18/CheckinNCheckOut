@@ -9,68 +9,93 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
-    var venue = [Venues](){
-        didSet {
-            DispatchQueue.main.async {
-                self.listView.myTableView.reloadData()
-            }
+  
+    var urlStrings = [String]()
+    var venues = [VenuesInfo](){
+        didSet{
+            self.listView.myTableView.reloadData()
         }
     }
     
-    var listView = ListView()
+
+  var listView = ListView()
+  var venueId = ""
+  init(venues:[VenuesInfo]){
+        super.init(nibName: nil, bundle: nil)
+        self.venues = venues
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(listView)
         listView.myTableView.delegate = self
         listView.myTableView.dataSource = self
-        
+      modalTransitionStyle = .coverVertical
+      modalPresentationStyle = .currentContext
         view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+      let toggle = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(toggleListMap))
+      self.navigationItem.rightBarButtonItem = toggle
+      self.navigationItem.title = "List of Places"
+    }
+  
+  @objc func toggleListMap(){
+    dismiss(animated: true, completion: nil)
+  }
+  func getImagesFromPrefixandSuffix(urlString:String,imageView:UIImageView){
+    if let image = ImageCache.shared.fetchImageFromCache(urlString: urlString){
+      DispatchQueue.main.async {
+        imageView.image = image
         
-    }
-    
-  var venueInfo: Venue?
-
-    
-  private func getVenuesInArea(lattitude:String,longitude:String,date:String){
-    VenueApiClient.getVenues(lattitude: lattitude, longitude: longitude, date: date) { (error, venue) in
-      if let error = error {
-        print(error.errorMessage())
       }
-      if let venue = venue{
-        self.venue = venue
-        dump(venue)
-        print("I have\(venue.count) items")
+    }else{
+      ImageCache.shared.fetchImageFromNetwork(urlString: urlString) { (error, image) in
+        if let error = error{
+          print(error.errorMessage())
+        }
+        if let image = image {
+          DispatchQueue.main.async {
+            imageView.image = image
+   
+          }
+        }
       }
     }
   }
-  private func getVenueDetails(venueId:String,date:String){
-    VenueApiClient.getVenueInformation(venueId: venueId, date: date) { (error, venueInfo) in
-      if let error = error {
-        print(error.errorMessage())
-      }
-      if let venueInfo = venueInfo {
-        self.venueInfo = venueInfo
-        dump(venueInfo)
-      }
-    }
-  }
+  
+  
 }
 
-
-
-//JOSHUA
 extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //getVenuesInArea
+        return venues.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = listView.myTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {return UITableViewCell()}
-        return cell
+      let venue = venues[indexPath.row]
+      let venueId = venue.id
+      self.venueId = venue.id
+      cell.venueTitle.text = venue.name
+      cell.venueSubtitle.text = venue.location.formattedAddress.first
+      VenueApiClient.getItemsPrefixAndSuffix(venueId: venueId, date: "20190221") { (error, items) in
+        if let error = error{
+          print(error.errorMessage())
+        }
+        if let items = items{
+          let urlString = items.prefix + "300x500" + items.suffix
+          DispatchQueue.main.async {
+              self.getImagesFromPrefixandSuffix(urlString: urlString, imageView: cell.venueImage)
+          }
+        
+        }
+      }
+      return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,16 +103,10 @@ extension ListViewController : UITableViewDataSource , UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        let vc = ListDetailViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        
-        
-        print("Dont touch me")
-       
-        // getvenueDetails -> give you the venue ID
-        // and you use itt to call getVenueDetails
+        let vc = ListDetailViewController.init(venueId: venueId)
+        let navigationController = UINavigationController(rootViewController: vc)
+       self.present(navigationController, animated: true, completion: nil)
     }
     
 }
+
