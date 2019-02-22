@@ -69,11 +69,7 @@ class CreateTipViewController: UIViewController {
 }
 
 extension CreateTipViewController: UITextViewDelegate {
-    //TODO: clear the textview didBegin editing
-    //restrict to certain number of character - 200 character
-    //if user erase comment - show the placeholder text again
-    //this you have it in a previous project
-    
+   
     func textViewDidBeginEditing(_ textView: UITextView) {
         if createTipView.createTipTextView.text == createTipPlaceholder {
             textView.text = ""

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CathegoryViewController: UIViewController {
+class CategoryViewController: UIViewController {
 
     var categoryView = CategoryView()
     var category = [CategoryInfo]()
@@ -42,7 +42,7 @@ class CathegoryViewController: UIViewController {
 
 }
 
-extension CathegoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return category.count
     }
